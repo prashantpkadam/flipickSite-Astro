@@ -1,0 +1,64 @@
+---
+import { organization, website } from '../data/schema';
+
+interface Props {
+  title: string;
+  description: string;
+  ogImage?: string;
+  ogType?: string;
+  noindex?: boolean;
+  keywords?: string;
+  locale?: string;
+  schema?: object[];   // page-specific JSON-LD (WebPage, FAQPage, ...)
+}
+
+const {
+  title,
+  description,
+  ogImage = '/assets/images/flipick-og-banner.png',
+  ogType = 'website',
+  noindex = false,
+  keywords,
+  locale = 'en_US',
+  schema = [],
+} = Astro.props;
+
+const cleanPath =
+  Astro.url.pathname
+    .replace(/index\.html$/, '')
+    .replace(/\.html$/, '')
+    .replace(/(.)\/$/, '$1') || '/';
+const canonical = new URL(cleanPath, Astro.site).href;
+const ogImageUrl = new URL(ogImage, Astro.site).href;
+const robots = noindex
+  ? 'noindex, nofollow'
+  : 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [organization, website, ...schema],
+};
+---
+<title>{title}</title>
+<meta name="description" content={description} />
+{keywords && <meta name="keywords" content={keywords} />}
+<meta name="robots" content={robots} />
+<meta name="author" content="Flipick" />
+<link rel="canonical" href={canonical} />
+
+<meta name="google-site-verification" content="18R-BvwfUg5nAsnvs-jzFXYCmEO8tdM9fF6fEToiNuo" />
+<meta name="google-site-verification" content="Itj4N6uDNh3x7w9r_0fpBYp5pKBpLisSP-qMaImL5yA" />
+
+<meta property="og:type" content={ogType} />
+<meta property="og:site_name" content="Flipick" />
+<meta property="og:locale" content={locale} />
+<meta property="og:url" content={canonical} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={ogImageUrl} />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={ogImageUrl} />
+
+<script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />

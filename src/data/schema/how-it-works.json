@@ -1,0 +1,117 @@
+[
+      {
+        "@type": "WebPage",
+        "@id": "https://flipick.com/how-it-works",
+        "url": "https://flipick.com/how-it-works",
+        "name": "How It Works | Flipick — Create, Distribute, Prove",
+        "description": "Inside the Flipick studio: the Screenplay Builder, Asset Library, Ingredients and Overlays (Variable Video Production), plus personalized distribution and proof.",
+        "isPartOf": {"@id": "https://flipick.com/#website"},
+        "breadcrumb": {"@id": "https://flipick.com/how-it-works#breadcrumb"},
+        "speakable": {
+          "@type": "SpeakableSpecification",
+          "cssSelector": [".hero h1", ".hero .sub"]
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://flipick.com/how-it-works#breadcrumb",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://flipick.com/"},
+          {"@type": "ListItem", "position": 2, "name": "How It Works", "item": "https://flipick.com/how-it-works"}
+        ]
+      },
+      {
+        "@type": "HowTo",
+        "name": "How to Create, Distribute and Prove AI Video with Flipick",
+        "description": "Flipick's complete AI video production pipeline — from screenplay to personalized delivery and audience proof.",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "position": 1,
+            "name": "Screenplay Builder",
+            "text": "Describe your objective and the AI builds a production-ready screenplay through a structured conversation — narrative arc, scenes, shot-by-shot breakdowns, voiceover and dialogue. Approve the story before you spend a credit."
+          },
+          {
+            "@type": "HowToStep",
+            "position": 2,
+            "name": "Video Builder",
+            "text": "Once the screenplay is signed off, the Video Builder generates each shot, renders the beats and assembles the cut — with per-shot control over every frame."
+          },
+          {
+            "@type": "HowToStep",
+            "position": 3,
+            "name": "Asset Library",
+            "text": "Build a central repository of reusable production elements — ambassadors, products, characters and locations — that persist across every project in your organisation."
+          },
+          {
+            "@type": "HowToStep",
+            "position": 4,
+            "name": "Ingredients",
+            "text": "Define variable data fields — names, product details, prices — that swap per recipient to create a personalised version of the video for each viewer."
+          },
+          {
+            "@type": "HowToStep",
+            "position": 5,
+            "name": "Overlays (Variable Video Production)",
+            "text": "Apply overlays with real-time data via Variable Video Production (VVP) to create personalised versions from one master film and deliver them at scale."
+          },
+          {
+            "@type": "HowToStep",
+            "position": 6,
+            "name": "Distribute Personally",
+            "text": "Deliver a personalised version to each recipient by link, email or LMS. One master film becomes many personal cuts."
+          },
+          {
+            "@type": "HowToStep",
+            "position": 7,
+            "name": "Prove It Worked",
+            "text": "Authenticate viewers, track completion and drop-off, and tie CTAs to action. Know who watched, who finished, who acted."
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is Variable Video Production (VVP)?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Variable Video Production is Flipick's method for generating personalised videos at scale. You create one master film with variable data fields (Ingredients), then the platform swaps names, products, prices and other details per recipient — producing a unique version for every viewer without re-rendering from scratch."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does the Screenplay Builder work?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "You describe your objective and the AI builds a production-ready screenplay through a structured conversation — narrative arc, scenes, shot-by-shot breakdowns, voiceover and dialogue. You approve the story before any rendering credits are spent."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does Flipick keep characters and products consistent across scenes?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The Asset Library stores reusable production elements — ambassadors, characters, products and locations. Once locked, these assets persist across every shot and every project in your organisation, so faces and brand elements stay the same from scene one to scene nine."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do I need video editing skills to use Flipick?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. The platform handles the entire pipeline from script to delivery. You work at the story level — approving screenplays and storyboards — while AI handles rendering, editing, overlays and assembly. If you can write a brief, you can produce a finished video."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does personalised distribution and proof work?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Flipick delivers a unique version of your video to each recipient by link, email or LMS. Viewers are authenticated, so you get verified completion data, drop-off tracking and CTA click-through — not just view counts. Every metric is audit-ready."
+            }
+          }
+        ]
+      }
+    ]

@@ -1,0 +1,940 @@
+---
+import Layout from "../layouts/Layout.astro";
+import schema from "../data/schema/dealership.json";
+---
+
+<Layout
+  title="Video for Every Rooftop | Flipick for US Dealer Groups"
+  description="Flipick turns one offer brief into a video for every rooftop, size and language. Built on the photos already on your lot — no licence needed."
+  keywords="dealership video marketing, automotive dealer group video, rooftop video versions, car dealership offer video, variable video production automotive"
+  page="dealership"
+  schema={schema}
+>
+  <main>
+    <!-- ================= HERO ================= -->
+    <section class="hero camp-hero camp-hero-left">
+      <div class="wrap">
+        <span class="eyebrow d-none"
+          >Variable Video Production &middot; for US dealer groups</span
+        >
+        <h1 class="camp-title">
+          One brief. <span class="serif-i"
+            >Every rooftop, every size, every language.</span>
+        </h1>
+        <p class="lead mt-18">
+          Write the offer once, add the photos already sitting on your lot, and
+          adapt it yourself into every version you need. No re-cut for every
+          size, no stock library, no licence to clear.
+        </p>
+        <div class="btns mid mt-18">
+          <a class="btn btn-primary" href="#start"
+            ><span class="tri"></span>Send us your next offer</a
+          >
+          <a class="btn btn-ghost" href="#try">See one brief multiply</a>
+        </div>
+
+        <div class="dlr-vid-wrap rv">
+          <div class="vid" data-vid="dealership-hero">
+            <img
+              class="vid-thumb"
+              src="/assets/images/thumbnail/dealership_video.webp"
+              alt="Flipick dealership film — one brief, every rooftop"
+              loading="lazy"
+              width="1920"
+              height="1080"
+            />
+            <span class="badge">DEALER FILM &middot; MADE ON FLIPICK</span>
+            <div class="ov lower3">
+              <b>One brief &middot; every rooftop</b><span
+                >US DEALER GROUPS</span>
+            </div>
+            <a href="#" class="play" aria-label="Play video"></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= LOGO STRIP ================= -->
+    <section class="section-pad-flush section-bordered d-none">
+      <div class="wrap">
+        <div class="logostrip logostrip-lg rv">
+          <div class="lbl">Trusted by teams at</div>
+          <div class="logorow">
+            <div class="logoslot">
+              <img
+                src="/assets/images/customers/IIBF_logo.webp"
+                alt="IIBF"
+                width="1200"
+                height="380"
+                loading="lazy"
+              />
+            </div>
+            <div class="logoslot">
+              <img
+                src="/assets/images/customers/Pearson_logo.webp"
+                alt="Pearson"
+                width="1200"
+                height="380"
+                loading="lazy"
+              />
+            </div>
+            <div class="logoslot">
+              <img
+                src="/assets/images/customers/logo_elsevier.svg"
+                alt="Elsevier"
+                width="58"
+                height="65"
+                loading="lazy"
+              />
+            </div>
+            <div class="logoslot">
+              <img
+                src="/assets/images/customers/Clarivate_Logo.webp"
+                alt="Clarivate"
+                width="1200"
+                height="380"
+                loading="lazy"
+              />
+            </div>
+            <div class="logoslot">
+              <img
+                src="/assets/images/customers/PI-horizontal-logo.webp"
+                alt="PI Industries"
+                width="1200"
+                height="380"
+                loading="lazy"
+              />
+            </div>
+            <div class="logoslot">
+              <img
+                src="/assets/images/customers/jindal-steel.webp"
+                alt="Jindal Steel"
+                width="1200"
+                height="380"
+                loading="lazy"
+              />
+            </div>
+            <div class="logoslot">
+              <img
+                src="/assets/images/customers/logo_godrej.webp"
+                alt="Godrej"
+                width="1200"
+                height="380"
+                loading="lazy"
+              />
+            </div>
+            <div class="logoslot">
+              <img
+                src="/assets/images/customers/IFC-WBG.webp"
+                alt="IFC World Bank Group"
+                width="1200"
+                height="380"
+                loading="lazy"
+              />
+            </div>
+            <div class="logoslot">
+              <img
+                src="/assets/images/customers/logo_iica.webp"
+                alt="IICA"
+                width="1200"
+                height="380"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= VERSION BUILDER ================= -->
+    <section id="try" class="vvp-section-sm">
+      <div class="lwrap">
+        <div class="sec-head vvp-sec-head rv">
+          <span class="eyebrow">Try it live</span>
+          <h2>
+            Version count is usually what costs you. <span class="serif-i"
+              >Here it is just a setting.</span>
+          </h2>
+          <p class="vvp-leadp">
+            Set your spread below. The number is how many finished videos come
+            off a single offer brief.
+          </p>
+        </div>
+
+        <div class="dlr-bldr rv">
+          <div class="dlr-ctrls">
+            <div>
+              <span class="dlr-ctrl-lbl">Rooftops</span>
+              <div class="dlr-stp">
+                <button type="button" id="dlrMinus" aria-label="Fewer rooftops"
+                  >&minus;</button
+                >
+                <span class="dlr-stp-v" id="dlrRtv" aria-live="polite">14</span>
+                <button type="button" id="dlrPlus" aria-label="More rooftops"
+                  >+</button
+                >
+              </div>
+            </div>
+            <div>
+              <span class="dlr-ctrl-lbl" id="dlrFmtLbl">Formats</span>
+              <div
+                class="dlr-chips"
+                id="dlrFmts"
+                role="group"
+                aria-labelledby="dlrFmtLbl"
+              >
+                <button
+                  type="button"
+                  class="dlr-chip"
+                  data-v="16:9"
+                  data-sw="dlr-sw-169"
+                  aria-pressed="true">16:9</button
+                >
+                <button
+                  type="button"
+                  class="dlr-chip"
+                  data-v="1:1"
+                  data-sw="dlr-sw-11"
+                  aria-pressed="true">1:1</button
+                >
+                <button
+                  type="button"
+                  class="dlr-chip"
+                  data-v="9:16"
+                  data-sw="dlr-sw-916"
+                  aria-pressed="true">9:16</button
+                >
+              </div>
+            </div>
+            <div>
+              <span class="dlr-ctrl-lbl" id="dlrLangLbl">Languages</span>
+              <div
+                class="dlr-chips"
+                id="dlrLangs"
+                role="group"
+                aria-labelledby="dlrLangLbl"
+              >
+                <button
+                  type="button"
+                  class="dlr-chip"
+                  data-v="EN"
+                  aria-pressed="true">English</button
+                >
+                <button
+                  type="button"
+                  class="dlr-chip"
+                  data-v="ES"
+                  aria-pressed="true">Spanish</button
+                >
+              </div>
+            </div>
+          </div>
+          <div class="dlr-tally">
+            <b id="dlrCount">84</b><span id="dlrCountLabel"
+              >videos from one brief</span>
+          </div>
+          <div class="dlr-vgrid" id="dlrGrid" aria-live="polite"></div>
+          <p class="dlr-note">
+            Same source photos throughout. Each size is cropped from a single
+            render rather than re-rendered, which is where the cost saving comes
+            from.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= STATEMENT BAND ================= -->
+    <section class="vvp-section-flush">
+      <div class="lwrap">
+        <div class="darkband darkband-center rv">
+          <span class="eyebrow">Variable data printing, for video</span>
+          <h2>
+            One offer brief &rarr; every version you need. Your eighty-fourth
+            costs about the same as your first.
+          </h2>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= HOW IT WORKS ================= -->
+    <section id="how" class="vvp-section-sm">
+      <div class="lwrap">
+        <div class="sec-head vvp-sec-head rv">
+          <span class="eyebrow">How it works</span>
+          <h2>Four steps, <span class="serif-i">brief to published.</span></h2>
+        </div>
+        <div class="grid4">
+          <div class="fcard rv">
+            <div class="ic">1</div>
+            <h3>Brief it</h3>
+            <p>
+              Vehicle, offer, price, expiry, dealer details. One form, filled
+              once.
+            </p>
+            <div class="pill-row dlr-steppill">
+              <span class="pill">2 minutes</span>
+            </div>
+          </div>
+          <div class="fcard rv">
+            <div class="ic">2</div>
+            <h3>Add your photos</h3>
+            <p>
+              Straight off your lot, unaltered. No studio shoot and no stock
+              account.
+            </p>
+            <div class="pill-row dlr-steppill">
+              <span class="pill">Your images</span>
+            </div>
+          </div>
+          <div class="fcard rv">
+            <div class="ic">3</div>
+            <h3>Pick your spread</h3>
+            <p>Rooftops, formats, languages, personalised recipients.</p>
+            <div class="pill-row dlr-steppill">
+              <span class="pill">One screen</span>
+            </div>
+          </div>
+          <div class="fcard rv">
+            <div class="ic">4</div>
+            <h3>Publish and adjust</h3>
+            <p>
+              Change a price or a rooftop name yourself, right in the platform.
+            </p>
+            <div class="pill-row dlr-steppill">
+              <span class="pill">Live in minutes</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= IMAGE RIGHTS ================= -->
+    <section id="rights" class="vvp-section-sm">
+      <div class="lwrap">
+        <div class="fcard fcard-bl-teal rv">
+          <span class="eyebrow">Image rights &amp; brand safety</span>
+          <h3 class="fcard-h3--sm">Your photos. Your output. No grey area.</h3>
+          <p>
+            Dealer marketing carries real exposure: OEM brand guidelines, co-op
+            compliance, stock licensing, and the open question of who owns the
+            photos on your own website. Flipick sidesteps all of it by never
+            sourcing an image in the first place.
+          </p>
+          <ul class="ticks">
+            <li>
+              Built from the photos already on your lot and already on your site
+            </li>
+            <li>
+              No stock libraries, and no licensing costs passed through to you
+            </li>
+            <li>No photos scraped from third-party inventory feeds</li>
+            <li>
+              No AI-generated vehicles, so no trade dress or design IP questions
+            </li>
+            <li>
+              Finished videos belong to the dealership [confirm exact licence
+              wording]
+            </li>
+          </ul>
+          <p class="dlr-note">
+            Nothing your OEM or your legal team has to think twice about. [OEM
+            co-op eligibility: confirm before publishing.]
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FIGURES ================= -->
+    <section class="vvp-section-flush">
+      <div class="lwrap">
+        <div class="darkband rv">
+          <span class="eyebrow">Built for your offer calendar</span>
+          <h2 class="darkband-headline">
+            A Labor Day offer briefed Monday morning is live across every
+            rooftop by Monday afternoon.
+          </h2>
+          <div class="grid3">
+            <div>
+              <div class="camp-stat-val">~ 30 sec</div>
+              <p class="camp-stat-lbl">
+                of render time per 30 seconds of finished video<sup>1</sup>
+              </p>
+            </div>
+            <div>
+              <div class="camp-stat-val">~80%</div>
+              <p class="camp-stat-lbl">
+                lower rendering cost, because each size is cropped once instead
+                of re-rendered<sup>2</sup>
+              </p>
+            </div>
+            <div>
+              <div class="camp-stat-val">Minutes</div>
+              <p class="camp-stat-lbl">
+                from one brief to a full version set, on your own timeline
+              </p>
+            </div>
+          </div>
+          <p class="dlr-fnote">
+            1. Measured against a benchmark of roughly ten minutes for
+            cinematic-only rendering. 2. Against the cost of a full render per
+            size. [Both figures to be confirmed by product before this page goes
+            live.]
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= WHERE IT FITS ================= -->
+    <section class="vvp-section-sm">
+      <div class="lwrap">
+        <div class="sec-head vvp-sec-head rv">
+          <span class="eyebrow">Where it fits</span>
+          <h2>
+            It works alongside <span class="serif-i"
+              >whoever you already work with.</span>
+          </h2>
+          <p class="vvp-leadp">
+            Flipick is not a replacement for your agency or your in-house team.
+            It takes the repetitive part of the job, which is turning one
+            approved idea into every version it has to run as.
+          </p>
+        </div>
+        <div class="grid3">
+          <div class="fcard rv">
+            <h3>If you work with an agency</h3>
+            <ul>
+              <li>They keep the strategy, the media plan and the brand work</li>
+              <li>Their creative goes in as the brief</li>
+              <li>Version count stops being a separate production cycle</li>
+              <li>Agencies can run Flipick on your behalf, or you can</li>
+            </ul>
+          </div>
+          <div class="fcard rv">
+            <h3>If you edit in-house</h3>
+            <ul>
+              <li>Your editor makes the call on look and treatment</li>
+              <li>The first cut is theirs, the rest are a setting</li>
+              <li>No render queue to babysit between offers</li>
+              <li>Time goes back into work only they can do</li>
+            </ul>
+          </div>
+          <div class="fcard fcard-featured rv">
+            <h3>If you do both</h3>
+            <ul>
+              <li>Most groups of any size do</li>
+              <li>The brief is the same either way</li>
+              <li>The account sits with whoever owns the offer</li>
+              <li>Nothing in your current stack has to come out</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FAQ ================= -->
+    <section class="vvp-section-sm">
+      <div class="lwrap">
+        <div class="sec-head vvp-sec-head rv">
+          <span class="eyebrow">Questions we get</span>
+          <h2>The ones dealer marketers ask first.</h2>
+        </div>
+        <div class="rv">
+          <details class="dlr-fq">
+            <summary>Do we need an editor or a production team?</summary>
+            <p>
+              No. One person who can write an offer can run it. There is no
+              timeline, no keyframes and no render queue to manage.
+            </p>
+          </details>
+          <details class="dlr-fq">
+            <summary>Where do the vehicle images come from?</summary>
+            <p>
+              Yours. We do not supply or license vehicle imagery, and we do not
+              pull from third-party inventory feeds. You upload the photos
+              already on your lot.
+            </p>
+          </details>
+          <details class="dlr-fq">
+            <summary>Can we change a price after publishing?</summary>
+            <p>
+              Yes. Change the field and only the affected versions update. You
+              do not re-render the set.
+            </p>
+          </details>
+          <details class="dlr-fq">
+            <summary>What sizes and languages do we get?</summary>
+            <p>
+              Every size is cropped from a single render rather than rendered
+              separately, which is what keeps the cost flat as the version count
+              grows.
+            </p>
+          </details>
+          <details class="dlr-fq">
+            <summary>Who owns the finished videos?</summary>
+            <p>The intent is that output belongs to the dealership.</p>
+          </details>
+          <details class="dlr-fq">
+            <summary>How is this priced?</summary>
+            <p>
+              Flipick is credit-based rather than seat-based, so you pay for
+              what you make. [Insert US pricing once confirmed — do not publish
+              the rupee-denominated figures from flipick.com/pricing on this
+              page.]
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CLOSING + LEAD FORM ================= -->
+    <section class="sec dark" id="start">
+      <div class="wrap close">
+        <div class="rv">
+          <span class="eyebrow dk">No deck, no discovery call</span>
+          <h2>
+            Send us your next offer. We&rsquo;ll send back the full version set.
+          </h2>
+          <p class="lead dk mt-18">
+            Give us one offer and a handful of your own lot photos. We set the
+            template up and send the whole set back within one business day,
+            along with the account so you run it yourself from there.
+          </p>
+          <div class="answers">
+            <div>
+              <b>Does every rooftop need its own film?</b> No. That is the whole point.
+              One brief carries the offer and the rooftop list supplies what changes.
+            </div>
+            <div>
+              <b>How fast is the first set?</b> About 7 business days for your master
+              template, then same-day version sets from every brief after it.
+            </div>
+            <div>
+              <b>Whose images are we publishing?</b> Only yours. Nothing on this page
+              is stock, scraped or AI-generated.
+            </div>
+          </div>
+        </div>
+        <div class="rv">
+          <div class="form">
+            <div id="formBody">
+              <h3>Send my offer</h3>
+              <div class="dlr-row2">
+                <div class="field">
+                  <label for="d1">Name <span class="required">*</span></label
+                  ><input
+                    id="d1"
+                    type="text"
+                    placeholder="Jane Whitfield"
+                  /><div class="field-error" id="d1Err"></div>
+                </div>
+                <div class="field">
+                  <label for="d2"
+                    >Work email <span class="required">*</span></label
+                  ><input
+                    id="d2"
+                    type="email"
+                    placeholder="jane@yourgroup.com"
+                  /><div class="field-error" id="d2Err"></div>
+                </div>
+              </div>
+              <div class="dlr-row2">
+                <div class="field">
+                  <label for="d3"
+                    >Dealership or group <span class="required">*</span></label
+                  ><input
+                    id="d3"
+                    type="text"
+                    placeholder="Whitfield Automotive"
+                  /><div class="field-error" id="d3Err"></div>
+                </div>
+                <div class="field">
+                  <label for="d4">Role <span class="required">*</span></label
+                  ><input
+                    id="d4"
+                    type="text"
+                    placeholder="Marketing Director"
+                  /><div class="field-error" id="d4Err"></div>
+                </div>
+              </div>
+              <div class="field">
+                <label for="d5">Rooftops <span class="required">*</span></label
+                ><input
+                  id="d5"
+                  type="text"
+                  inputmode="numeric"
+                  pattern="[0-9]*"
+                  placeholder="14"
+                /><div class="field-error" id="d5Err"></div>
+              </div>
+              <div class="field">
+                <label for="d6"
+                  >Your next offer, in one line <span class="required">*</span
+                  ></label
+                ><input
+                  id="d6"
+                  type="text"
+                  placeholder="Labor Day cash deal, 2019 sedan, $18,495"
+                /><div class="field-error" id="d6Err"></div>
+              </div>
+              <button class="btn btn-primary send" id="send" disabled
+                >Send my offer</button
+              >
+              <div class="form-server-error" id="formServerErr"></div>
+              <p class="ffoot">
+                Prefer to talk first? <a
+                  data-demo-link
+                  href="https://calendly.com/rahul-uppal-flipick/30min"
+                  target="_blank"
+                  rel="noopener noreferrer">Book a demo</a>
+              </p>
+            </div>
+            <div class="ok" id="okBody">
+              <div class="tick">&#10003;</div>
+              <h3>Thanks &#8212; message sent.</h3>
+              <p>We&#8217;ve got your offer and will be in touch shortly.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script is:inline slot="scripts" src="/assets/js/video-player.js"></script>
+  <script is:inline slot="scripts">
+    (function () {
+      var grid = document.getElementById("dlrGrid");
+      var count = document.getElementById("dlrCount");
+      var label = document.getElementById("dlrCountLabel");
+      var rtv = document.getElementById("dlrRtv");
+      if (!grid) return;
+
+      var MAX_TILES = 120;
+      var rooftops = 14;
+
+      function pressed(id) {
+        return Array.prototype.filter.call(
+          document.querySelectorAll("#" + id + " .dlr-chip"),
+          function (b) {
+            return b.getAttribute("aria-pressed") === "true";
+          },
+        );
+      }
+
+      function pad(n) {
+        return (n < 10 ? "0" : "") + n;
+      }
+
+      function draw() {
+        var fmts = pressed("dlrFmts");
+        var langs = pressed("dlrLangs");
+        var total = rooftops * fmts.length * langs.length;
+
+        count.textContent = total;
+        rtv.textContent = rooftops;
+        label.textContent =
+          total === 1 ? "video from one brief" : "videos from one brief";
+        grid.textContent = "";
+
+        if (!total) {
+          var empty = document.createElement("p");
+          empty.className = "dlr-msg";
+          empty.textContent = "Pick at least one format and one language.";
+          grid.appendChild(empty);
+          return;
+        }
+
+        var cap = Math.min(total, MAX_TILES);
+        var i = 0;
+        var frag = document.createDocumentFragment();
+
+        outer: for (var r = 1; r <= rooftops; r++) {
+          for (var a = 0; a < fmts.length; a++) {
+            for (var b = 0; b < langs.length; b++) {
+              if (i >= cap) break outer;
+
+              var tile = document.createElement("div");
+              tile.className = "dlr-vt";
+              tile.style.animationDelay = Math.min(i * 9, 560) + "ms";
+
+              var swatch = document.createElement("i");
+              swatch.className = fmts[a].getAttribute("data-sw");
+
+              var num = document.createElement("b");
+              num.textContent = pad(r);
+
+              var meta = document.createElement("em");
+              meta.textContent =
+                fmts[a].getAttribute("data-v") +
+                " · " +
+                langs[b].getAttribute("data-v");
+
+              tile.appendChild(swatch);
+              tile.appendChild(num);
+              tile.appendChild(meta);
+              frag.appendChild(tile);
+              i++;
+            }
+          }
+        }
+        grid.appendChild(frag);
+
+        if (total > cap) {
+          var more = document.createElement("p");
+          more.className = "dlr-msg dlr-msg-more";
+          more.textContent = "Showing " + cap + " of " + total + ".";
+          grid.appendChild(more);
+        }
+      }
+
+      document.getElementById("dlrPlus").addEventListener("click", function () {
+        rooftops = Math.min(rooftops + 1, 30);
+        draw();
+      });
+      document
+        .getElementById("dlrMinus")
+        .addEventListener("click", function () {
+          rooftops = Math.max(rooftops - 1, 1);
+          draw();
+        });
+      Array.prototype.forEach.call(
+        document.querySelectorAll(".dlr-chip"),
+        function (chip) {
+          chip.addEventListener("click", function () {
+            chip.setAttribute(
+              "aria-pressed",
+              chip.getAttribute("aria-pressed") === "true" ? "false" : "true",
+            );
+            draw();
+          });
+        },
+      );
+
+      draw();
+    })();
+  </script>
+  <script is:inline slot="scripts">
+    (function () {
+      var LABEL = "Send my offer";
+
+      var rules = {
+        d1: { min: 2, msg: "Please enter your name (min 2 characters)." },
+        d2: {
+          email: true,
+          blockPersonal: true,
+          msg: "Please enter a valid work email address.",
+          msgPersonal:
+            "Please enter your work email address. Personal email addresses such as Gmail or Yahoo are not accepted.",
+        },
+        d3: {
+          min: 2,
+          msg: "Please enter your dealership or group name (min 2 characters).",
+        },
+        d4: { min: 2, msg: "Please enter your role (min 2 characters)." },
+        d5: { numeric: true, msg: "Please enter numbers only (e.g. 14)." },
+        d6: { min: 6, msg: "Please describe your next offer in one line." },
+      };
+
+      var touched = {};
+      var valid = {
+        d1: false,
+        d2: false,
+        d3: false,
+        d4: false,
+        d5: false,
+        d6: false,
+      };
+      var btn = document.getElementById("send");
+      var srvErr = document.getElementById("formServerErr");
+      if (!btn) return;
+
+      function validate(id) {
+        var el = document.getElementById(id),
+          err = document.getElementById(id + "Err"),
+          rule = rules[id];
+        if (!el || !err || !rule) return;
+        var v = el.value.trim();
+        var msg = rule.msg;
+        var ok;
+        if (rule.email) {
+          ok = v.length > 0 && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+          if (ok && rule.blockPersonal) {
+            var domain = v.split("@").pop().toLowerCase();
+            var blocked = (window.FLIPICK && FLIPICK.blockedEmailDomains) || [];
+            if (blocked.indexOf(domain) !== -1) {
+              ok = false;
+              msg = rule.msgPersonal || msg;
+            }
+          }
+        } else if (rule.numeric) {
+          ok = /^[0-9]+$/.test(v);
+        } else {
+          ok = v.length >= rule.min;
+        }
+        valid[id] = ok;
+        if (touched[id]) {
+          el.classList.toggle("f-invalid", !ok);
+          el.classList.toggle("f-valid", ok);
+          err.textContent = ok ? "" : msg;
+          err.classList.toggle("show", !ok);
+        }
+      }
+
+      function updateBtn() {
+        btn.disabled = !Object.keys(valid).every(function (k) {
+          return valid[k];
+        });
+      }
+
+      function showSuccess() {
+        btn.classList.add("btn-success");
+        btn.textContent = "✓ Sent!";
+        setTimeout(function () {
+          document.getElementById("formBody").style.display = "none";
+          var ok = document.getElementById("okBody");
+          ok.style.display = "flex";
+          ok.style.animation = "ok-fadein 0.5s ease forwards";
+          setTimeout(resetForm, 7000);
+        }, 1500);
+      }
+
+      function resetForm() {
+        var ok = document.getElementById("okBody");
+        ok.style.animation = "none";
+        ok.style.transition = "opacity 0.3s ease";
+        ok.style.opacity = "0";
+        setTimeout(function () {
+          ok.style.cssText = "";
+          document.getElementById("formBody").style.display = "";
+          Object.keys(rules).forEach(function (id) {
+            var el = document.getElementById(id),
+              err = document.getElementById(id + "Err");
+            if (el) {
+              el.value = "";
+              el.classList.remove("f-valid", "f-invalid");
+            }
+            if (err) {
+              err.textContent = "";
+              err.classList.remove("show");
+            }
+          });
+          touched = {};
+          Object.keys(valid).forEach(function (k) {
+            valid[k] = false;
+          });
+          btn.classList.remove("btn-success", "btn-loading");
+          btn.textContent = LABEL;
+          btn.disabled = true;
+          srvErr.textContent = "";
+          srvErr.classList.remove("show");
+        }, 300);
+      }
+
+      // Rooftops: strip any non-digit characters as the user types or pastes
+      var rooftopsEl = document.getElementById("d5");
+      if (rooftopsEl) {
+        rooftopsEl.addEventListener("input", function () {
+          var digitsOnly = this.value.replace(/[^0-9]/g, "");
+          if (digitsOnly !== this.value) this.value = digitsOnly;
+        });
+      }
+
+      Object.keys(rules).forEach(function (id) {
+        var el = document.getElementById(id);
+        if (!el) return;
+        el.addEventListener("input", function () {
+          touched[id] = true;
+          validate(id);
+          updateBtn();
+        });
+        el.addEventListener("blur", function () {
+          touched[id] = true;
+          validate(id);
+          updateBtn();
+        });
+      });
+
+      btn.addEventListener("click", function () {
+        Object.keys(rules).forEach(function (id) {
+          touched[id] = true;
+          validate(id);
+        });
+        updateBtn();
+        if (btn.disabled) return;
+
+        var payload = {
+          form_id: "dealership-lead",
+          page: "dealership",
+          campaign: "US Dealerships",
+          name: document.getElementById("d1").value.trim(),
+          email: document.getElementById("d2").value.trim(),
+          fields: [
+            {
+              label: "Dealership or group",
+              value: document.getElementById("d3").value.trim(),
+            },
+            {
+              label: "Role",
+              value: document.getElementById("d4").value.trim(),
+            },
+            {
+              label: "Rooftops",
+              value: document.getElementById("d5").value.trim(),
+            },
+            {
+              label: "Next offer",
+              value: document.getElementById("d6").value.trim(),
+            },
+          ],
+        };
+
+        srvErr.textContent = "";
+        srvErr.classList.remove("show");
+        btn.disabled = true;
+        btn.textContent = "Sending…";
+
+        fetch("/api/send-campaign-mail.php", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        })
+          .then(function (res) {
+            return res.json().then(function (d) {
+              return { ok: res.ok, data: d };
+            });
+          })
+          .then(function (res) {
+            if (res.ok && res.data.success) {
+              showSuccess();
+            } else {
+              throw new Error(
+                res.data.message || "Something went wrong. Please try again.",
+              );
+            }
+          })
+          .catch(function (err) {
+            updateBtn();
+            btn.textContent = LABEL;
+            srvErr.textContent = err.message;
+            srvErr.classList.add("show");
+          });
+      });
+    })();
+  </script>
+  <script is:inline slot="scripts">
+    const _rv = document.querySelectorAll(".rv");
+    if ("IntersectionObserver" in window) {
+      const io = new IntersectionObserver(
+        (es) =>
+          es.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add("in");
+              io.unobserve(e.target);
+            }
+          }),
+        { threshold: 0, rootMargin: "0px 0px -8% 0px" },
+      );
+      _rv.forEach((el) => io.observe(el));
+      setTimeout(() => _rv.forEach((el) => el.classList.add("in")), 3000);
+    }
+  </script>
+</Layout>

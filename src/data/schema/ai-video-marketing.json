@@ -1,0 +1,108 @@
+[
+      {
+        "@type": "WebPage",
+        "@id": "https://flipick.com/ai-video-marketing",
+        "url": "https://flipick.com/ai-video-marketing",
+        "name": "AI Video for Marketing — Flipick",
+        "description": "Flipick is the AI video studio that creates studio-grade video, distributes it personally to every viewer, and proves it landed.",
+        "isPartOf": {"@id": "https://flipick.com/#website"},
+        "breadcrumb": {"@id": "https://flipick.com/ai-video-marketing#breadcrumb"},
+        "speakable": {
+          "@type": "SpeakableSpecification",
+          "cssSelector": [".hero h1", ".hero .sub"]
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://flipick.com/ai-video-marketing#breadcrumb",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://flipick.com/"},
+          {"@type": "ListItem", "position": 2, "name": "AI Video for Marketing", "item": "https://flipick.com/ai-video-marketing"}
+        ]
+      },
+      {
+        "@type": "Service",
+        "name": "AI Video for Marketing",
+        "provider": {
+          "@type": "Organization",
+          "name": "Flipick",
+          "url": "https://flipick.com/"
+        },
+        "description": "Studio-grade AI video creation for marketing teams — cinematic campaigns, personalized to every customer with Variable Video Production, and proven end to end.",
+        "serviceType": "AI Video Production for Marketing",
+        "areaServed": "Worldwide"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How does Flipick let a marketing team create campaign videos without an agency?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Flipick turns a creative brief into a screenplay and storyboard you approve before a credit is spent. The finished, on-brand cinematic film is typically delivered inside a campaign cycle — no shoots, no back-and-forth with an agency, and no weeks of edit rounds."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is Variable Video Production and how does it personalize a campaign video?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Variable Video Production (VVP) takes a single master film and renders it into thousands of versions — by customer name, segment, city, language or offer. Each version is rendered from the film itself, not by overlaying text, so every field is part of the video."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can Flipick deliver localized video ads for different markets without re-shooting?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Flipick localizes one master production into every language and market you sell in — same brand, same look, with localized voice and on-screen text. No re-shoots and no separate agency engagements per region."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does Flipick prove that a video actually moved the marketing funnel?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Every view is tied to a known recipient. Flipick tracks completion and CTA click-through per version, so marketing teams can report on outcomes, not just impressions, and know exactly which video version drove which result."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "VideoObject",
+        "name": "Flipick AI Video for Marketing — One Film, Every Customer",
+        "description": "Hero showreel for the marketing page demonstrating how Flipick produces cinematic campaign video and personalises it for every customer via Variable Video Production.",
+        "thumbnailUrl": "https://flipick.com/assets/images/thumbnail/marketingPageHero.webp",
+        "contentUrl": "https://storage.googleapis.com/flipick-videos-gen/3dceaee0-0d2c-4dfb-85e6-59b6bbfa14d7-Marketing Page Hero - One Film, Every Customer 1 1 1.mp4",
+        "uploadDate": "2026-01-01",
+        "publisher": {"@id": "https://flipick.com/#organization"}
+      },
+      {
+        "@type": "VideoObject",
+        "name": "AI Marketing Video — Personalised for Every Viewer",
+        "description": "Demonstrates Flipick's personalised video delivery for marketing — multilingual, accurate and data-driven, with a unique version rendered per viewer.",
+        "thumbnailUrl": "https://flipick.com/assets/images/thumbnail/by-industry.webp",
+        "contentUrl": "https://storage.googleapis.com/flipick-videos-gen/0bce4242-1d00-43a1-9b58-715d88b637b3-3_MULTILINGUAL%20%C2%B7%20ACCURATE%20%C2%B7%20AUDIT-READY 1.mp4",
+        "uploadDate": "2026-01-01",
+        "publisher": {"@id": "https://flipick.com/#organization"}
+      },
+      {
+        "@type": "VideoObject",
+        "name": "AI Marketing Video — Training, Ads, Film and Explainers",
+        "description": "Showcases the range of marketing content types produced on Flipick: ads, promotional films, explainers and campaign videos from one AI studio pipeline.",
+        "thumbnailUrl": "https://flipick.com/assets/images/thumbnail/by-content.webp",
+        "contentUrl": "https://storage.googleapis.com/flipick-videos-gen/0cfb4eba-4a52-4436-989e-cb086917f56a-2_TRAINING%20%C2%B7%20ADS%20%C2%B7%20FILM%20%C2%B7%20EXPLAINERS 1.mp4",
+        "uploadDate": "2026-01-01",
+        "publisher": {"@id": "https://flipick.com/#organization"}
+      },
+      {
+        "@type": "VideoObject",
+        "name": "AI Marketing Video — Festive Product Promo",
+        "description": "Example festive product promotion video created on the Flipick platform — one master film versioned for every SKU, market and language at calendar speed.",
+        "thumbnailUrl": "https://flipick.com/assets/images/thumbnail/festive-product-promo.webp",
+        "contentUrl": "https://storage.googleapis.com/flipick-videos-gen/246252c2-2301-4d8b-9ab1-a1c47d1c428f-4_ONE PLATFORM, MANY USES.mp4",
+        "uploadDate": "2026-01-01",
+        "publisher": {"@id": "https://flipick.com/#organization"}
+      }
+    ]

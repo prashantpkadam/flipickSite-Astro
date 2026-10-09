@@ -1,0 +1,287 @@
+---
+import Layout from '../layouts/Layout.astro';
+import schema from '../data/schema/how-it-works.json';
+---
+<Layout
+  title="How It Works: Create, Distribute, Prove | Flipick"
+  description="Inside the Flipick studio: Screenplay Builder, Asset Library, Ingredients and Overlays for Variable Video Production, plus personalized distribution and proof."
+  keywords="AI video creation process, screenplay builder, video builder, asset library, variable video production, personalized video distribution, VVP, AI video pipeline, storyboard to video"
+  page="how-it-works"
+  schema={schema}
+>
+  <main>
+
+    <!-- ================= HERO ================= -->
+    <section class="hero hero--std" aria-label="How Flipick works">
+    <div class="wrap">
+        <div class="hero-grid hero-grid--xl">
+        <h1 class="hero-h1--md">How Flipick works: <span class="serif-i text-brand-mid">create, distribute, prove.</span></h1>
+        <p class="sub">One platform takes a brief from a written screenplay to a finished, on-brand film &mdash; then delivers it personally and measures who watched. Here&rsquo;s the pipeline, the studio tools up close, and the proof.</p>
+        <div class="ctas">
+            <a class="btn btn-ghost" data-demo-link href="https://calendly.com/amol-chandsarkar/" target="_blank" rel="noopener noreferrer">Book a demo</a>
+        </div>
+        </div>
+    </div>
+    </section>
+
+    <!-- ================= PRODUCT 1 INTRO + DEEP-DIVE NAV ================= -->
+    <section class="section-pad-intro">
+    <div class="wrap">
+        <div class="sec-head rv">
+        <span class="plabel">Product 1 &middot; AI Video Creation</span>
+        <h2>Inside the studio. <span class="serif-i text-brand">A closer look.</span></h2>
+        <p>Five tools do the heavy lifting &mdash; from the first conversation to the personalised final frame. Here&rsquo;s each one on screen.</p>
+        <p style="margin-top:1rem;padding:1rem 1.25rem;border-left:3px solid var(--brand);background:var(--surface-2,#f8f9ff);border-radius:0 6px 6px 0"><strong>How Flipick differs from text-to-video AI tools:</strong> Most text-to-video tools generate a single clip from a prompt — with no scene planning, no brand consistency across cuts, and no delivery mechanism. Flipick&rsquo;s pipeline runs nine stages: screenplay, storyboard approval, generation, consistency, overlay, editing, localisation, delivery and measurement — with a sign-off point before any credit is spent on rendering. Typical timelines: Screenplay Creator 15–30 minutes from brief to script &middot; Storyboard approval 1 business day &middot; Rendering under 2 hours per scene.</p>
+        <div class="ddnav">
+            <a href="#screenplay">Screenplay Builder</a>
+            <a href="#video">Video Builder</a>
+            <a href="#assets">Asset Library</a>
+            <a href="#ingredients">Ingredients</a>
+            <a href="#overlays">Overlays</a>
+        </div>
+        </div>
+    </div>
+    </section>
+
+    <!-- ================= SCREENPLAY BUILDER ================= -->
+    <section id="screenplay" aria-label="Screenplay Builder" class="section-pad-xs">
+    <div class="wrap">
+        <div class="feat feat--clean rv">
+        <div class="media">
+            <img src="/assets/images/how-it-works/screenplay-builder.webp" alt="Flipick Screenplay Builder — story plan with scenes, shots and beats" class="feat-img" width="1672" height="941" loading="lazy">
+        </div>
+        <div class="feat-copy">
+            <span class="flagtag">SCREENPLAY BUILDER</span>
+            <h3>Every project starts with a screenplay, not a blank page.</h3>
+            <p class="leadp">Describe your objective and the AI builds a production-ready screenplay through a structured conversation &mdash; narrative arc, scenes, shot-by-shot breakdowns, voiceover and dialogue.</p>
+            <ul class="bul">
+            <li><b>Campaign styles</b> &mdash; Narrative Ad, How-To, or Product Showcase, each with its own shot grammar</li>
+            <li><b>Pace management</b> &mdash; from measured to Super Energetic, controlling visual beats per shot</li>
+            <li><b>Beats grid</b> &mdash; Super Energetic renders a 3&times;3 grid: nine frames in a ten-second clip</li>
+            <li><b>Editable shots</b> &mdash; edit the visual and motion prompts and voiceover text, and regenerate any shot</li>
+            <li><b>Create from Import</b> &mdash; already have an approved concept? Import a plot doc and skip the story pass</li>
+            </ul>
+        </div>
+        </div>
+    </div>
+    </section>
+
+    <!-- ================= VIDEO BUILDER ================= -->
+    <section id="video" aria-label="Video Builder" class="section-white section-pad-xs">
+    <div class="wrap">
+        <div class="feat feat--clean rev rv">
+        <div class="media">
+            <img src="/assets/images/how-it-works/video-builder.webp" alt="Flipick Video Builder — shots with reference slots and regenerate controls" class="feat-img" width="1672" height="941" loading="lazy">
+        </div>
+        <div class="feat-copy">
+            <span class="flagtag">VIDEO BUILDER</span>
+            <h3>Turn the approved storyboard into finished video.</h3>
+            <p class="leadp">Once the screenplay is signed off, the Video Builder generates each shot, renders the beats and assembles the cut &mdash; with control over every frame.</p>
+            <ul class="bul">
+            <li><b>Beats engine</b> &mdash; each shot renders as beat frames stitched into the clip; pace sets how many</li>
+            <li><b>Regenerate precisely</b> &mdash; re-render a single beat or shot without disturbing the rest</li>
+            <li><b>Per-shot control</b> &mdash; edit the visual and motion prompts, then re-render cleanly</li>
+            <li><b>Voiceover &amp; reference locks</b> &mdash; VO text feeds the TTS pipeline; reference slots hold the character and location images the engine uses</li>
+            </ul>
+        </div>
+        </div>
+    </div>
+    </section>
+
+    <!-- ================= ASSET LIBRARY ================= -->
+    <section id="assets" aria-label="Asset Library" class="section-pad-xs">
+    <div class="wrap">
+        <div class="feat feat--clean rv">
+        <div class="media">
+            <img src="/assets/images/how-it-works/asset-library.webp" alt="Flipick Asset Library — photo-locked characters, locations and props" class="feat-img" width="1672" height="941" loading="lazy">
+        </div>
+        <div class="feat-copy">
+            <span class="flagtag">ASSET LIBRARY</span>
+            <h3>Build a brand world once. Reuse it everywhere.</h3>
+            <p class="leadp">A central repository of reusable production elements &mdash; ambassadors, products, characters and locations &mdash; that persist across every project in your organisation, carrying their full visual identity.</p>
+            <ul class="bul">
+            <li><b>Real brand ambassadors</b> &mdash; lock a real person&rsquo;s likeness; the same face and style across every campaign</li>
+            <li><b>Products as hero elements</b> &mdash; held in the Asset Library and reused as the hero of a shot across campaigns, without consuming a generation slot</li>
+            <li><b>AI characters &amp; locations</b> &mdash; personas with multiple looks, and environments reproduced consistently scene to scene</li>
+            <li><b>Promote &amp; share</b> &mdash; create in a project, promote to the library; scoped to your tenant, shared across your team</li>
+            </ul>
+        </div>
+        </div>
+    </div>
+    </section>
+
+    <!-- ================= INGREDIENTS ================= -->
+    <section id="ingredients" aria-label="Ingredients — Variable Video Production" class="section-white section-pad-xs">
+    <div class="wrap">
+        <div class="feat feat--clean rev rv">
+        <div class="media">
+            <img src="/assets/images/how-it-works/Ingredients.webp" alt="Flipick Video Builder — shots with reference slots and regenerate controls" class="feat-img" width="1672" height="941" loading="lazy">
+        </div>
+        <div class="feat-copy">
+            <span class="flagtag">INGREDIENTS</span>
+            <h3>The static building blocks of every overlay.</h3>
+            <p class="leadp">Ingredients are static image assets &mdash; logos, backgrounds, headline graphics, product shots &mdash; stored once and assembled into the personalised frames that sit on top of generated video.</p>
+            <ul class="bul">
+            <li><b>Upload once, reuse anywhere</b> &mdash; categorise and assign into overlay slots across any project</li>
+            <li><b>Position by slot</b> &mdash; logo top-right, lifestyle panel behind text, product image in its zone</li>
+            <li class="d-none"><b>VVP at scale</b> &mdash; referenced by GCS path in the Variable Video Production Excel template, pulled per variant</li>
+            <li class="d-none"><b>Not generative inputs</b> &mdash; ingredients are for the overlay layer, distinct from the reference images that drive AI video</li>
+            </ul>
+        </div>
+        </div>
+    </div>
+    </section>
+
+    <!-- ================= OVERLAYS ================= -->
+    <section id="overlays" aria-label="Overlays and personalisation" class="section-pad-ov">
+    <div class="wrap">
+        <div class="feat feat--clean rv">
+        <div class="media">
+            <img src="/assets/images/how-it-works/overlays.webp" alt="Flipick Overlays — variable video production with logo, lower third and text fields" class="feat-img" width="1672" height="941" loading="lazy">
+        </div>
+        <div class="feat-copy">
+            <span class="flagtag">OVERLAYS &middot; VARIABLE VIDEO PRODUCTION</span>
+            <h3>One master video. Hundreds of variants.</h3>
+            <p class="leadp">Overlays are composited on top of the generated video &mdash; text, logos, pricing, disclaimers, CTAs. Generate the master once; produce 500 retailer variants for a fraction of the cost of 500 videos.</p>
+            <ul class="bul">
+            <li><b>Excel-driven variants</b> &mdash; define variables, populate one row per variant, upload, get a named MP4 each</li>
+            <li><b>Prices live on overlays</b> &mdash; financial values are never baked into AI video, keeping regulated content accurate &amp; auditable</li>
+            <li><b>8 template types</b> &mdash; banners, logos, product images, CTA panels, lifestyle backgrounds</li>
+            <li><b>Orientation-aware</b> &mdash; scales for 16:9 and 9:16; batch ZIP delivers every variant at once</li>
+            </ul>
+        </div>
+        </div>
+    </div>
+    </section>
+
+    <!-- ================= THE RESULT ================= -->
+    <section id="result" aria-label="Distribution and proof" class="section-white section-pad-result">
+    <div class="wrap">
+        <div class="feat feat--clean rev rv">
+        <div class="media">
+            <img src="/assets/images/how-it-works/results.webp" alt="Flipick Results — generated shots with regenerate image and edit beats options" class="feat-img" width="1672" height="941" loading="lazy">
+        </div>
+        <div class="feat-copy">
+            <span class="flagtag">THE RESULT</span>
+            <h3>Your cast and products stay the same &mdash; every scene.</h3>
+            <p class="leadp">Put the four tools together and you get the thing raw generators can&rsquo;t do: a presenter and product held steady across a whole film, branded and localised &mdash; fast, on brand, and consistent from scene one to nine.</p>
+        </div>
+        </div>
+    </div>
+    </section>
+
+    <!-- ================= PRODUCT 2 — DISTRIBUTION & PROOF ================= -->
+    <section class="section-white section-pad-lg">
+    <div class="wrap">
+        <div class="sec-head rv">
+        <span class="plabel">Product 2 &middot; Distribution &amp; Proof</span>
+        <h2>Deliver it personally, <span class="serif-i text-brand">then prove it landed.</span></h2>
+        </div>
+
+        <div class="feat rv">
+        <div class="media">
+            <img src="/assets/images/how-it-works/personalize-deliver.webp" alt="Flipick Personalization & Delivery — per-recipient variants with WhatsApp send" class="feat-img" width="1672" height="941" loading="lazy">
+        </div>
+        <div class="feat-copy">
+            <span class="flagtag">PERSONALIZE &amp; DELIVER</span>
+            <h3>One master film becomes a version for everyone.</h3>
+            <p class="leadp">Map recipient fields &mdash; name, role, branch, language &mdash; and Flipick renders a personal cut for each, delivered by link, email, in-app or your LMS.</p>
+            <ul class="bul">
+            <li>Personalized fields per recipient</li>
+            <li>Campaigns, scheduling and recipient management</li>
+            <li>Deliver by link, email, in-app or your LMS</li>
+            </ul>
+        </div>
+        </div>
+
+        <div class="feat feat--clean rev rv d-none">
+        <div class="media">
+            <div class="shot">
+            <div class="chrome"><i class="r"></i><i class="y"></i><i class="g"></i><span class="ttl">Flipick &middot; Analytics &amp; proof</span></div>
+            <div class="canvas">
+                <div class="an-s">
+                <div class="antile-s"><b>87<em>%</em></b><span>Completion rate</span></div>
+                <div class="antile-s"><b>412</b><span>Authenticated viewers</span></div>
+                <div class="antile-s"><b>96</b><span>CTA clicks tracked</span></div>
+                <div class="anbars-s">
+                    <i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+                </div>
+                </div>
+            </div>
+            </div>
+            <p class="shotcap">Representative UI &mdash; replace with a product screenshot.</p>
+        </div>
+        <div class="feat-copy">
+            <span class="flagtag">AUTHENTICATE &amp; MEASURE</span>
+            <h3>Know who watched, who finished, who acted.</h3>
+            <p class="leadp">Verify viewer identity before playback, then track completion, drop-off and re-watch per person &mdash; and tie every overlay CTA to the action that followed.</p>
+            <ul class="bul">
+            <li>Viewer authentication before playback</li>
+            <li>Per-viewer completion &amp; engagement analytics</li>
+            <li>CTA tracking &mdash; audit-ready records</li>
+            </ul>
+        </div>
+        </div>
+
+        <div class="slim-band slim-band--spaced rv">
+        <div class="slim-head">
+            <span class="eyebrow db-eyebrow">The whole loop, measured</span>
+            <h2>Create &rarr; Distribute &rarr; Prove.</h2>
+        </div>
+        <div class="proof">
+            <div class="st"><b>Days<em>,</em> not weeks</b><span>Brief to finished, on-brand film</span></div>
+            <div class="st"><b>1 <em>&rarr;</em> many</b><span>A personal version for every viewer</span></div>
+            <div class="st"><b>100<em>%</em></b><span>Authenticated, audit-ready proof</span></div>
+        </div>
+        </div>
+    </div>
+    </section>
+
+    <!-- ================= FAQ ================= -->
+    <section id="faq" aria-label="Frequently asked questions">
+    <div class="wrap">
+        <div class="sec-head rv sec-head--center sec-head--mb-md">
+        <span class="eyebrow">FAQ</span>
+        <h2>Common questions about <span class="serif-i text-brand">how Flipick works.</span></h2>
+        </div>
+        <div class="faq rv">
+        <details open>
+            <summary>What is Variable Video Production (VVP)?</summary>
+            <p>Variable Video Production is Flipick&rsquo;s method for generating personalised videos at scale. You create one master film with variable data fields (Ingredients), then the platform swaps names, products, prices and other details per recipient &mdash; producing a unique version for every viewer without re-rendering from scratch.</p>
+        </details>
+        <details>
+            <summary>How does the Screenplay Builder work?</summary>
+            <p>You describe your objective and the AI builds a production-ready screenplay through a structured conversation &mdash; narrative arc, scenes, shot-by-shot breakdowns, voiceover and dialogue. You approve the story before any rendering credits are spent.</p>
+        </details>
+        <details>
+            <summary>How does Flipick keep characters and products consistent across scenes?</summary>
+            <p>The Asset Library stores reusable production elements &mdash; ambassadors, characters, products and locations. Once locked, these assets persist across every shot and every project in your organisation, so faces and brand elements stay the same from scene one to scene nine.</p>
+        </details>
+        <details>
+            <summary>Do I need video editing skills to use Flipick?</summary>
+            <p>No. The platform handles the entire pipeline from script to delivery. You work at the story level &mdash; approving screenplays and storyboards &mdash; while AI handles rendering, editing, overlays and assembly. If you can write a brief, you can produce a finished video.</p>
+        </details>
+        <details>
+            <summary>How does personalised distribution and proof work?</summary>
+            <p>Flipick delivers a unique version of your video to each recipient by link, email or LMS. Viewers are authenticated, so you get verified completion data, drop-off tracking and CTA click-through &mdash; not just view counts. Every metric is audit-ready.</p>
+        </details>
+        </div>
+    </div>
+    </section>
+
+    <!-- ================= CLOSING CTA ================= -->
+    <section class="closing" aria-label="Call to action">
+    <div class="wrap">
+        <h2>See the studio <span class="serif-i">on your own brief.</span></h2>
+        <p>Bring a script, a deck or a product, and watch it become a finished, measured video.</p>
+        <div class="ctas-center">
+        <a class="btn btn-ghost" data-demo-link href="https://calendly.com/amol-chandsarkar/" target="_blank" rel="noopener noreferrer">Book a demo</a>
+        </div>
+        <p class="also-explore">Also explore: <a href="/ai-video-platform">AI Video Platform</a> &middot; <a href="/lms">Flipick LMS</a> &middot; <a href="/ppt-to-scorm">PowerPoint &rarr; SCORM</a> &middot; <a href="/pricing">Pricing</a></p>
+    </div>
+    </section>
+
+    </main>
+
+  <script is:inline slot="scripts" src="/assets/js/video-player.js"></script>
+</Layout>

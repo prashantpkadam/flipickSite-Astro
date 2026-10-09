@@ -1,0 +1,72 @@
+[
+      {
+        "@type": "WebPage",
+        "@id": "https://flipick.com/vvp-india",
+        "url": "https://flipick.com/vvp-india",
+        "name": "Variable Video Production for India — Flipick",
+        "description": "One master film becomes thousands of localized videos — every store, every offer, every Indian language — rendered from your data.",
+        "isPartOf": {"@id": "https://flipick.com/#website"},
+        "breadcrumb": {"@id": "https://flipick.com/vvp-india#breadcrumb"},
+        "speakable": {
+          "@type": "SpeakableSpecification",
+          "cssSelector": [".hero h1", ".hero p.sub"]
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://flipick.com/vvp-india#breadcrumb",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://flipick.com/"},
+          {"@type": "ListItem", "position": 2, "name": "Variable Video Production — India", "item": "https://flipick.com/vvp-india"}
+        ]
+      },
+      {
+        "@type": "Service",
+        "name": "Variable Video Production — India",
+        "provider": {
+          "@type": "Organization",
+          "name": "Flipick",
+          "url": "https://flipick.com/"
+        },
+        "description": "Turn one master brand film into thousands of localized video versions — per store, per offer, per Indian language — rendered from your data.",
+        "serviceType": "Variable Video Production",
+        "areaServed": "IN"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How many language versions can Flipick create from a single master video?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Flipick renders a version per language from a single master — Hindi, Tamil, Telugu, Bengali, Marathi and more. Each region's offer, rate and local details are built into that language's version automatically, without separate shoots for each language."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is VVP affordable for mid-size businesses with hundreds of dealer outlets?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Because variants are rendered from your data rather than re-shot, per-variant cost collapses toward zero at scale. Your 500th version costs about the same as your first, making a localized video per dealer or outlet practical for the first time."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does VVP work for festive and seasonal campaigns in India?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "You produce one seasonal master film and Flipick renders a version per store, zone or language — with that location's offer and rate built in. When offers change, only the data feed needs updating; the master film stays the same."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which channels can Flipick VVP videos be delivered through in India?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "VVP videos can be delivered through WhatsApp, YouTube, Meta, retail media networks, and in-store screens. Every variant is tracked per recipient, and you keep the data throughout."
+            }
+          }
+        ]
+      }
+    ]

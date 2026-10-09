@@ -1,0 +1,81 @@
+[
+      {
+        "@type": "WebPage",
+        "@id": "https://flipick.com/shopify-usa",
+        "url": "https://flipick.com/shopify-usa",
+        "name": "Shopify Product Video at Catalog Scale — Flipick",
+        "description": "Connect your Shopify store and every SKU gets video. One master film, versioned from your product feed, current with your prices.",
+        "isPartOf": {"@id": "https://flipick.com/#website"},
+        "breadcrumb": {"@id": "https://flipick.com/shopify-usa#breadcrumb"},
+        "speakable": {
+          "@type": "SpeakableSpecification",
+          "cssSelector": [".hero h1", ".hero .lead"]
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://flipick.com/shopify-usa#breadcrumb",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://flipick.com/"},
+          {"@type": "ListItem", "position": 2, "name": "Shopify Product Video", "item": "https://flipick.com/shopify-usa"}
+        ]
+      },
+      {
+        "@type": "Service",
+        "name": "Shopify Catalog Video Production",
+        "provider": {
+          "@type": "Organization",
+          "name": "Flipick",
+          "url": "https://flipick.com/"
+        },
+        "description": "Connect your Shopify store and every SKU gets video — one master film, versioned from your product feed, current with your prices.",
+        "serviceType": "Catalog Video Production",
+        "areaServed": "US"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How does Flipick create product videos for Shopify stores?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Flipick connects to your Shopify catalog and renders one master AI film per product type. That master is then versioned — with your live prices, SKU names and overlays — using Variable Video Production (VVP), so every SKU gets its own current video without re-rendering on AI."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How many product videos can Flipick produce from one master film?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "One master film can become hundreds of variants — one per SKU, size, colour, price tier or market. Each variant is rendered on Flipick's servers at a fraction of the master's cost, so a catalog of 800 products can have current video without a proportional budget."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does the video stay current when my Shopify prices change?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Because prices are injected as overlay data rather than baked into the AI render, updating a price means re-rendering only the overlay layer — not the underlying film. This keeps catalog videos current at minimal cost."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Who is this service for?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Flipick's Shopify catalog video service is designed for US-based Shopify brands and agencies that manage large product catalogs and need video at scale — without per-video production budgets or manual editing cycles."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "VideoObject",
+        "name": "Flipick for Shopify — AI Product Video Generator",
+        "description": "Demonstrates Flipick's Shopify catalog video service — connect your store and every SKU gets its own AI product video, versioned from your product feed and current with your prices.",
+        "thumbnailUrl": "https://flipick.com/assets/images/thumbnail/Shopify-video.webp",
+        "contentUrl": "https://storage.googleapis.com/flipick-videos-gen/443a72a4-a28a-41f0-80c5-6cde3b726203-Shopify%20Video%20Generator%203.mp4",
+        "uploadDate": "2026-01-01",
+        "publisher": {"@id": "https://flipick.com/#organization"}
+      }
+    ]

@@ -1,0 +1,40 @@
+[
+      {
+        "@type": "WebPage",
+        "@id": "https://flipick.com/dealership",
+        "url": "https://flipick.com/dealership",
+        "name": "Video for Every Rooftop — Flipick for US Dealer Groups",
+        "description": "Flipick turns one offer brief into a video for every rooftop, size and language, built on the photos already on your lot.",
+        "isPartOf": {"@id": "https://flipick.com/#website"},
+        "breadcrumb": {"@id": "https://flipick.com/dealership#breadcrumb"}
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://flipick.com/dealership#breadcrumb",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://flipick.com/"},
+          {"@type": "ListItem", "position": 2, "name": "For Dealerships", "item": "https://flipick.com/dealership"}
+        ]
+      },
+      {
+        "@type": "Service",
+        "name": "Dealer Group Offer Video Production",
+        "provider": {
+          "@type": "Organization",
+          "name": "Flipick",
+          "url": "https://flipick.com/"
+        },
+        "description": "One offer brief becomes a finished video for every rooftop, format and language, built from the dealership's own lot photography.",
+        "serviceType": "Variable Video Production",
+        "areaServed": "US"
+      },
+      {
+        "@type": "VideoObject",
+        "name": "Flipick for Dealerships — AI Video for Auto Retail",
+        "description": "Demonstrates how Flipick turns one offer brief into a video for every rooftop, size and language — built on the lot photos already on your system, no licence required.",
+        "thumbnailUrl": "https://flipick.com/assets/images/thumbnail/dealership_video.webp",
+        "contentUrl": "https://storage.googleapis.com/flipick-videos-gen/b2a28bd2-bbe4-444d-8ad8-ae67a86701e0-Labor Day_V2 1.mp4",
+        "uploadDate": "2026-01-01",
+        "publisher": {"@id": "https://flipick.com/#organization"}
+      }
+    ]

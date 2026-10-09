@@ -1,16 +1,347 @@
 ---
----
+import Layout from '../layouts/Layout.astro';
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+const faqs = [
+  {
+    q: 'What is Flipick?',
+    a: 'Flipick is an AI video platform that creates studio-grade video, distributes a personalised version to every viewer via Variable Video Production (VVP), and proves who watched with authenticated viewer tracking. One platform covers the full create → distribute → prove pipeline.',
+  },
+  {
+    q: 'What is Variable Video Production (VVP)?',
+    a: 'Variable Video Production is Flipick’s method for generating personalised videos at scale. You create one master film with variable data fields, then the platform swaps names, products, prices and other details per recipient — producing a unique version for every viewer without re-rendering from scratch.',
+  },
+  {
+    q: 'How much does Flipick cost?',
+    a: 'Everything is priced in credits — 1 credit = ₹1. AI Video Creation starts at 3,300 credits per finished minute (typical projects run 5,000–5,500 with moderate edits). VVP Distribution ranges from 50 credits per recipient (under 100) down to 20 per recipient (above 10,000). No seats, no subscriptions.',
+    usd: 'Everything is priced in credits — 1 credit = $0.01 (1¢). AI Video Creation starts at 3,300 credits per finished minute (typical projects run 5,000–5,500 with moderate edits). VVP Distribution ranges from 50 credits per recipient (under 100) down to 20 per recipient (above 10,000). No seats, no subscriptions.',
+  },
+  {
+    q: 'Which teams use Flipick?',
+    a: 'L&D and training teams ship multilingual, assessable courses; marketing teams produce on-brand ads and promos at calendar speed; and customer education teams send personalised walkthroughs and onboarding videos — all from the same platform.',
+  },
+  {
+    q: 'How is Flipick different from other AI video tools?',
+    a: 'Most AI video tools generate a clip from a prompt. Flipick runs a full studio pipeline — screenplay, storyboard approval, consistent characters and products across scenes, brand overlays, personalised distribution, and authenticated viewer analytics. It’s built for teams that need on-brand, measurable video at scale, not one-off clips.',
+  },
+];
+
+const schema = [
+  {
+    '@type': 'WebPage',
+    '@id': 'https://flipick.com/',
+    url: 'https://flipick.com/',
+    name: 'Flipick | Create, distribute and prove AI video',
+    description: 'Flipick is an AI video platform that creates studio-grade video, distributes a personalised version to every viewer, and proves who watched. One platform, end to end.',
+    isPartOf: { '@id': 'https://flipick.com/#website' },
+    about: { '@id': 'https://flipick.com/#organization' },
+    speakable: {
+      '@type': 'SpeakableSpecification',
+      cssSelector: ['.hero h1', '.hero .sub'],
+    },
+  },
+  {
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  },
+];
+---
+<Layout
+ title="Flipick | Create, distribute and prove AI video"
+  description="Flipick is the AI video studio that creates studio-grade video, distributes it personally to every viewer, and proves it landed. One platform, end to end."
+  keywords="AI video platform, AI video studio, personalized video delivery, Variable Video Production, VVP, create distribute prove, enterprise video platform, learning technology, AI training video, eLearning video"
+  page="home"
+  schema={schema}
+>
+  
+  <main>
+
+    <!-- ================= HERO ================= -->
+    <section class="hero hero--home" aria-label="Hero — Create, distribute and prove AI video">
+      <div class="wrap">
+        <div class="hero-grid">
+          <div>
+            <h1 class="hero-h1--xl">Create video. Distribute it personally. <span class="serif-i text-brand-mid">Prove it worked.</span></h1>
+            <p class="sub">Flipick is the AI video studio that doesn't stop at a clip. Script it, storyboard it, keep your cast and products consistent, deliver a version to every viewer - and measure who watched.</p>
+            <div class="ctas">
+              <a class="btn btn-ghost" data-demo-link href="https://calendly.com/amol-chandsarkar/" target="_blank" rel="noopener noreferrer">Book a demo</a>
+            </div>
+          </div>
+          <div class="hero-player rv">
+            <div class="vid" data-vid="index-hero">
+              <img class="vid-thumb" src="https://img.youtube.com/vi/wfMoSIuWX_Q/maxresdefault.jpg" alt="Play video" loading="lazy">
+              <span class="badge">SHOWREEL · MADE ON FLIPICK</span>
+              <div class="ov lower3"><b>Create &rarr; Distribute &rarr; Prove</b><span>ONE PLATFORM, END TO END</span></div>
+              <a href="#" class="play" aria-label="Play video" target="_blank" rel="noopener noreferrer"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CREATE / DISTRIBUTE / PROVE ================= -->
+    <section class="section-white section-pad" aria-label="Create, distribute and prove pipeline">
+      <div class="wrap">
+        <div class="sec-head rv">
+          <span class="eyebrow">The whole job, not a third of it</span>
+          <h2>Most tools stop at the download. <span class="serif-i text-brand">We don't.</span></h2>
+        </div>
+        <div class="spine rv">
+          <div class="s">
+            <div class="k"><i>1</i>Create</div>
+            <h3>A studio, not a slot machine</h3>
+            <p>Start from a screenplay and storyboard, keep characters and products consistent, and brand every frame. Fast and on-brand — not a one-shot prompt.</p>
+          </div>
+          <div class="s">
+            <div class="k"><i>2</i>Distribute</div>
+            <h3>Personal, not broadcast</h3>
+            <p>Deliver a version to each recipient — their name, language, account — by link, email or your LMS. One master, many personal cuts. This is Variable Video Production (VVP): a single master film rendered into thousands of personalized versions, each delivered uniquely to its intended viewer.</p>
+          </div>
+          <div class="s">
+            <div class="k"><i>3</i>Prove</div>
+            <h3>Proof, not impressions</h3>
+            <p>Authenticate viewers, track completion and drop-off, and tie CTAs to action. Know who watched, who finished, who acted.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= HOW IT WORKS ================= -->
+    <section id="how" class="section-pad--shallow" aria-label="How Flipick works">
+      <div class="wrap">
+        <div class="sec-head rv">
+          <span class="eyebrow">How it works</span>
+          <h2>A real production pipeline, <span class="serif-i text-brand">run by AI.</span></h2>
+          <p>Write &rarr; storyboard &rarr; generate &rarr; keep consistent &rarr; overlay &rarr; edit &rarr; localize &rarr; deliver &rarr; measure. Nine stages, one platform.</p>
+        </div>
+
+        <div class="feat rv">
+          <div class="media">
+            <div class="vid small" data-vid="index-screenplay">
+              <img class="vid-thumb" src="https://img.youtube.com/vi/wfMoSIuWX_Q/maxresdefault.jpg" alt="Play video" loading="lazy">
+              <span class="badge">SAMPLE · SCREENPLAY &rarr; STORYBOARD &rarr; FINAL CUT</span>
+              <div class="ov lower3"><b>Scene 4 of 9 approved</b><span>STORYBOARD-FIRST</span></div>
+              <a href="#" class="play" aria-label="Play video" target="_blank" rel="noopener noreferrer"></a>
+            </div>
+          </div>
+          <div>
+            <span class="flagtag">THE STUDIO PIPELINE</span>
+            <h3>Approve the story before you spend a credit.</h3>
+            <p class="leadp">The Screenplay Creator structures your idea; the storyboard locks every shot for sign-off; only then does it render. Revisions happen on the page, not the render bill.</p>
+            <ul class="bul">
+              <li>Screenplay &amp; storyboard before generation</li>
+              <li>Scene editor, timeline and clean re-renders</li>
+              <li>Localize into any language without re-recording</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="feat rev rv">
+          <div class="media">
+            <div class="vid small t4" data-vid="index-consistency">
+              <img class="vid-thumb" src="https://img.youtube.com/vi/wfMoSIuWX_Q/maxresdefault.jpg" alt="Play video" loading="lazy">
+              <span class="badge">SAMPLE · SAME PRESENTER &amp; PRODUCT, 9 SCENES</span>
+              <div class="ov lower3"><b>Anita Rao &middot; consistent host</b><span>SCENE 1 &rarr; SCENE 9</span></div>
+              <a href="#" class="play" aria-label="Play video" target="_blank" rel="noopener noreferrer"></a>
+            </div>
+          </div>
+          <div>
+            <span class="flagtag">THE DIFFERENCE: CONSISTENCY</span>
+            <h3>Your cast and products stay the same — every scene.</h3>
+            <p class="leadp">The thing raw AI can't do: hold a presenter's face and your product steady across a whole film. Lock them once; they're consistent from scene one to nine.</p>
+            <ul class="bul">
+              <li>Consistent characters, faces and wardrobe</li>
+              <li>Accurate products and brand world in every shot</li>
+              <li>The flagships: Screenplay, Storyboard, Consistency, Overlays</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Flagship flags strip -->
+        <div class="flags rv flags--spaced">
+          <div class="flag">
+            <div class="ic">&#9998;</div>
+            <b>Screenplay Creator</b>
+            <span>Turn a brief into a structured, scene-by-scene script.</span>
+          </div>
+          <div class="flag">
+            <div class="ic">&#9783;</div>
+            <b>Storyboard</b>
+            <span>Lock every shot and sign off before rendering.</span>
+          </div>
+          <div class="flag">
+            <div class="ic">&#9673;</div>
+            <b>Consistency</b>
+            <span>Hold characters and products steady across scenes.</span>
+          </div>
+          <div class="flag">
+            <div class="ic">&#9632;</div>
+            <b>Overlays</b>
+            <span>Brand the frame — logos, prices, captions, CTAs.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= DISTRIBUTE + PROVE STAT BAND ================= -->
+    <section class="section-pad-band" aria-label="Distribute and prove stats">
+      <div class="wrap">
+        <div class="slim-band rv">
+          <div class="slim-head">
+            <span class="eyebrow db-eyebrow">Distribute &amp; prove</span>
+            <h2>Deliver it personally. Then prove it landed.</h2>
+          </div>
+          <div class="proof">
+            <div class="st"><b>1 master <em>&rarr;</em> 10,000<em>+</em> versions</b><span>One film, personalized for every recipient</span></div>
+            <div class="st"><b>Viewer-authenticated</b><span>Only the intended recipient can open their video</span></div>
+            <div class="st"><b>100<em>%</em> tracked</b><span>Completion, drop-off &amp; CTA — xAPI audit-ready</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SOLUTIONS / USE CASES ================= -->
+    <section id="solutions" class="section-white section-pad" aria-label="Flipick solutions">
+      <div class="wrap">
+        <div class="sec-head rv">
+          <span class="eyebrow">Who it's for</span>
+          <h2>Built for the teams <span class="serif-i text-brand">who ship video.</span></h2>
+        </div>
+
+        <div class="feat rv feat--clean feat--pb-sm">
+          <div class="media">
+            <div class="vid small t3" data-vid="index-promo">
+              <img class="vid-thumb" src="https://img.youtube.com/vi/wfMoSIuWX_Q/maxresdefault.jpg" alt="Play video" loading="lazy">
+              <span class="badge">SAMPLE · FESTIVE PRODUCT PROMO</span>
+              <div class="ov price">&#8377;4,999 <small>FESTIVE</small></div>
+              <div class="ov cta">Shop now &rarr;</div>
+              <a href="#" class="play" aria-label="Play video" target="_blank" rel="noopener noreferrer"></a>
+            </div>
+          </div>
+          <div>
+            <span class="flagtag">ONE PLATFORM, MANY USES</span>
+            <h3>Training, marketing, customer education — all from one studio.</h3>
+            <p class="leadp">From a multilingual onboarding module to a festive promo whose price updates on the overlay, the same pipeline serves every team and every kind of video.</p>
+            <ul class="bul">
+              <li>L&amp;D &amp; training that people actually finish</li>
+              <li>On-brand ads, promos and launch films</li>
+              <li>Customer onboarding, explainers and how-tos</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="ucards rv">
+          <div class="ucd">
+            <div class="tg">By team</div>
+            <h4>L&amp;D &middot; Marketing &middot; CS</h4>
+            <p>Whichever team you lead, the same create-distribute-prove pipeline fits the way you already work.</p>
+            <a href="/ai-video-platform#by-team">See team solutions &rarr;</a>
+          </div>
+          <div class="ucd">
+            <div class="tg">By content type</div>
+            <h4>Training &middot; Ads &middot; Film &middot; Explainers</h4>
+            <p>Structured lessons, campaign promos, narrative films and clear how-tos — all in one studio.</p>
+            <a href="/ai-video-platform#by-content">See content types &rarr;</a>
+          </div>
+          <div class="ucd">
+            <div class="tg">By industry</div>
+            <h4>Mfg &middot; Retail &middot; BFSI &middot; F&amp;B &middot; Software</h4>
+            <p>Tuned to how your sector trains, sells and proves — multilingual and audit-ready.</p>
+            <a href="/ai-video-platform#by-industry">See industries &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PRICING TEASER ================= -->
+    <section id="pricing" class="section-pad-teaser" aria-label="Pricing overview">
+      <div class="wrap">
+        <div class="pteaser rv">
+          <span class="eyebrow">Pricing</span>
+          <h2>Pay for what you make. <span class="serif-i text-brand">See the cost first.</span></h2>
+          <div class="credit">
+            <b class="geo-cloak" data-inr="1 credit = ₹1" data-usd="1 credit = $0.01 (1¢)">1 credit = &#8377;1</b>
+          </div>
+          <p>Transparent, credit-based pricing across both products — and a live calculator that estimates any campaign before you spend a thing.</p>
+          <div class="pteaser-ctas">
+            <a class="btn btn-primary" href="/pricing">See pricing</a>
+            <a class="btn btn-outline" href="/pricing#calculator">Try the calculator</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PROOF STATS ================= -->
+    <section class="section-pad-crumb">
+      <div class="wrap">
+        <div class="logostrip rv logostrip--center">
+          <p class="logostrip-cap"><b>150,000+ active learners</b> across the Flipick platform &middot; Rated <b>4.8 / 5</b> &mdash; trusted by <b>Pearson</b>, <b>IIBF</b>, <b>Godrej</b>, <b>Jindal Steel</b>, <b>IFC World Bank Group</b> and <b>IICA</b>.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= COMPARISON ================= -->
+    <section class="section-white section-pad-md">
+      <div class="wrap cmp-wrap">
+        <h2 class="cmp-heading">Flipick vs traditional video production</h2>
+        <div class="cmp-scroll">
+        <table class="cmp-table">
+          <thead><tr>
+            <th>Dimension</th>
+            <th>Traditional production</th>
+            <th>Typical AI video tools</th>
+            <th class="text-brand">Flipick</th>
+          </tr></thead>
+          <tbody>
+            <tr><td>Pipeline</td><td>Agency + weeks of shoots</td><td>Single-template generator</td><td><b>End-to-end: screenplay &rarr; storyboard &rarr; studio-grade video</b></td></tr>
+            <tr><td>Character consistency</td><td>Depends on actor availability</td><td>Often inconsistent across scenes</td><td><b>AI-locked characters &amp; products across every scene</b></td></tr>
+            <tr><td>Personalisation</td><td>One version for all viewers</td><td>Name overlay at most</td><td><b>Variable Video Production &mdash; unique version per viewer</b></td></tr>
+            <tr><td>Viewer proof</td><td>Play count only</td><td>Basic analytics</td><td><b>Authenticated viewing, completion rate &amp; CTA tracking</b></td></tr>
+            <tr><td>Pricing model</td><td>Project-based (lakhs+)</td><td>Monthly subscription</td><td><b class="geo-cloak" data-inr="Credit-based — 1 credit = ₹1, pay per minute" data-usd="Credit-based — 1 credit = $0.01 (1¢), pay per minute">Credit-based &mdash; 1 credit = &#8377;1, pay per minute</b></td></tr>
+          </tbody>
+        </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FAQ ================= -->
+    <section id="faq" aria-label="Frequently asked questions">
+      <div class="wrap">
+        <div class="sec-head rv sec-head--center sec-head--mb-md">
+          <span class="eyebrow">Frequently Asked Questions</span>
+          <h2>Common questions about <span class="serif-i text-brand">Flipick.</span></h2>
+        </div>
+        <div class="faq rv">
+          {faqs.map((f, i) => (
+            <details open={i === 0}>
+              <summary>{f.q}</summary>
+              {f.usd ? (
+                <p class="geo-cloak" data-inr={f.a} data-usd={f.usd}>{f.a}</p>
+              ) : (
+                <p>{f.a}</p>
+              )}
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CLOSING CTA ================= -->
+    <section class="closing" aria-label="Call to action">
+      <div class="wrap">
+        <h2>Ready to make video <span class="serif-i">that does its job?</span></h2>
+        <p>Bring a brief and watch Flipick take it from screenplay to a measured campaign.</p>
+        <div class="ctas-center">
+          <a class="btn btn-ghost" data-demo-link href="https://calendly.com/amol-chandsarkar/" target="_blank" rel="noopener noreferrer">Book a demo</a>
+        </div>
+      </div>
+    </section>
+
+    </main>
+
+    <script is:inline slot="scripts" src="/assets/js/video-player.js"></script>
+
+</Layout>

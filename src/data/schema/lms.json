@@ -1,0 +1,78 @@
+[
+      {
+        "@type": "WebPage",
+        "@id": "https://flipick.com/lms",
+        "url": "https://flipick.com/lms",
+        "name": "Flipick LMS — AI Skills-Development Platform",
+        "description": "Flipick LMS G2 puts AI across the whole learning lifecycle — content creation, engagement, assessment and analytics — and aligns every learner to real industry roles.",
+        "isPartOf": {"@id": "https://flipick.com/#website"},
+        "breadcrumb": {"@id": "https://flipick.com/lms#breadcrumb"},
+        "speakable": {
+          "@type": "SpeakableSpecification",
+          "cssSelector": [".hero h1", ".hero .sub"]
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://flipick.com/lms#breadcrumb",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://flipick.com/"},
+          {"@type": "ListItem", "position": 2, "name": "Solutions", "item": "https://flipick.com/solution"},
+          {"@type": "ListItem", "position": 3, "name": "LMS", "item": "https://flipick.com/lms"}
+        ]
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "Flipick LMS G2",
+        "applicationCategory": "EducationalApplication",
+        "operatingSystem": "Web",
+        "description": "An AI skills-development platform covering the full learning lifecycle — content creation, learner engagement, adaptive assessment and analytics — aligned to industry frameworks like the Singapore Skills Framework.",
+        "provider": {"@id": "https://flipick.com/#organization"},
+        "featureList": ["Zero-hallucination RAG assistant with citations", "GMAT-style adaptive assessments", "Singapore Skills Framework integration", "AI-powered course and question-bank generation", "Talent-gap analytics and role-migration planning", "Adaptive personalised learning paths", "Multi-layered learner, manager and org analytics"]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is Flipick LMS G2?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Flipick LMS G2 is an AI skills-development platform that puts AI across the whole learning lifecycle — content creation, learner engagement, adaptive assessment and analytics — and aligns every learner to real industry roles through frameworks like the Singapore Skills Framework."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does the zero-hallucination learning assistant work?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The RAG-based assistant answers only from your verified course materials, transcripts and resources. Every response carries citations back to the source document, so there is no risk of invented or off-policy information reaching learners."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is adaptive assessment in Flipick LMS?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Flipick LMS uses GMAT-style adaptive testing where question difficulty adjusts in real time based on each learner's responses. The result is a precise competency score — not just pass or fail — with instant diagnostics of strengths and weaknesses."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does skills-framework integration work?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The platform integrates the Singapore Skills Framework's sectors, occupations and roles into structured learning pathways. Each learner's profile is mapped to relevant roles, gaps are identified automatically, and role-migration planning supports career progression."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can Flipick LMS generate courses and assessments automatically?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. You can build courses from AI prompts tied to role definitions, auto-generate large question pools from uploaded material in MCQ, case-based and scenario formats, and create personalised learning paths that update dynamically as the learner progresses."
+            }
+          }
+        ]
+      }
+    ]

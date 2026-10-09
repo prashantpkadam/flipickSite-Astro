@@ -1,0 +1,35 @@
+ [
+      {
+        "@type": "WebPage",
+        "@id": "https://flipick.com/vvp-usa-retail",
+        "url": "https://flipick.com/vvp-usa-retail",
+        "name": "Variable Video Production (VVP) for US Retail — Flipick",
+        "description": "Turn each week's ad into localized video — one version per store, banner and zip — rendered from your circular data.",
+        "isPartOf": {"@id": "https://flipick.com/#website"},
+        "breadcrumb": {"@id": "https://flipick.com/vvp-usa-retail#breadcrumb"},
+        "speakable": {
+          "@type": "SpeakableSpecification",
+          "cssSelector": [".hero h1", ".hero p.sub"]
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://flipick.com/vvp-usa-retail#breadcrumb",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://flipick.com/"},
+          {"@type": "ListItem", "position": 2, "name": "Variable Video Production — US Retail", "item": "https://flipick.com/vvp-usa-retail"}
+        ]
+      },
+      {
+        "@type": "Service",
+        "name": "Variable Video Production — US Retail",
+        "provider": {
+          "@type": "Organization",
+          "name": "Flipick",
+          "url": "https://flipick.com/"
+        },
+        "description": "Turn one master brand film into thousands of localized video versions per store, banner and zip — rendered weekly from your circular data.",
+        "serviceType": "Variable Video Production",
+        "areaServed": "US"
+      }
+    ]

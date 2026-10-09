@@ -1,0 +1,799 @@
+---
+import Layout from "../layouts/Layout.astro";
+import schema from "../data/schema/vvp-india.json";
+---
+
+<Layout
+  title="Variable Video Production for India — Flipick"
+  description="Flipick VVP for India: one master film becomes thousands of localized videos — every store, every offer, every Indian language — rendered from your data."
+  keywords="variable video production India, localized video ads, dealer video marketing, festive campaign video, regional language video, VVP India"
+  page="vvp-india"
+  locale="en_IN"
+  schema={schema}
+>
+  <main>
+    <!-- ================= HERO ================= -->
+    <section class="hero camp-hero camp-hero-compact">
+      <div class="wrap">
+        <div class="hero-grid camp-hero-grid">
+          <span class="eyebrow">Variable Video Production &middot; India</span>
+          <h1 class="camp-title">
+            One master film. <span class="serif-i"
+              >A version for every store, every offer, every language.</span>
+          </h1>
+          <p class="sub">
+            Stores, prices, offers, languages &mdash; VVP renders a video
+            version for each, from one master. When your offer, rate or market
+            changes, the video changes with it.
+          </p>
+          <div class="ctas">
+            <a class="btn btn-primary" href="#try">Try it live</a>
+            <a class="btn btn-ghost" data-demo-link href="#"
+              >Get your own variant</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= WHAT IS VVP ================= -->
+    <section
+      class="vvp-section-sm"
+      aria-label="What is Variable Video Production"
+    >
+      <div class="lwrap">
+        <div
+          class="fcard rv"
+          style="border-left:4px solid var(--brand);padding:1.5rem 2rem;max-width:780px;margin:0 auto"
+        >
+          <span class="eyebrow">What is Variable Video Production?</span>
+          <p style="margin-top:.5rem;font-size:1.05rem;line-height:1.65">
+            <strong>Variable Video Production (VVP)</strong> is a technique where
+            a single master brand film is rendered into thousands of unique versions
+            — one per store, one per dealer, one per customer. Variables such as the
+            store name, offer amount, renewal date, local price or regional language
+            are inserted into each version from your data. Flipick delivers each version
+            as a unique authenticated link — only the intended viewer sees it, and
+            their completion and engagement are tracked end to end.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= WHEN VVP FITS ================= -->
+    <section class="vvp-section-sm">
+      <div class="lwrap">
+        <div class="sec-head vvp-sec-head rv">
+          <span class="eyebrow">When VVP fits</span>
+          <h2>
+            If your video doesn&rsquo;t use your data, <span
+              class="serif-i-light">you don&rsquo;t need us.</span>
+          </h2>
+          <p class="vvp-leadp">
+            One brand film? Any AI generator does that. VVP is for when one
+            video must become hundreds &mdash; a different store, price, offer
+            or language in each.
+          </p>
+        </div>
+        <div class="grid2">
+          <div class="fcard fcard-muted rv">
+            <h4>Probably don&rsquo;t need VVP</h4>
+            <ul>
+              <li>One short brand film</li>
+              <li>No data, localization or personalization</li>
+              <li>
+                A single audience, one version &mdash; a generator handles it
+              </li>
+            </ul>
+          </div>
+          <div class="fcard fcard-featured rv">
+            <h4>Built for VVP</h4>
+            <ul>
+              <li>Many stores, showrooms, outlets or dealers</li>
+              <li>Offers, prices or rates that keep changing</li>
+              <li>Multiple languages from one production</li>
+              <li>Campaigns that need a local version per market</li>
+              <li>Per-recipient personalization</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= INTERACTIVE DEMO ================= -->
+    <section id="try" class="vvp-section-sm">
+      <div class="lwrap">
+        <div class="sec-head vvp-sec-head rv">
+          <span class="eyebrow">See it yourself</span>
+          <h2>
+            Others personalize the name. <span class="serif-i-light"
+              >We personalize the whole film.</span>
+          </h2>
+          <p class="vvp-leadp">
+            Enter a few details. In about 15 seconds they&rsquo;re rendered into
+            the film itself &mdash; not a caption.
+          </p>
+        </div>
+        <div class="vvp-demo-land rv">
+          <div class="demostage video--landscape" id="stage">
+            <video
+              id="masterVideo"
+              class="master-video"
+              src="https://storage.googleapis.com/flipick-videos-gen/videos/merged_49dcf0f9-b42f-441a-a68b-f8f9c3daa5fd_01323a88.mp4"
+              poster="/assets/images/thumbnail/ProductDetailsIndia.webp"
+              controls
+              playsinline
+              preload="metadata"></video>
+            <div class="stg-load">
+              <div class="spinner"></div>
+              <div class="ld-status" id="ldStatus">
+                Reading your data&hellip;
+              </div>
+              <div class="ld-bar"><i id="ldBar"></i></div>
+              <div class="ld-count" id="ldCount">&asymp; 15s</div>
+            </div>
+            <div class="stg-done">
+              <span class="pz-badge">Personalized &check; every field</span>
+              <button class="pz-again" id="again">&#8635; Try another</button>
+              <div class="dplay pz-dplay"></div>
+              <div class="pz-greet" id="pzGreet">Hi, Priya!</div>
+              <div class="pz-lower">
+                <div class="pz-l1" id="pzL1">Auto Plan</div>
+                <div class="pz-l2" id="pzL2">Renewal due Apr 12</div>
+              </div>
+            </div>
+          </div>
+          <div class="demoform">
+            <div class="vvp-seg" id="seg">
+              <button data-c="comms" class="hidden-tab">Communications</button>
+              <button data-c="retail" class="hidden-tab">Offers</button>
+              <button data-c="product" class="on">Product Details</button>
+            </div>
+            <div id="stdFields">
+              <label>Customer name</label>
+              <input
+                id="fName"
+                placeholder="e.g. Priya Sharma"
+                autocomplete="off"
+              />
+              <label id="l2lab">Policy / plan</label>
+              <input id="fV1" placeholder="e.g. Auto Plan" autocomplete="off" />
+              <label id="l3lab">Renewal date</label>
+              <input id="fV2" placeholder="e.g. Apr 12" autocomplete="off" />
+            </div>
+            <div id="prodFields" class="vvp-fields-hidden">
+              <label>Product name</label>
+              <input
+                id="fProdName"
+                placeholder="e.g. Samsung Galaxy S25"
+                autocomplete="off"
+              />
+              <label>Product Description</label>
+              <input
+                id="fProdDesc"
+                placeholder='e.g. 6.7" Display, 200MP Camera'
+                autocomplete="off"
+              />
+              <label>Sale price</label>
+              <input
+                id="fSalePrice"
+                placeholder="e.g. ₹79,999"
+                autocomplete="off"
+              />
+              <label>Regular Price</label>
+              <input
+                id="fStrikePrice"
+                placeholder="e.g. ₹99,999"
+                autocomplete="off"
+              />
+              <label>Offer</label>
+              <input
+                id="fOffer"
+                placeholder="e.g. 20% off + free earbuds"
+                autocomplete="off"
+              />
+            </div>
+            <button class="btn btn-primary vvp-genbtn" id="gen"
+              >Generate my video</button
+            >
+            <p class="vvp-formnote">
+              Most tools merge a name. Flipick renders <b>every</b> field into the
+              film.
+            </p>
+          </div>
+        </div>
+        <p class="logohint">
+          Concept demo. In production this returns a real MP4, rendered from
+          your master and your data.
+        </p>
+      </div>
+    </section>
+
+    <!-- ================= INDIA OPPORTUNITY ================= -->
+    <section class="vvp-section-flush">
+      <div class="lwrap">
+        <div class="darkband rv">
+          <span class="eyebrow">The opportunity</span>
+          <h2 class="darkband-headline">
+            Your advertising is local. Your video isn&rsquo;t. Yet.
+          </h2>
+          <p class="darkband-body">
+            Every multi-location business localizes its marketing &mdash; except
+            its video. A version per location was never affordable, so the most
+            persuasive format stayed national. VVP closes that gap: one master
+            becomes hundreds of local versions, for close to the cost of one.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= COST EFFICIENCY ================= -->
+    <section class="vvp-section-flush">
+      <div class="lwrap">
+        <div class="fcard fcard-featured fcard-center rv">
+          <h2 class="ind-fcard-title">
+            Your 500th version &mdash; and your 10th language &mdash; costs
+            about the same as your first.
+          </h2>
+          <p>
+            Variants are rendered from your data, not re-shot &mdash; so
+            per-variant cost collapses toward zero.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= WHERE VVP EARNS ITS PLACE ================= -->
+    <section class="vvp-section-sm">
+      <div class="lwrap">
+        <div class="sec-head vvp-sec-head rv">
+          <span class="eyebrow">Where VVP earns its place</span>
+          <h2>Data-driven, localized video at scale.</h2>
+        </div>
+        <div class="grid2">
+          <div class="fcard fcard-bl-brand rv">
+            <span class="eyebrow">Retail offers, as video</span>
+            <h3>Every offer, one video per store.</h3>
+            <p>
+              Grocers, value retail, quick commerce: one video per store or
+              zone, refreshed whenever offers change.
+            </p>
+          </div>
+          <div class="fcard fcard-bl-amber rv">
+            <span class="eyebrow">Local-store ads</span>
+            <h3>The ads the platforms can&rsquo;t run.</h3>
+            <p>
+              Ad platforms don&rsquo;t serve pin-code-level video. VVP renders
+              one per store &mdash; for WhatsApp, YouTube, Meta or in-store
+              screens.
+            </p>
+          </div>
+          <div class="fcard fcard-bl-teal rv">
+            <span class="eyebrow">Dealer &amp; franchise networks</span>
+            <h3>One campaign, a version per dealer.</h3>
+            <p>
+              Auto, paints, building materials, QSR: one national campaign, a
+              version per dealer or outlet &mdash; local pricing, offers, phone
+              number.
+            </p>
+          </div>
+          <div class="fcard fcard-bl-mid rv">
+            <span class="eyebrow">Personalized communications</span>
+            <h3>Rendered per customer, not per name.</h3>
+            <p>
+              Insurance, banking, telecom, D2C: renewal and loyalty video
+              rendered per customer from fields you already hold.
+            </p>
+          </div>
+          <div class="fcard fcard-bl-brand rv">
+            <span class="eyebrow">One master, every language</span>
+            <h3>Stop re-shooting the same ad five times.</h3>
+            <p>
+              Hindi, Tamil, Telugu, Bengali, Marathi and more &mdash; rendered
+              from one master, with each region&rsquo;s offer and rate built in.
+            </p>
+          </div>
+          <div class="fcard fcard-bl-amber rv">
+            <span class="eyebrow">Festive &amp; seasonal campaigns</span>
+            <h3>One seasonal master. A version per store.</h3>
+            <p>
+              Diwali, Onam, Eid, wedding season: one seasonal master, a version
+              per store and language, refreshed as offers change.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= HOW IT WORKS ================= -->
+    <section id="how" class="vvp-section-sm">
+      <div class="lwrap">
+        <div class="grid4">
+          <div class="fcard rv">
+            <div class="ic">1</div><h3>Master film</h3><p>
+              One cinematic brand film, approved once.
+            </p>
+          </div>
+          <div class="fcard rv">
+            <div class="ic">2</div><h3>Your data</h3><p>
+              Stores, prices and offers &mdash; from a feed, sheet or PIM.
+            </p>
+          </div>
+          <div class="fcard rv">
+            <div class="ic">3</div><h3>Rendered variants</h3><p>
+              Every version generated automatically, on brand.
+            </p>
+          </div>
+          <div class="fcard rv">
+            <div class="ic">4</div><h3>Delivered &amp; measured</h3><p>
+              Any channel &mdash; and tracked per variant.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= DELIVERY & DATA ================= -->
+    <section class="vvp-section-flush">
+      <div class="lwrap">
+        <div class="fcard rv">
+          <span class="eyebrow">Delivery &amp; data</span>
+          <p>
+            Deliver anywhere &mdash; WhatsApp, YouTube, Meta, retail media,
+            in-store screens. You keep the data. Every variant is tracked.
+          </p>
+          <div class="pill-row">
+            <span class="pill">WhatsApp-ready</span>
+            <span class="pill">Deliver on any channel</span>
+            <span class="pill">You keep the data</span>
+            <span class="pill">Tracked per variant</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PARTNERS ================= -->
+    <section class="vvp-section-flush">
+      <div class="lwrap">
+        <div class="fcard fcard-bl-teal rv">
+          <span class="eyebrow">Partners &amp; platforms</span>
+          <h3>Add the variable-video layer.</h3>
+          <p>
+            Ad platforms, agencies and dealer co-op programmes can white-label
+            VVP &mdash; the variable-video layer their stack doesn&rsquo;t have
+            yet.
+          </p>
+          <a class="btn btn-outline btn-mt" data-demo-link href="#"
+            >Explore a partnership</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= LOGO STRIP ================= -->
+    <section class="section-pad-flush section-bordered">
+      <div class="wrap">
+        <div class="logostrip logostrip-lg rv">
+          <div class="lbl">Trusted by teams at</div>
+          <div class="logorow">
+            <div class="logoslot">
+              <img
+                src="/assets/images/customers/IIBF_logo.webp"
+                alt="IIBF"
+                width="1200"
+                height="380"
+                loading="lazy"
+              />
+            </div>
+            <div class="logoslot">
+              <img
+                src="/assets/images/customers/Pearson_logo.webp"
+                alt="Pearson"
+                width="1200"
+                height="380"
+                loading="lazy"
+              />
+            </div>
+            <div class="logoslot">
+              <img
+                src="/assets/images/customers/logo_elsevier.svg"
+                alt="Elsevier"
+                width="58"
+                height="65"
+                loading="lazy"
+              />
+            </div>
+            <div class="logoslot">
+              <img
+                src="/assets/images/customers/Clarivate_Logo.webp"
+                alt="Clarivate"
+                width="1200"
+                height="380"
+                loading="lazy"
+              />
+            </div>
+            <div class="logoslot">
+              <img
+                src="/assets/images/customers/PI-horizontal-logo.webp"
+                alt="PI Industries"
+                width="1200"
+                height="380"
+                loading="lazy"
+              />
+            </div>
+            <div class="logoslot">
+              <img
+                src="/assets/images/customers/jindal-steel.webp"
+                alt="Jindal Steel"
+                width="1200"
+                height="380"
+                loading="lazy"
+              />
+            </div>
+            <div class="logoslot">
+              <img
+                src="/assets/images/customers/logo_godrej.webp"
+                alt="Godrej"
+                width="1200"
+                height="380"
+                loading="lazy"
+              />
+            </div>
+            <div class="logoslot">
+              <img
+                src="/assets/images/customers/IFC-WBG.webp"
+                alt="IFC World Bank Group"
+                width="1200"
+                height="380"
+                loading="lazy"
+              />
+            </div>
+            <div class="logoslot">
+              <img
+                src="/assets/images/customers/logo_iica.webp"
+                alt="IICA"
+                width="1200"
+                height="380"
+                loading="lazy"
+              />
+            </div>
+          </div>
+          <p class="trusted-cap">
+            Trusted by Pearson, IIBF, Elsevier, Clarivate, Godrej, Jindal Steel,
+            IFC World Bank Group and IICA.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FAQ ================= -->
+    <section id="faq" aria-label="Frequently asked questions">
+      <div class="wrap">
+        <div class="sec-head rv sec-head--center sec-head--mb-md">
+          <span class="eyebrow">FAQ</span>
+          <h2>
+            Common questions about <span class="serif-i text-brand"
+              >Variable Video Production India.</span>
+          </h2>
+        </div>
+        <div class="faq rv">
+          <details open>
+            <summary
+              >How many language versions can Flipick create from a single
+              master video?</summary
+            >
+            <p>
+              Flipick renders a version per language from a single master
+              &mdash; Hindi, Tamil, Telugu, Bengali, Marathi and more. Each
+              region&#8217;s offer, rate and local details are built into that
+              language&#8217;s version automatically, without separate shoots
+              for each language.
+            </p>
+          </details>
+          <details>
+            <summary
+              >Is VVP affordable for mid-size businesses with hundreds of dealer
+              outlets?</summary
+            >
+            <p>
+              Yes. Because variants are rendered from your data rather than
+              re-shot, per-variant cost collapses toward zero at scale. Your
+              500th version costs about the same as your first, making a
+              localized video per dealer or outlet practical for the first time.
+            </p>
+          </details>
+          <details>
+            <summary
+              >How does VVP work for festive and seasonal campaigns in India?</summary
+            >
+            <p>
+              You produce one seasonal master film and Flipick renders a version
+              per store, zone or language &mdash; with that location&#8217;s
+              offer and rate built in. When offers change, only the data feed
+              needs updating; the master film stays the same.
+            </p>
+          </details>
+          <details>
+            <summary
+              >Which channels can Flipick VVP videos be delivered through in
+              India?</summary
+            >
+            <p>
+              VVP videos can be delivered through WhatsApp, YouTube, Meta,
+              retail media networks, and in-store screens. Every variant is
+              tracked per recipient, and you keep the data throughout.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CLOSING CTA ================= -->
+    <section class="closing" aria-label="Call to action">
+      <div class="wrap">
+        <h2>Get your own <span class="serif-i">variant.</span></h2>
+        <p>
+          Send a store list or a price list &mdash; we&rsquo;ll send back real
+          localized videos on your brand.
+        </p>
+        <div class="ctas-center">
+          <a class="btn btn-ghost" data-demo-link href="#">Book a demo</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script is:inline slot="scripts">
+    (function () {
+      var STAGE_BASE = "demostage video--landscape";
+      var stage = document.getElementById("stage");
+      if (!stage) return;
+
+      var seg = document.getElementById("seg"),
+        camp = "product";
+      var CONF = {
+        comms: {
+          l2: "Policy / plan",
+          v1ph: "e.g. Auto Plan",
+          v1def: "Auto Plan",
+          l3: "Renewal date",
+          v2ph: "e.g. Apr 12",
+          v2def: "Apr 12",
+          lower: function (v) {
+            return "Renewal due " + v;
+          },
+        },
+        retail: {
+          l2: "Store / location",
+          v1ph: "e.g. Andheri West, Mumbai",
+          v1def: "Andheri West, Mumbai",
+          l3: "Offer / rate",
+          v2ph: "e.g. ₹100 off / 22K rate today",
+          v2def: "₹100 off",
+          lower: function (v) {
+            return v;
+          },
+        },
+      };
+
+      var l2lab = document.getElementById("l2lab");
+      var l3lab = document.getElementById("l3lab");
+      var fName = document.getElementById("fName");
+      var fV1 = document.getElementById("fV1");
+      var fV2 = document.getElementById("fV2");
+      var stdFields = document.getElementById("stdFields");
+      var prodFields = document.getElementById("prodFields");
+      var genBtn = document.getElementById("gen");
+
+      function applyCamp() {
+        var isProd = camp === "product";
+        stdFields.classList.toggle("vvp-fields-hidden", isProd);
+        prodFields.classList.toggle("vvp-fields-hidden", !isProd);
+        genBtn.textContent = "Generate my video";
+        if (!isProd) {
+          var c = CONF[camp];
+          l2lab.textContent = c.l2;
+          fV1.placeholder = c.v1ph;
+          l3lab.textContent = c.l3;
+          fV2.placeholder = c.v2ph;
+        }
+      }
+
+      seg.addEventListener("click", function (e) {
+        var btn = e.target.closest("button");
+        if (!btn) return;
+        camp = btn.getAttribute("data-c");
+        Array.prototype.forEach.call(seg.children, function (b) {
+          b.classList.toggle("on", b === btn);
+        });
+        applyCamp();
+      });
+      applyCamp();
+
+      var MSGS = [
+        "Reading your data…",
+        "Casting your master film…",
+        "Compositing name & overlays…",
+        "Rendering in your brand…",
+        "Finishing up…",
+      ];
+      var pulseTimer = null;
+
+      function startPulse(dur, onComplete) {
+        var bar = document.getElementById("ldBar"),
+          st = document.getElementById("ldStatus"),
+          ct = document.getElementById("ldCount");
+        var t0 = Date.now();
+        bar.style.width = "0%";
+        ct.textContent = "≈ " + Math.ceil(dur / 1000) + "s";
+        st.textContent = MSGS[0];
+        pulseTimer = setInterval(function () {
+          var elapsed = Date.now() - t0,
+            p = Math.min(1, elapsed / dur);
+          bar.style.width = (p * 100).toFixed(0) + "%";
+          ct.textContent =
+            "≈ " + Math.max(0, Math.ceil((dur - elapsed) / 1000)) + "s";
+          st.textContent =
+            MSGS[Math.min(MSGS.length - 1, Math.floor(p * MSGS.length))];
+          if (p >= 1 && onComplete) {
+            clearInterval(pulseTimer);
+            pulseTimer = null;
+            onComplete();
+          }
+        }, 200);
+      }
+
+      function stopPulse() {
+        if (pulseTimer) {
+          clearInterval(pulseTimer);
+          pulseTimer = null;
+        }
+      }
+
+      function resetStage() {
+        stopPulse();
+        var old = stage.querySelector(".vvp-result-video");
+        if (old) old.remove();
+        ["pzGreet", "pzL1", "pzL2"].forEach(function (id) {
+          var el = document.getElementById(id);
+          if (el) el.style.display = "";
+        });
+        stage.className = STAGE_BASE;
+      }
+
+      function showDone(mp4Url) {
+        stopPulse();
+        var vid = document.createElement("video");
+        vid.className = "vvp-result-video";
+        vid.src = mp4Url;
+        vid.controls = true;
+        vid.autoplay = true;
+        vid.setAttribute("playsinline", "");
+        ["pzGreet", "pzL1", "pzL2"].forEach(function (id) {
+          var el = document.getElementById(id);
+          if (el) el.style.display = "none";
+        });
+        stage.classList.remove("loading");
+        stage.classList.remove("done");
+        stage.appendChild(vid);
+      }
+
+      var API_BASE = "https://cinematic-1.onrender.com/api/v1/public";
+      var API_KEY = "UlNEMTVARmxpcGlja0NpbmVtYXRpYw==";
+      var PROD_PROJECT_ID = "49dcf0f9-b42f-441a-a68b-f8f9c3daa5fd";
+
+      genBtn.onclick = async function () {
+        var old = stage.querySelector(".vvp-result-video");
+        if (old) old.remove();
+        ["pzGreet", "pzL1", "pzL2"].forEach(function (id) {
+          var el = document.getElementById(id);
+          if (el) el.style.display = "";
+        });
+        stage.className = STAGE_BASE + " loading";
+        stopPulse();
+
+        if (camp === "product") {
+          var prodName = document.getElementById("fProdName").value.trim();
+          var prodDesc = document.getElementById("fProdDesc").value.trim();
+          var salePrice = document.getElementById("fSalePrice").value.trim();
+          var strikePrice = document
+            .getElementById("fStrikePrice")
+            .value.trim();
+          var offer = document.getElementById("fOffer").value.trim();
+
+          startPulse(60000);
+          var pollTimer = null;
+
+          function showError(msg) {
+            stopPulse();
+            if (pollTimer) clearInterval(pollTimer);
+            document.getElementById("ldStatus").textContent = "Error: " + msg;
+            document.getElementById("ldBar").style.background = "#E24B4A";
+            setTimeout(resetStage, 4000);
+          }
+
+          var jobId;
+          try {
+            var resp = await fetch(API_BASE + "/render", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+                "X-Api-Key": API_KEY,
+              },
+              body: JSON.stringify({
+                project_id: PROD_PROJECT_ID,
+                variables: {
+                  ProductName: { text: prodName },
+                  Description: { text: prodDesc },
+                  SalePrice: { text: salePrice },
+                  StrikethroughPrice: { text: strikePrice },
+                  Offer: { text: offer },
+                },
+              }),
+            });
+            if (!resp.ok) {
+              var e = await resp.json().catch(function () {
+                return {};
+              });
+              return showError(e.error || "Server error " + resp.status);
+            }
+            var data = await resp.json();
+            jobId = data.job_id;
+          } catch (err) {
+            return showError("Cannot reach server: " + err.message);
+          }
+
+          pollTimer = setInterval(async function () {
+            try {
+              var sr = await fetch(API_BASE + "/render-jobs/" + jobId, {
+                headers: { "X-Api-Key": API_KEY },
+              });
+              if (!sr.ok) return;
+              var job = await sr.json();
+              if (job.status === "done") {
+                clearInterval(pollTimer);
+                showDone(job.mp4_url);
+              } else if (job.status === "failed") {
+                clearInterval(pollTimer);
+                showError(job.error_msg || "Render failed");
+              }
+            } catch (err) {
+              /* network hiccup — keep polling */
+            }
+          }, 10000);
+        } else {
+          var c = CONF[camp];
+          var name = (fName.value || "Priya").trim();
+          var v1 = (fV1.value || c.v1def).trim();
+          var v2 = (fV2.value || c.v2def).trim();
+          startPulse(15000, function () {
+            document.getElementById("pzGreet").textContent =
+              "Hi, " + name + "!";
+            document.getElementById("pzL1").textContent = v1;
+            document.getElementById("pzL2").textContent = c.lower(v2);
+            stage.className = STAGE_BASE + " done";
+          });
+        }
+      };
+
+      document.getElementById("again").addEventListener("click", resetStage);
+    })();
+  </script>
+  <script is:inline slot="scripts">
+    const _rv = document.querySelectorAll(".rv");
+    if ("IntersectionObserver" in window) {
+      const io = new IntersectionObserver(
+        (es) =>
+          es.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add("in");
+              io.unobserve(e.target);
+            }
+          }),
+        { threshold: 0, rootMargin: "0px 0px -8% 0px" },
+      );
+      _rv.forEach((el) => io.observe(el));
+      setTimeout(() => _rv.forEach((el) => el.classList.add("in")), 3000);
+    }
+  </script>
+</Layout>

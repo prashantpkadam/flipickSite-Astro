@@ -1,0 +1,159 @@
+ [
+      {
+        "@type": "WebPage",
+        "@id": "https://flipick.com/ai-video-platform",
+        "url": "https://flipick.com/ai-video-platform",
+        "name": "AI Video Platform — Flipick",
+        "description": "Flipick for every team, content type and industry — L&D, marketing and customer education; training, ads, film and explainers; manufacturing, retail, BFSI, F&B and software.",
+        "isPartOf": {"@id": "https://flipick.com/#website"},
+        "breadcrumb": {"@id": "https://flipick.com/ai-video-platform#breadcrumb"},
+        "speakable": {
+          "@type": "SpeakableSpecification",
+          "cssSelector": [".hero h1", ".hero .sub"]
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://flipick.com/ai-video-platform#breadcrumb",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://flipick.com/"},
+          {"@type": "ListItem", "position": 2, "name": "Solutions", "item": "https://flipick.com/solution"},
+          {"@type": "ListItem", "position": 3, "name": "AI Video Platform", "item": "https://flipick.com/ai-video-platform"}
+        ]
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "Flipick AI Video Platform",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "description": "Studio-grade AI video creation platform for L&D, marketing and customer teams. Create, personalize and prove video — end to end.",
+        "offers": [{
+          "@type": "Offer",
+          "priceCurrency": "INR",
+          "price": "3300",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "3300",
+            "priceCurrency": "INR",
+            "unitText": "per finished minute (base rate)"
+          }
+        }, {"@type": "Offer", "priceCurrency": "USD", "price": "33", "priceSpecification": {"@type": "UnitPriceSpecification", "price": "33", "priceCurrency": "USD", "unitText": "per finished minute (base rate)"}}],
+        "provider": {"@id": "https://flipick.com/#organization"},
+        "featureList": ["Screenplay Creator and storyboard approval", "Consistent characters and products across scenes", "Brand overlays — logos, prices, captions, CTAs", "Variable Video Production (VVP) personalisation", "Multilingual localisation without re-recording", "Authenticated viewer tracking and CTA analytics", "Credit-based pricing — 1 credit = ₹1"]
+      },
+      {
+        "@type": "HowTo",
+        "name": "How to create AI video with Flipick",
+        "description": "A step-by-step guide to producing studio-grade AI video — from brief to authenticated viewer proof — on the Flipick platform.",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "position": "1",
+            "name": "Write a brief",
+            "text": "Describe the campaign objective, target audience, tone and key messages in Flipick's brief interface — no scripts needed."
+          },
+          {
+            "@type": "HowToStep",
+            "position": "2",
+            "name": "Review and approve the screenplay and storyboard",
+            "text": "Flipick's AI generates a structured screenplay and scene-by-scene storyboard. Your team approves it before a single credit is spent on rendering."
+          },
+          {
+            "@type": "HowToStep",
+            "position": "3",
+            "name": "Lock characters, locations and brand assets",
+            "text": "Add your characters, locations, props and brand elements to the Asset Library so they appear consistently across scenes and future campaigns."
+          },
+          {
+            "@type": "HowToStep",
+            "position": "4",
+            "name": "Render the master film on AI",
+            "text": "Flipick renders the approved storyboard into a finished, studio-grade AI film. This is the single AI render — your master."
+          },
+          {
+            "@type": "HowToStep",
+            "position": "5",
+            "name": "Generate variants with Variable Video Production",
+            "text": "Use VVP to produce versions of the master for different sizes (16:9, 9:16, 1:1), languages, overlays and personalised data fields — all rendered on Flipick's servers at a fraction of the master's cost."
+          },
+          {
+            "@type": "HowToStep",
+            "position": "6",
+            "name": "Distribute and track",
+            "text": "Push finished variants via email, link, WhatsApp or site embed. Authenticated viewer tracking records who watched, for how long, and what they clicked."
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is the Flipick AI Video Platform?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Flipick is a studio-grade AI video creation platform that lets L&D, marketing and customer teams create, personalise and prove video end to end — from a single pipeline that covers every content type and industry."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which teams use Flipick?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "L&D and training teams ship multilingual, assessable courses; marketing teams produce on-brand ads and promos at calendar speed; and customer education teams send personalised walkthroughs and onboarding videos — all from the same platform."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What types of video can I create?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Training videos (structured, multilingual, assessable), ads and promos (campaign-ready, re-skinnable), narrative films (consistent cast across scenes), and explainer videos (clear how-tos with tracked next steps)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which industries does Flipick serve?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Manufacturing (safety and SOP training), retail (frontline onboarding and promos), BFSI (compliance with audit-ready tracking), food and beverage (franchise training), software (product launches and explainers), and healthcare (compliance and patient education)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does Flipick personalise videos at scale?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Flipick delivers a unique version of each video per recipient using variable data fields — names, products, prices and offers swap automatically without re-rendering. Every view is authenticated, so you get verified completion data, not just view counts."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "VideoObject",
+        "name": "Flipick AI Video for L&D — One Platform, Many Uses",
+        "description": "Demonstrates Flipick's AI video platform serving L&D teams with consistent, on-brand training video production across every content type and industry.",
+        "thumbnailUrl": "https://flipick.com/assets/images/thumbnail/by-team.webp",
+        "contentUrl": "https://storage.googleapis.com/flipick-videos-gen/246252c2-2301-4d8b-9ab1-a1c47d1c428f-4_ONE PLATFORM, MANY USES.mp4",
+        "uploadDate": "2026-01-01",
+        "publisher": {"@id": "https://flipick.com/#organization"}
+      },
+      {
+        "@type": "VideoObject",
+        "name": "Flipick AI Video — Training, Ads, Film and Explainers",
+        "description": "Showcases the full range of content types produced on Flipick: training videos, ads, narrative films and explainers — all from one AI studio pipeline.",
+        "thumbnailUrl": "https://flipick.com/assets/images/thumbnail/by-content.webp",
+        "contentUrl": "https://storage.googleapis.com/flipick-videos-gen/0cfb4eba-4a52-4436-989e-cb086917f56a-2_TRAINING%20%C2%B7%20ADS%20%C2%B7%20FILM%20%C2%B7%20EXPLAINERS 1.mp4",
+        "uploadDate": "2026-01-01",
+        "publisher": {"@id": "https://flipick.com/#organization"}
+      },
+      {
+        "@type": "VideoObject",
+        "name": "Flipick AI Video — Multilingual and Personalised",
+        "description": "Demonstrates Flipick's multilingual video production and personalised delivery capabilities — accurate localisation and audit-ready tracking for diverse audiences.",
+        "thumbnailUrl": "https://flipick.com/assets/images/thumbnail/by-industry.webp",
+        "contentUrl": "https://storage.googleapis.com/flipick-videos-gen/0bce4242-1d00-43a1-9b58-715d88b637b3-3_MULTILINGUAL%20%C2%B7%20ACCURATE%20%C2%B7%20AUDIT-READY 1.mp4",
+        "uploadDate": "2026-01-01",
+        "publisher": {"@id": "https://flipick.com/#organization"}
+      }
+    ]

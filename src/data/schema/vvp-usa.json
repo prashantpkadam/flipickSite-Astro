@@ -1,0 +1,72 @@
+[
+      {
+        "@type": "WebPage",
+        "@id": "https://flipick.com/vvp-usa",
+        "url": "https://flipick.com/vvp-usa",
+        "name": "Variable Video Production — Flipick",
+        "description": "One master brand film, rendered into unlimited personalized versions — by name, store, language or offer.",
+        "isPartOf": {"@id": "https://flipick.com/#website"},
+        "breadcrumb": {"@id": "https://flipick.com/vvp-usa#breadcrumb"},
+        "speakable": {
+          "@type": "SpeakableSpecification",
+          "cssSelector": [".hero h1", ".hero p.sub"]
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://flipick.com/vvp-usa#breadcrumb",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://flipick.com/"},
+          {"@type": "ListItem", "position": 2, "name": "Variable Video Production", "item": "https://flipick.com/vvp-usa"}
+        ]
+      },
+      {
+        "@type": "Service",
+        "name": "Variable Video Production",
+        "provider": {
+          "@type": "Organization",
+          "name": "Flipick",
+          "url": "https://flipick.com/"
+        },
+        "description": "Turn one master brand film into thousands of personalized versions — by name, store, language or offer — at almost no cost per version.",
+        "serviceType": "Variable Video Production",
+        "areaServed": "US"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What types of businesses benefit most from Variable Video Production?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "VVP is built for businesses that need many localized or personalized versions of a single video — CPG, beverage, QSR, auto and national retail brands that run co-op programs, and companies in insurance, banking, fintech, telecom and SaaS that send personalized communications at scale."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How is VVP different from simply adding a customer's name to a video?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Most tools merge a name into a text overlay or subject line. Flipick VVP renders every variable field — name, store address, phone number, product, date or offer — directly into the film itself, so the personalization is part of the rendered video, not a caption on top of it."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does Flipick handle the customer data used to personalize videos?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Personalization runs on the fields you already hold in your CRM or PIM — you stay the data controller. Delivery uses your existing, consented channels. Data-handling documentation and a Data Processing Agreement (DPA) are available for security review."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can TCMA or co-op platforms integrate Variable Video Production into their stack?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. TCMA, co-op and VDP platforms and print service providers can white-label VVP as the AI-video layer their stack does not yet have. The process and delivery model mirror existing co-op workflows, with video replacing print as the output format."
+            }
+          }
+        ]
+      }
+    ]

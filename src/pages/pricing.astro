@@ -1,0 +1,192 @@
+---
+import Layout from '../layouts/Layout.astro';
+import schema from '../data/schema/pricing.json';
+---
+<Layout
+  title="AI Video Pricing: Credit-Based, No Seats | Flipick"
+  description="Credit-based pricing for AI video creation and VVP distribution: no seats, no subscriptions. Estimate any campaign with the live credit calculator."
+  keywords="AI video pricing, credit based pricing, VVP pricing, eLearning video cost, AI video cost per minute, variable video production cost, enterprise video pricing, SCORM course pricing"
+  page="pricing"
+  schema={schema}
+>
+  <main>
+
+    <!-- ================= HERO ================= -->
+    <section class="hero hero--pricing">
+    <div class="wrap">
+        <div class="hero-grid hero-grid--lg">
+        <h1 class="hero-h1--lg">Pay for what you make. <span class="serif-i text-brand-mid">See the cost before you make it.</span></h1>
+        <p class="sub">Everything on Flipick is priced in credits, across two products &mdash; AI Video Creation and VVP Distribution. No seats, no surprises. The calculator below estimates any campaign in seconds.</p>
+        </div>
+    </div>
+    </section>
+
+    <!-- ================= CREDIT MODEL ================= -->
+    <section class="section-white">
+    <div class="wrap">
+        <div class="sec-head rv sec-head--mb-34">
+        <span class="eyebrow">The credit model</span>
+        <h2>One currency. <span class="serif-i text-brand">Two products.</span></h2>
+        <p>Credits are spent in two places: producing video, and distributing it. Buy a balance, spend it across both.</p>
+        <p style="margin-top:1rem;padding:1rem 1.25rem;border-left:3px solid var(--brand);background:var(--surface-2,#f8f9ff);border-radius:0 6px 6px 0;font-size:.95rem"><strong>How AI video pricing works:</strong> Flipick uses a credit-based model &mdash; 1 credit = &#8377;1 (or $0.01 USD). Credits are spent in two ways: producing video (priced per finished minute of output) and distributing it via Variable Video Production (priced per recipient, lower at volume). Credits never expire and are shared across your team. A typical 3-minute training video uses 15,000&ndash;18,000 credits at moderate edit level. A VVP campaign to 1,000 recipients adds 30,000 credits. <strong>No seats. No subscriptions. Pay for what you make.</strong></p>
+        <div class="credit-def geo-cloak"><b data-inr="1 credit = ₹1" data-usd="1 credit = $0.01 (1¢)">1 credit = &#8377;1</b><span>&middot;</span><small>currency unit per the current plan</small></div>
+        </div>
+        <div class="prods rv">
+        <div class="pcard">
+            <span class="tag">PRODUCT 1</span>
+            <h3>AI Video Creation</h3>
+            <div class="unit">Priced per finished minute</div>
+            <div class="base"><span>Base production &middot; 1 minute</span><b>3,300 credits</b></div>
+            <div class="trow"><span>No edits</span><b>3,300</b></div>
+            <div class="trow"><span>Light edits</span><b>4,000 &ndash; 4,500</b></div>
+            <div class="trow hot"><span>Moderate edits <span class="pill">typical</span></span><b>5,000 &ndash; 5,500</b></div>
+            <div class="trow"><span>Heavy edits</span><b>6,000 &ndash; 6,500</b></div>
+            <div class="trow"><span>Creative exploration</span><b>7,000 &ndash; 9,000+</b></div>
+            <div class="pcard-note">Plan around 5,000&ndash;6,000 per finished minute. Storyboard-first teams stay in the lower tiers &mdash; revisions happen before rendering, not after.</div>
+        </div>
+        <div class="pcard">
+            <span class="tag">PRODUCT 2</span>
+            <h3>VVP Distribution</h3>
+            <div class="unit">Priced per recipient &middot; cheaper at scale</div>
+            <div class="base"><span>Per-recipient rate falls as volume rises</span><b class="geo-cloak" data-inr="₹50 → ₹20" data-usd="$0.50 → $0.20">&#8377;50 &rarr; &#8377;20</b></div>
+            <div class="trow"><span>1 &ndash; 100 recipients</span><b class="geo-cloak" data-inr="₹50 / recipient" data-usd="$0.50 / recipient">&#8377;50 / recipient</b></div>
+            <div class="trow"><span>101 &ndash; 500</span><b class="geo-cloak" data-inr="₹37.50 / recipient" data-usd="$0.38 / recipient">&#8377;37.50 / recipient</b></div>
+            <div class="trow"><span>501 &ndash; 2,500</span><b class="geo-cloak" data-inr="₹30 / recipient" data-usd="$0.30 / recipient">&#8377;30 / recipient</b></div>
+            <div class="trow"><span>2,501 &ndash; 10,000</span><b class="geo-cloak" data-inr="₹25 / recipient" data-usd="$0.25 / recipient">&#8377;25 / recipient</b></div>
+            <div class="trow"><span>Above 10,000</span><b class="geo-cloak" data-inr="₹20 / recipient" data-usd="$0.20 / recipient">&#8377;20 / recipient</b></div>
+            <div class="pcard-note">The rate for a campaign is set by the band its recipient count falls into. Authentication, analytics and CTA tracking are included.</div>
+        </div>
+        </div>
+    </div>
+    </section>
+
+    <!-- ================= CALCULATOR ================= -->
+    <section id="calculator">
+    <div class="wrap">
+        <div class="calc-wrap rv">
+        <div class="calc-grid">
+            <div>
+            <span class="eyebrow db-eyebrow">Credit calculator</span>
+            <h2 class="calc-heading">Price your campaign.</h2>
+            <p class="calc-sub">Set the length, the edit level and the audience &mdash; see the cost before you spend a credit.</p>
+
+            <div class="ctrl">
+                <div class="clab"><span>Finished minutes</span><b id="vMins">1.0 min</b></div>
+                <input type="range" id="mins" min="0.5" max="10" step="0.5" value="1">
+            </div>
+            <div class="ctrl">
+                <div class="clab"><span>Edit level</span></div>
+                <div class="seg" id="tierSeg">
+                <button data-tier="none">No edits</button>
+                <button data-tier="light">Light</button>
+                <button data-tier="moderate" class="on">Moderate</button>
+                <button data-tier="heavy">Heavy</button>
+                <button data-tier="creative">Creative</button>
+                </div>
+            </div>
+            <div class="ctrl">
+                <div class="clab"><span>Recipients</span><b id="vRcpt">500</b></div>
+                <input type="range" id="rcpt" min="0" max="10000" step="50" value="500">
+            </div>
+            </div>
+            <div class="result">
+            <div class="rrow"><span>Creation <small id="cMinsLab" class="calc-label"></small></span><b id="cCreate">5,500</b></div>
+            <div class="rrow"><span>Distribution <small id="cRateLab" class="calc-label"></small></span><b id="cDist">18,750</b></div>
+            <div class="rtotal"><span>Total estimate</span><b id="cTotal">24,250</b></div>
+            <div class="rupee geo-cloak" id="cRupee" data-inr="→ ₹24,250" data-usd="→ $242.50">&rarr; &#8377;24,250</div>
+            <div class="rnote geo-cloak" data-inr="Estimate only · 1 credit = ₹1 · creation figures are tier midpoints/ceilings." data-usd="Estimate only · 1 credit = $0.01 (1¢) · creation figures are tier midpoints/ceilings.">Estimate only &middot; 1 credit = &#8377;1 &middot; creation figures are tier midpoints/ceilings.</div>
+            </div>
+        </div>
+        </div>
+        <p class="rv calc-note">Shown by default: a 1-minute, moderately edited film delivered to 500 learners &mdash; <b>24,250 credits</b>, the worked example from our pricing model.</p>
+    </div>
+    </section>
+
+    <!-- ================= ENTERPRISE ================= -->
+    <section class="section-white">
+    <div class="wrap">
+        <div class="ent rv">
+        <div>
+            <span class="eyebrow">Enterprise &amp; custom</span>
+            <h3 class="mt-10">For high volume and regulated teams.</h3>
+            <p>Negotiated credit packs, the security and controls compliance teams need, and onboarding that gets your team producing fast.</p>
+            <ul>
+            <li>Credit packs at volume rates</li>
+            <li>Viewer authentication &amp; security controls</li>
+            <li>Onboarding, training and priority support</li>
+            <li>Procurement-friendly terms &amp; invoicing</li>
+            </ul>
+            <a class="btn btn-primary" href="/company#contact"><span class="tri"></span>Talk to sales</a>
+        </div>
+        <div class="big">
+            <b>Custom</b>
+            <span>Volume credit pricing<br>tailored to your programme</span>
+        </div>
+        </div>
+    </div>
+    </section>
+
+    <!-- ================= QUICK FACTS ================= -->
+    <section class="section-pad-qf">
+    <div class="wrap">
+        <div class="fcard rv fcard--brand fcard--narrow">
+        <h3 class="qf-heading">Pricing quick facts</h3>
+        <ul class="qf-list">
+            <li class="geo-cloak" data-inr="1 credit = ₹1 — one currency across both products" data-usd="1 credit = $0.01 (1¢) — one currency across both products"><b>1 credit = &#8377;1</b> &mdash; one currency across both products</li>
+            <li><b>AI Video Creation:</b> 3,300 credits/min base; typical projects 5,000&ndash;5,500/min with moderate edits</li>
+            <li><b>VVP Distribution:</b> 50 credits/recipient (under 100) down to 20/recipient (10,000+)</li>
+            <li><b>No seats, no subscriptions</b> &mdash; pay only for what you create and distribute</li>
+            <li><b>Enterprise:</b> volume credit packs with negotiated rates available</li>
+        </ul>
+        </div>
+    </div>
+    </section>
+
+    <!-- ================= FAQ ================= -->
+    <section id="faq">
+    <div class="wrap">
+        <div class="sec-head rv sec-head--center sec-head--mb-md">
+        <span class="eyebrow">Pricing FAQ</span>
+        <h2>The questions <span class="serif-i text-brand">buyers ask first.</span></h2>
+        </div>
+        <div class="faq rv">
+        <details open>
+            <summary>What is a credit worth?</summary>
+            <p class="geo-cloak" data-inr="One credit equals ₹1 under the current plan. Pricing throughout the platform is shown in credits so creation and distribution share one balance; the calculator converts any campaign to both credits and rupees." data-usd="One credit equals $0.01 (1¢) under the current plan. Pricing throughout the platform is shown in credits so creation and distribution share one balance; the calculator converts any campaign to both credits and dollars.">One credit equals &#8377;1 under the current plan. Pricing throughout the platform is shown in credits so creation and distribution share one balance; the calculator converts any campaign to both credits and rupees.</p>
+        </details>
+        <details>
+            <summary>Can I buy creation without distribution &mdash; or the other way around?</summary>
+            <p>Yes. The two products draw from the same credit balance but are independent. Create video and export it, distribute a film you already have, or use both together as one workflow.</p>
+        </details>
+        <details>
+            <summary>How does the per-recipient rate work?</summary>
+            <p>Distribution is priced per recipient, and the rate is set by the band your campaign's total recipient count falls into &mdash; from 50 credits each under 100 recipients down to 20 credits each above 10,000. Larger sends are cheaper per person.</p>
+        </details>
+        <details>
+            <summary>Why do edits change the creation cost?</summary>
+            <p>Base production is 3,300 credits per finished minute. More editing and regeneration consumes more credits, which is why approving the screenplay and storyboard first keeps most projects in the lower tiers &mdash; revisions land before rendering, not after.</p>
+        </details>
+        <details>
+            <summary>Do credits expire, and is there a free trial?</summary>
+            <p>Credit terms and trial availability depend on your plan &mdash; the quickest way to confirm what applies to you is to book a demo or talk to sales, and we'll set you up with a balance to test a first project.</p>
+        </details>
+        </div>
+    </div>
+    </section>
+
+    <!-- ================= CLOSING CTA ================= -->
+    <section class="closing" aria-label="Call to action">
+    <div class="wrap">
+        <h2>Know the cost. <span class="serif-i">Then make the video.</span></h2>
+        <p>Talk to sales about a credit balance or a volume pack for your programme.</p>
+        <div class="ctas-center">
+        <a class="btn btn-ghost" href="/company#contact">Talk to sales</a>
+        </div>
+    </div>
+    </section>
+
+</main>
+
+  <script is:inline slot="scripts" src="/assets/js/calculator.js"></script>
+  <script is:inline slot="scripts" src="/assets/js/video-player.js"></script>
+</Layout>

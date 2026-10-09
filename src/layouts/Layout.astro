@@ -1,0 +1,52 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Analytics from '../components/Analytics.astro';
+import SEO from '../components/SEO.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  page?: string;
+  ogImage?: string;
+  ogType?: string;
+  noindex?: boolean;
+  keywords?: string;
+  locale?: string;
+  schema?: object[];
+}
+
+const { page = '', ...seo } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <Analytics />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <SEO {...seo} />
+
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon_io/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon_io/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,400..800;1,14..32,400..800&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <link rel="stylesheet" href="/assets/css/components.css" />
+    <link rel="stylesheet" href="/assets/css/responsive.css" />
+
+    <slot name="head" />
+  </head>
+  <body data-page={page}>
+    <Header />
+    <slot />
+    <Footer />
+
+    <script is:inline src="/assets/js/config.js"></script>
+    <script is:inline src="/assets/js/geo-pricing.js"></script>
+    <script is:inline src="/assets/js/navigation.js"></script>
+    <script is:inline src="/assets/js/main.js"></script>
+    <slot name="scripts" />
+  </body>
+</html>

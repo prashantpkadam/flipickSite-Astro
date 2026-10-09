@@ -1,0 +1,89 @@
+ [
+      {
+        "@type": "WebPage",
+        "@id": "https://flipick.com/solution",
+        "url": "https://flipick.com/solution",
+        "name": "Solutions | Flipick — AI Video, LMS & PowerPoint to SCORM",
+        "description": "Flipick offers three AI products: a video studio for marketing &amp; L&amp;D, a skills-development LMS, and a PPT-to-SCORM converter.",
+        "isPartOf": {"@id": "https://flipick.com/#website"},
+        "breadcrumb": {"@id": "https://flipick.com/solution#breadcrumb"},
+        "speakable": {
+          "@type": "SpeakableSpecification",
+          "cssSelector": [".hero h1", ".hero .sub"]
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://flipick.com/solution#breadcrumb",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://flipick.com/"},
+          {"@type": "ListItem", "position": 2, "name": "Solutions", "item": "https://flipick.com/solution"}
+        ]
+      },
+      {
+        "@type": "ItemList",
+        "name": "Flipick Solutions",
+        "description": "Three AI-powered products for enterprise learning and video.",
+        "numberOfItems": 3,
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "AI Video Platform",
+            "description": "Studio-grade AI video creation for marketing, L&D and customer teams — create, personalise and prove video end to end.",
+            "url": "https://flipick.com/ai-video-platform"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Flipick LMS G2",
+            "description": "AI skills-development platform covering the full learning lifecycle — content creation, engagement, adaptive assessment and analytics.",
+            "url": "https://flipick.com/lms"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "PowerPoint to SCORM",
+            "description": "Convert existing PowerPoint decks into fully animated, narrated, assessed, SCORM-ready eLearning courses in approximately 15 days.",
+            "url": "https://flipick.com/ppt-to-scorm"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What products does Flipick offer?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Flipick offers three products: the AI Video Platform for marketing, L&D and customer teams; Flipick LMS, an AI skills-development platform; and PowerPoint to SCORM, which converts existing decks into SCORM-ready eLearning courses."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is Variable Video Production (VVP)?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Variable Video Production turns one master film into hundreds or thousands of personalised variants, rendered from your data so every viewer gets a version that fits them."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is PowerPoint to SCORM?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "It converts PowerPoint, PDF or Word source material into fully animated, narrated and assessed SCORM-ready courses in approximately 15 days, with every element derived from your source documents."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How is Flipick priced?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Flipick uses transparent credit-based pricing: 1 credit = ₹1 (or $0.01 in USD). There are no seats and no subscriptions. The AI video base rate is 3,300 credits per finished minute."
+            }
+          }
+        ]
+      }
+    ]

@@ -1,0 +1,60 @@
+[
+      {
+        "@type": ["WebPage", "ContactPage"],
+        "@id": "https://flipick.com/company",
+        "url": "https://flipick.com/company",
+        "name": "Company & Contact | Flipick",
+        "description": "About Flipick, our security approach, careers, and how to get in touch. Existing Flipick LMS customers can sign in here too.",
+        "isPartOf": {"@id": "https://flipick.com/#website"},
+        "breadcrumb": {"@id": "https://flipick.com/company#breadcrumb"},
+        "speakable": {
+          "@type": "SpeakableSpecification",
+          "cssSelector": [".hero h1", ".hero .sub", ".lede"]
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://flipick.com/company#breadcrumb",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://flipick.com/"},
+          {"@type": "ListItem", "position": 2, "name": "Company", "item": "https://flipick.com/company"}
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Who founded Flipick and where is it based?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Flipick is a learning-technology company founded in 2011 by Ravi Dugal. It is based in Pune, India."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What does Flipick do?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Flipick builds an AI video platform that creates studio-grade video, distributes it personally to every viewer and proves it landed. It also offers Flipick LMS, an AI skills-development platform, and a PowerPoint-to-SCORM course conversion service."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Who uses Flipick?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Flipick serves 150,000+ active learners across enterprise clients including Pearson, IIBF, Godrej, Jindal Steel, IFC World Bank Group and IICA."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I contact Flipick?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Email sales@flipick.com for sales or support@flipick.com for support, or book a demo from this page. The Pune office is staffed Monday to Friday, 10:00 to 18:00 IST."
+            }
+          }
+        ]
+      }
+    ]

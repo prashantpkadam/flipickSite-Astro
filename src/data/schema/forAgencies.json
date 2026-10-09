@@ -1,0 +1,81 @@
+[
+      {
+        "@type": "WebPage",
+        "@id": "https://flipick.com/forAgencies",
+        "url": "https://flipick.com/forAgencies",
+        "name": "Flipick for Agencies — White-Label AI Video Platform",
+        "description": "Flipick for Agencies: white-label the AI video studio your clients need. Produce cinematic AI video, then turn one master into thousands of personalized variants, under your own brand.",
+        "isPartOf": {"@id": "https://flipick.com/#website"},
+        "breadcrumb": {"@id": "https://flipick.com/forAgencies#breadcrumb"},
+        "speakable": {
+          "@type": "SpeakableSpecification",
+          "cssSelector": [".hero h1", ".hero .sub"]
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://flipick.com/forAgencies#breadcrumb",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://flipick.com/"},
+          {"@type": "ListItem", "position": 2, "name": "For Agencies", "item": "https://flipick.com/forAgencies"}
+        ]
+      },
+      {
+        "@type": "Service",
+        "name": "Flipick for Agencies",
+        "provider": {
+          "@type": "Organization",
+          "name": "Flipick",
+          "url": "https://flipick.com/"
+        },
+        "description": "White-labeled AI video studio and Variable Video Production engine for agencies, letting partners render a master film once and produce unlimited on-brand variants for clients.",
+        "serviceType": "White-Label AI Video Platform for Agencies",
+        "areaServed": "Worldwide"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How does Flipick work for agencies?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Agencies get a white-labeled Flipick tenant — their own branded platform with per-client brand kits, shared character and location libraries, and a Video Engine API. They brief, storyboard and approve on behalf of clients, then render the master film once and use VVP to produce all variants at a fraction of the master cost."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What does 'white-labeled' mean in the Flipick agency program?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The Flipick platform runs under the agency's own branding and domain. Clients see the agency's name, not Flipick's. Per-client brand kits, shared asset libraries, and separate billing make it possible to manage multiple client accounts from one platform without cross-contamination."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How is Flipick priced for agencies?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The platform runs on credits. Briefing, storyboarding and asset management are free. You're charged only when you render a master on AI. Variants cost a fraction of the master's credit cost and scale down further with volume. Indicative rates are available on request — confirm the current rate card before quoting a client."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What kinds of client work does Flipick support for agencies?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Performance and A/B creative testing, e-commerce catalog video, multilingual localisation, and personalised data-driven video — all from one master film. Agencies can also push finished variants to channels like WhatsApp and Instagram directly from the platform."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "VideoObject",
+        "name": "Flipick for Agencies — White-Label AI Video Platform",
+        "description": "Introduces Flipick's agency partner program — a white-label AI video studio where agencies brief, storyboard, render and distribute cinematic video under their own brand.",
+        "thumbnailUrl": "https://flipick.com/assets/images/thumbnail/For_agencies.webp",
+        "contentUrl": "https://storage.googleapis.com/flipick-videos-gen/e468da30-f90a-4cd7-9201-607bf42f4eda-1st Sept 2026 - Flipick_for_Agencies_v6.mp4",
+        "uploadDate": "2026-01-01",
+        "publisher": {"@id": "https://flipick.com/#organization"}
+      }
+    ]

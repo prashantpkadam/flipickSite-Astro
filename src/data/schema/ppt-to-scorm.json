@@ -1,0 +1,113 @@
+[
+      {
+        "@type": "WebPage",
+        "@id": "https://flipick.com/ppt-to-scorm",
+        "url": "https://flipick.com/ppt-to-scorm",
+        "name": "PPT to SCORM | Flipick",
+        "description": "Turn your PowerPoint into a fully animated, narrated, assessed, SCORM-ready course. A third of the cost. A fifth of the time. Delivered in 15 days.",
+        "isPartOf": {"@id": "https://flipick.com/#website"},
+        "breadcrumb": {"@id": "https://flipick.com/ppt-to-scorm#breadcrumb"},
+        "speakable": {
+          "@type": "SpeakableSpecification",
+          "cssSelector": [".hero h1", ".hero .sub"]
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://flipick.com/ppt-to-scorm#breadcrumb",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://flipick.com/"},
+          {"@type": "ListItem", "position": 2, "name": "Solutions", "item": "https://flipick.com/solution"},
+          {"@type": "ListItem", "position": 3, "name": "PPT to SCORM", "item": "https://flipick.com/ppt-to-scorm"}
+        ]
+      },
+      {
+        "@type": "Service",
+        "name": "PowerPoint to SCORM Conversion",
+        "description": "Convert existing PowerPoint decks into fully animated, narrated, assessed, SCORM-ready eLearning courses. No scripts or storyboards needed. Source-locked with zero hallucination. Delivered in approximately 15 days at a third of the cost of a traditional agency build.",
+        "provider": {"@id": "https://flipick.com/#organization"},
+        "serviceType": "eLearning Content Production",
+        "areaServed": "Worldwide",
+        "offers": [
+          {"@type": "Offer", "name": "Up to 15 min course", "price": "150000", "priceCurrency": "INR", "description": "SCORM + MP4 delivery in ~15 days"},
+          {"@type": "Offer", "name": "16–60 min course", "price": "250000", "priceCurrency": "INR", "priceSpecification": {"@type": "UnitPriceSpecification", "minPrice": "250000", "maxPrice": "400000", "priceCurrency": "INR"}}
+        ]
+      },
+      {
+        "@type": "HowTo",
+        "name": "How to convert a PowerPoint to a SCORM course with Flipick",
+        "description": "Turn your existing PowerPoint, PDF or Word document into a fully animated, narrated, assessed, SCORM-ready eLearning course in approximately 15 days.",
+        "totalTime": "P15D",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "position": "1",
+            "name": "Upload your source document",
+            "text": "Share your PowerPoint, PDF or Word document. No scripts or storyboards are needed — the source file is the only input required."
+          },
+          {
+            "@type": "HowToStep",
+            "position": "2",
+            "name": "AI pipeline redesigns and animates every slide",
+            "text": "Flipick's AI pipeline restructures the content, applies animated visuals, and generates narration — all locked to your source material with zero hallucination."
+          },
+          {
+            "@type": "HowToStep",
+            "position": "3",
+            "name": "Instructional designers review and QA",
+            "text": "Every output is reviewed by Flipick's instructional design team for accuracy, instructional flow and assessment quality before delivery."
+          },
+          {
+            "@type": "HowToStep",
+            "position": "4",
+            "name": "Receive SCORM, MP4 and xAPI files",
+            "text": "Finished course files — SCORM 1.2, MP4 and xAPI — are delivered in approximately 15 days, ready to upload directly to your LMS."
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is PPT to SCORM conversion?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "PPT to SCORM conversion takes your existing PowerPoint deck and transforms it into a fully animated, narrated, assessed, SCORM-ready eLearning course — complete with scenario training, adaptive assessments and personalised learning paths. No scripts or storyboards needed."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does it take to convert a PowerPoint to a SCORM course?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Approximately 15 days from upload to delivery. You send your PowerPoint, PDF or Word document on day one; the AI pipeline redesigns, animates and narrates it; human QA reviews every output; and the finished SCORM and MP4 files are delivered by day 15."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What does 'zero hallucination' mean in this context?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Every element in the finished course — narration, visuals, assessment questions and scenario branches — is derived exclusively from your uploaded source documents. The AI does not invent or improvise content. Instructional designers review the output before delivery for accuracy."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What file formats are accepted and delivered?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "You can upload PowerPoint (PPT/PPTX), PDF or Word documents. The finished course is delivered as SCORM 1.2 and MP4, ready to drop into any LMS. xAPI reporting and LTI integration are also supported."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How much does PPT to SCORM conversion cost?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The Essentials package starts at ₹1,50,000 for a 45-minute narrated, animated compliance course with a 20-question assessment bank. The Professional tier ranges from ₹2,50,000 to ₹4,00,000 and adds scenario-based and adaptive assessments, AI avatar narration and brand-matched design. Enterprise pricing is available for multi-course programmes."
+            }
+          }
+        ]
+      }
+    ]

@@ -1,0 +1,118 @@
+[
+    {
+    "@type": "WebPage",
+    "@id": "https://flipick.com/pricing",
+    "url": "https://flipick.com/pricing",
+    "name": "Pricing | Flipick",
+    "description": "Transparent, credit-based pricing for AI video creation and VVP distribution. Estimate any campaign with the live credit calculator, then scale with volume and enterprise plans.",
+    "isPartOf": {"@id": "https://flipick.com/#website"},
+    "breadcrumb": {"@id": "https://flipick.com/pricing#breadcrumb"},
+    "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [".hero h1", ".hero .sub"]
+    }
+    },
+    {
+    "@type": "BreadcrumbList",
+    "@id": "https://flipick.com/pricing#breadcrumb",
+    "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://flipick.com/"},
+        {"@type": "ListItem", "position": 2, "name": "Pricing", "item": "https://flipick.com/pricing"}
+    ]
+    },
+    {
+    "@type": "Product",
+    "name": "Flipick Credit Pack",
+    "description": "Credit-based pricing for AI video creation and VVP distribution. 1 credit = ₹1.",
+    "brand": {"@id": "https://flipick.com/#organization"},
+    "offers": [
+        {
+        "@type": "Offer",
+        "name": "AI Video Creation — Base Rate",
+        "priceCurrency": "INR",
+        "price": "3300",
+        "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "3300",
+            "priceCurrency": "INR",
+            "unitText": "per finished minute (base, no edits)"
+        },
+        "description": "Base production cost per finished minute of AI video. Typical projects with moderate edits range 5,000–5,500 credits per minute."
+        },
+        {
+        "@type": "Offer",
+        "name": "VVP Distribution — Per Recipient",
+        "priceCurrency": "INR",
+        "price": "20",
+        "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "20",
+            "priceCurrency": "INR",
+            "unitText": "per recipient (10,000+ band)"
+        },
+        "description": "Per-recipient distribution cost. Rates range from 50 credits (under 100 recipients) to 20 credits (above 10,000 recipients)."
+        },
+        {
+        "@type": "Offer",
+        "name": "AI Video Creation — Base Rate (USD)",
+        "priceCurrency": "USD",
+        "price": "33",
+        "priceSpecification": {"@type": "UnitPriceSpecification", "price": "33", "priceCurrency": "USD", "unitText": "per finished minute (base, no edits)"},
+        "description": "USD pricing: 1 credit = $0.01, so the 3,300-credit base rate is $33 per finished minute."
+        },
+        {
+        "@type": "Offer",
+        "name": "VVP Distribution — Per Recipient (USD)",
+        "priceCurrency": "USD",
+        "price": "0.20",
+        "priceSpecification": {"@type": "UnitPriceSpecification", "price": "0.20", "priceCurrency": "USD", "unitText": "per recipient (10,000+ band)"},
+        "description": "USD pricing: $0.50 per recipient (under 100 recipients) down to $0.20 (above 10,000 recipients)."
+        }
+    ]
+    },
+    {
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+        "@type": "Question",
+        "name": "What is a credit worth?",
+        "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "One credit equals ₹1 under the current plan. Pricing throughout the platform is shown in credits so creation and distribution share one balance; the calculator converts any campaign to both credits and rupees."
+        }
+        },
+        {
+        "@type": "Question",
+        "name": "Can I buy creation without distribution — or the other way around?",
+        "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The two products draw from the same credit balance but are independent. Create video and export it, distribute a film you already have, or use both together as one workflow."
+        }
+        },
+        {
+        "@type": "Question",
+        "name": "How does the per-recipient rate work?",
+        "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Distribution is priced per recipient, and the rate is set by the band your campaign's total recipient count falls into — from 50 credits each under 100 recipients down to 20 credits each above 10,000. Larger sends are cheaper per person."
+        }
+        },
+        {
+        "@type": "Question",
+        "name": "Why do edits change the creation cost?",
+        "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Base production is 3,300 credits per finished minute. More editing and regeneration consumes more credits, which is why approving the screenplay and storyboard first keeps most projects in the lower tiers — revisions land before rendering, not after."
+        }
+        },
+        {
+        "@type": "Question",
+        "name": "Do credits expire, and is there a free trial?",
+        "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Credit terms and trial availability depend on your plan — the quickest way to confirm what applies to you is to book a demo or talk to sales, and we'll set you up with a balance to test a first project."
+        }
+        }
+    ]
+    }
+]

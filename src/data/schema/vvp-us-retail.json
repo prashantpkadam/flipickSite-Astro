@@ -1,0 +1,81 @@
+[
+      {
+        "@type": "WebPage",
+        "@id": "https://flipick.com/vvp-us-retail",
+        "url": "https://flipick.com/vvp-us-retail",
+        "name": "Variable Video Production for US Retail — Flipick",
+        "description": "One master film becomes a version for every store, offer, market and language. Rendered from the data you already publish.",
+        "isPartOf": {"@id": "https://flipick.com/#website"},
+        "breadcrumb": {"@id": "https://flipick.com/vvp-us-retail#breadcrumb"},
+        "speakable": {
+          "@type": "SpeakableSpecification",
+          "cssSelector": [".hero h1", ".hero .lead"]
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://flipick.com/vvp-us-retail#breadcrumb",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://flipick.com/"},
+          {"@type": "ListItem", "position": 2, "name": "Variable Video Production for US Retail", "item": "https://flipick.com/vvp-us-retail"}
+        ]
+      },
+      {
+        "@type": "Service",
+        "name": "Variable Video Production for US Retail",
+        "provider": {
+          "@type": "Organization",
+          "name": "Flipick",
+          "url": "https://flipick.com/"
+        },
+        "description": "One master film becomes a version for every store, offer, market and language. Rendered from your weekly ad and your store list.",
+        "serviceType": "Variable Video Production",
+        "areaServed": "US"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is Variable Video Production for retail?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Variable Video Production (VVP) lets US retailers render one master AI film and then generate a version for every store, offer, market or language — with the store name, weekly price and local offer injected as overlay data. Each variant is rendered at a fraction of the master's cost."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does Flipick keep retail videos current each week?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Your weekly ad circular or store data feeds directly into Flipick's overlay engine. When prices or offers change, only the overlay layer re-renders — the underlying master film stays the same. This means current video for every store location without a new production cycle each week."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can Flipick produce videos in multiple languages for different markets?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. The master film's voiceover and overlays are localised per market — Spanish, French, or other languages — without re-recording or re-rendering the visual track. One production becomes video in every language you operate in."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What data does Flipick need to generate retail video variants?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A store list (name, location) and your weekly ad data (product names, prices, offers) are the two inputs. Flipick maps those fields to the overlay positions in the master film and renders a version per store automatically."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "VideoObject",
+        "name": "Variable Video Production — Retail Explainer",
+        "description": "Explainer video for Flipick's Variable Video Production service for US retail — one master film becomes a version for every store, offer, market and language.",
+        "thumbnailUrl": "https://flipick.com/assets/images/thumbnail/vvp-retail-ad.webp",
+        "contentUrl": "https://storage.googleapis.com/flipick-videos-gen/dbedef1e-73b2-4983-aa22-c9097ab044e5-Circular Studio Explainer_Updated.mp4",
+        "uploadDate": "2026-01-01",
+        "publisher": {"@id": "https://flipick.com/#organization"}
+      }
+    ]
