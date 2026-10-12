@@ -1,0 +1,9 @@
+# Only the two form endpoints can be reached from the web.
+# Everything else in /api (lib/, PHPMailer/, blocked-email-domains.json, .env)
+# is still readable by PHP itself, just not by visitors.
+Options -Indexes
+Require all denied
+
+<FilesMatch "^(send-mail|send-campaign-mail)\.php$">
+  Require all granted
+</FilesMatch>
