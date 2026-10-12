@@ -1,0 +1,96 @@
+name: Deploy to production
+
+# Every push to main builds the site and uploads it to flipick.com over FTPS.
+# It also runs every night so that posts with a future publishDate go live on
+# their date, and it can be started by hand from the Actions tab.
+on:
+  push:
+    branches: [main]
+  schedule:
+    # 00:05 India time (18:35 UTC), every day
+    - cron: '35 18 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# Never run two deploys to the same server folder at once.
+concurrency:
+  group: deploy-production
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Check required secrets
+        env:
+          FTP_HOST: ${{ secrets.FTP_HOST }}
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+          SMTP_HOST: ${{ secrets.SMTP_HOST }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          SMTP_USERNAME: ${{ secrets.SMTP_USERNAME }}
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+          SMTP_FROM: ${{ secrets.SMTP_FROM }}
+        run: |
+          missing=0
+          for name in FTP_HOST FTP_USERNAME FTP_PASSWORD SMTP_HOST SMTP_PORT SMTP_USERNAME SMTP_PASSWORD SMTP_FROM; do
+            if [ -z "${!name}" ]; then
+              echo "::error::Missing repository secret: $name"
+              missing=1
+            fi
+          done
+          exit $missing
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build the site
+        run: npm run build
+
+      - name: Write the form settings (api/.env) into the build
+        env:
+          SMTP_HOST: ${{ secrets.SMTP_HOST }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          SMTP_USERNAME: ${{ secrets.SMTP_USERNAME }}
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+          SMTP_FROM: ${{ secrets.SMTP_FROM }}
+          SMTP_FROM_NAME: ${{ secrets.SMTP_FROM_NAME }}
+        run: |
+          umask 077
+          {
+            printf 'SMTP_HOST=%s\n' "$SMTP_HOST"
+            printf 'SMTP_PORT=%s\n' "$SMTP_PORT"
+            printf 'SMTP_USERNAME=%s\n' "$SMTP_USERNAME"
+            printf 'SMTP_PASSWORD=%s\n' "$SMTP_PASSWORD"
+            printf 'SMTP_FROM=%s\n' "$SMTP_FROM"
+            printf 'SMTP_FROM_NAME=%s\n' "${SMTP_FROM_NAME:-Flipick}"
+            # No MAIL_OVERRIDE_TO on production: leads go to the real recipients.
+          } > dist/api/.env
+          echo "Wrote dist/api/.env with $(wc -l < dist/api/.env) settings (values hidden)"
+
+      - name: Upload to Hostinger (production)
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          port: 21
+          protocol: ftps
+          local-dir: ./dist/
+          # Set the repository variable PRODUCTION_FTP_DIR to the live web folder on Hostinger.
+          server-dir: ${{ vars.PRODUCTION_FTP_DIR || '/public_html/' }}
+          # The action only deletes files it uploaded itself on an earlier run (it keeps a
+          # .ftp-deploy-sync-state.json on the server). Other folders, such as the staging
+          # folder, cgi-bin or .well-known, are never touched.
