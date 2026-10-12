@@ -5,8 +5,8 @@ require __DIR__ . '/lib/bootstrap.php';
 
 use PHPMailer\PHPMailer\Exception as MailException;
 
-// Recipients of contact-form enquiries. Add or remove addresses here.
-const RECIPIENTS = ['info@flipick.com'];
+// Recipients of contact-form enquiries come from api/.env (RECIPIENTS_CONTACT,
+// comma-separated), which the deploy writes from the GitHub secret of the same name.
 
 // Must match the options in the /company contact form.
 const TOPICS = [
@@ -43,7 +43,7 @@ try {
     $headerSafe = fn (string $s): string => trim(preg_replace('/[\r\n]+/', ' ', $s));
 
     $mail = make_mailer();
-    foreach (recipients_for(RECIPIENTS) as $addr) {
+    foreach (recipients_for(env_list('RECIPIENTS_CONTACT')) as $addr) {
         $mail->addAddress($addr);
     }
     $mail->addReplyTo($email, $headerSafe($name));

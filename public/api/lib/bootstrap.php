@@ -109,12 +109,35 @@ function make_mailer(): PHPMailer
     $mail->setFrom((string) env('SMTP_FROM'), (string) env('SMTP_FROM_NAME', 'Flipick'));
     return $mail;
 }
+
 /**
- * Staging safety: if MAIL_OVERRIDE_TO is set in api/.env, every email goes
- * to that one address instead of the real recipients.
+ * A comma-separated list of email addresses from api/.env, e.g.
+ * RECIPIENTS_CONTACT=a@example.com,b@example.com. Invalid entries are skipped.
+ * Recipient addresses live in GitHub secrets, not in the code.
+ */
+function env_list(string $key): array
+{
+    $list = [];
+    foreach (explode(',', env($key) ?? '') as $addr) {
+        $addr = trim($addr);
+        if ($addr !== '' && filter_var($addr, FILTER_VALIDATE_EMAIL)) {
+            $list[] = $addr;
+        }
+    }
+    return $list;
+}
+
+/**
+ * The final list of recipients. Staging safety: if MAIL_OVERRIDE_TO is set in
+ * api/.env, every email goes to that one address instead of the real recipients.
+ * Throws if nobody would receive the mail, so a lead is never silently lost.
  */
 function recipients_for(array $recipients): array
 {
     $override = env('MAIL_OVERRIDE_TO');
-    return ($override !== null && $override !== '') ? [$override] : $recipients;
+    $final = ($override !== null && $override !== '') ? [$override] : $recipients;
+    if ($final === []) {
+        throw new RuntimeException('No mail recipients are configured in api/.env');
+    }
+    return $final;
 }

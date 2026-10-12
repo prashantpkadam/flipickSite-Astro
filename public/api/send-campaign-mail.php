@@ -9,27 +9,29 @@ use PHPMailer\PHPMailer\Exception as MailException;
 // Key         form_id sent by the page's script.
 // campaign    label shown in the email subject and badge.
 // page        source page slug shown in the email.
-// recipients  who receives this form's leads.
+// recipients  NAME of the api/.env setting that holds this form's recipients, as a
+//             comma-separated list. The addresses themselves live in GitHub secrets,
+//             never in the code.
 // work_email  true = personal addresses (gmail, yahoo...) are rejected.
 // A form_id not listed here is rejected, so leads can never be mis-routed.
-// To add a campaign form: add one entry here, nothing else changes.
+// To add a campaign form: add one entry here, plus a RECIPIENTS_... secret.
 const ROUTES = [
     'shopify-usa-lead' => [
         'campaign'   => 'Shopify USA',
         'page'       => 'shopify-usa',
-        'recipients' => ['sonesh.prakash@flipick.com', 'rahul.uppal@flipick.com'],
+        'recipients' => 'RECIPIENTS_SHOPIFY_USA_LEAD',
         'work_email' => true,
     ],
     'vvp-us-retail-lead' => [
         'campaign'   => 'VVP US Retail',
         'page'       => 'vvp-us-retail',
-        'recipients' => ['sonesh.prakash@flipick.com', 'rahul.uppal@flipick.com'],
+        'recipients' => 'RECIPIENTS_VVP_US_RETAIL_LEAD',
         'work_email' => true,
     ],
     'dealership-lead' => [
         'campaign'   => 'US Dealerships',
         'page'       => 'dealership',
-        'recipients' => ['sonesh.prakash@flipick.com', 'rahul.uppal@flipick.com', 'info@flipick.com'],
+        'recipients' => 'RECIPIENTS_DEALERSHIP_LEAD',
         'work_email' => true,
     ],
 ];
@@ -105,7 +107,7 @@ try {
     $headerSafe = fn (string $s): string => trim(preg_replace('/[\r\n]+/', ' ', $s));
 
     $mail = make_mailer();
-    foreach (recipients_for($route['recipients']) as $addr)  {
+    foreach (recipients_for(env_list($route['recipients'])) as $addr) {
         $mail->addAddress($addr);
     }
     $mail->addReplyTo($email, $headerSafe($name));

@@ -74,7 +74,8 @@ jobs:
             printf 'SMTP_PASSWORD=%s\n' "$SMTP_PASSWORD"
             printf 'SMTP_FROM=%s\n' "$SMTP_FROM"
             printf 'SMTP_FROM_NAME=%s\n' "${SMTP_FROM_NAME:-Flipick}"
-            # Staging safety: every email goes to this address, never to the sales team.
+            # Staging safety: every email goes to this address, never to the real
+            # recipients. The RECIPIENTS_* secrets are deliberately not written to staging.
             printf 'MAIL_OVERRIDE_TO=%s\n' "$STAGING_MAIL_OVERRIDE_TO"
           } > dist/api/.env
           echo "Wrote dist/api/.env with $(wc -l < dist/api/.env) settings (values hidden)"

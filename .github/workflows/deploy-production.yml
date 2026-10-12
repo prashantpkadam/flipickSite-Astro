@@ -37,9 +37,13 @@ jobs:
           SMTP_USERNAME: ${{ secrets.SMTP_USERNAME }}
           SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
           SMTP_FROM: ${{ secrets.SMTP_FROM }}
+          RECIPIENTS_CONTACT: ${{ secrets.RECIPIENTS_CONTACT }}
+          RECIPIENTS_SHOPIFY_USA_LEAD: ${{ secrets.RECIPIENTS_SHOPIFY_USA_LEAD }}
+          RECIPIENTS_VVP_US_RETAIL_LEAD: ${{ secrets.RECIPIENTS_VVP_US_RETAIL_LEAD }}
+          RECIPIENTS_DEALERSHIP_LEAD: ${{ secrets.RECIPIENTS_DEALERSHIP_LEAD }}
         run: |
           missing=0
-          for name in FTP_HOST FTP_USERNAME FTP_PASSWORD SMTP_HOST SMTP_PORT SMTP_USERNAME SMTP_PASSWORD SMTP_FROM; do
+          for name in FTP_HOST FTP_USERNAME FTP_PASSWORD SMTP_HOST SMTP_PORT SMTP_USERNAME SMTP_PASSWORD SMTP_FROM RECIPIENTS_CONTACT RECIPIENTS_SHOPIFY_USA_LEAD RECIPIENTS_VVP_US_RETAIL_LEAD RECIPIENTS_DEALERSHIP_LEAD; do
             if [ -z "${!name}" ]; then
               echo "::error::Missing repository secret: $name"
               missing=1
@@ -67,6 +71,10 @@ jobs:
           SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
           SMTP_FROM: ${{ secrets.SMTP_FROM }}
           SMTP_FROM_NAME: ${{ secrets.SMTP_FROM_NAME }}
+          RECIPIENTS_CONTACT: ${{ secrets.RECIPIENTS_CONTACT }}
+          RECIPIENTS_SHOPIFY_USA_LEAD: ${{ secrets.RECIPIENTS_SHOPIFY_USA_LEAD }}
+          RECIPIENTS_VVP_US_RETAIL_LEAD: ${{ secrets.RECIPIENTS_VVP_US_RETAIL_LEAD }}
+          RECIPIENTS_DEALERSHIP_LEAD: ${{ secrets.RECIPIENTS_DEALERSHIP_LEAD }}
         run: |
           umask 077
           {
@@ -76,6 +84,10 @@ jobs:
             printf 'SMTP_PASSWORD=%s\n' "$SMTP_PASSWORD"
             printf 'SMTP_FROM=%s\n' "$SMTP_FROM"
             printf 'SMTP_FROM_NAME=%s\n' "${SMTP_FROM_NAME:-Flipick}"
+            printf 'RECIPIENTS_CONTACT=%s\n' "$RECIPIENTS_CONTACT"
+            printf 'RECIPIENTS_SHOPIFY_USA_LEAD=%s\n' "$RECIPIENTS_SHOPIFY_USA_LEAD"
+            printf 'RECIPIENTS_VVP_US_RETAIL_LEAD=%s\n' "$RECIPIENTS_VVP_US_RETAIL_LEAD"
+            printf 'RECIPIENTS_DEALERSHIP_LEAD=%s\n' "$RECIPIENTS_DEALERSHIP_LEAD"
             # No MAIL_OVERRIDE_TO on production: leads go to the real recipients.
           } > dist/api/.env
           echo "Wrote dist/api/.env with $(wc -l < dist/api/.env) settings (values hidden)"
