@@ -2,7 +2,7 @@ name: Build check
 
 # Runs the site build on every pull request into staging or main, and on every
 # push to dev. A broken page, schema or blog post fails here, so it can never be
-# merged and deployed. Needs no secrets.
+# merged. Vercel does the actual deploying; this only checks the code. No secrets.
 on:
   pull_request:
     branches: [staging, main]
@@ -36,11 +36,14 @@ jobs:
       - name: Build the site
         run: npm run build
 
-      - name: Check the build output
+      - name: Check the build output and the API functions
         run: |
           test -f dist/index.html || { echo "::error::dist/index.html is missing"; exit 1; }
           test -f dist/404.html || { echo "::error::dist/404.html is missing"; exit 1; }
-          test -f dist/.htaccess || { echo "::error::dist/.htaccess is missing"; exit 1; }
-          test -f dist/api/send-mail.php || { echo "::error::dist/api/send-mail.php is missing"; exit 1; }
-          test -f dist/api/blocked-email-domains.json || { echo "::error::blocked-email-domains.json is missing"; exit 1; }
+          test -f dist/assets/js/blocked-email-domains.js || { echo "::error::blocked-email-domains.js is missing"; exit 1; }
+          test -f api/send-mail.js || { echo "::error::api/send-mail.js is missing"; exit 1; }
+          test -f api/send-campaign-mail.js || { echo "::error::api/send-campaign-mail.js is missing"; exit 1; }
+          node -e "JSON.parse(require('fs').readFileSync('vercel.json','utf8')); console.log('vercel.json is valid JSON')"
+          # The functions must load (syntax and imports) without any environment variables.
+          node --input-type=module -e "await import('./api/send-mail.js'); await import('./api/send-campaign-mail.js'); console.log('API functions load OK')"
           echo "Pages built: $(find dist -name '*.html' | wc -l)"

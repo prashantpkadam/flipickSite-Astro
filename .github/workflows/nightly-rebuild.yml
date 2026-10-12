@@ -1,0 +1,31 @@
+name: Nightly rebuild
+
+# Posts with a future publishDate only appear when the site is rebuilt on or after
+# that date. This asks Vercel to rebuild production every night at 00:05 India time
+# (18:35 UTC), so scheduled posts go live on their date. It can also be run by hand.
+#
+# Setup: in Vercel, Project Settings -> Git -> Deploy Hooks, create a hook for the
+# branch "main", then save its URL as the repository secret VERCEL_DEPLOY_HOOK_PRODUCTION.
+on:
+  schedule:
+    - cron: '35 18 * * *'
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Trigger the production build on Vercel
+        env:
+          HOOK: ${{ secrets.VERCEL_DEPLOY_HOOK_PRODUCTION }}
+        run: |
+          if [ -z "$HOOK" ]; then
+            echo "::error::Missing repository secret: VERCEL_DEPLOY_HOOK_PRODUCTION"
+            exit 1
+          fi
+          status=$(curl -s -o /dev/null -w '%{http_code}' -X POST "$HOOK")
+          echo "Vercel answered HTTP $status"
+          [ "$status" -ge 200 ] && [ "$status" -lt 300 ]

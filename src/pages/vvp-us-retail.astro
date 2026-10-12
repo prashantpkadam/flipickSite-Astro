@@ -556,7 +556,7 @@ import schema from "../data/schema/vvp-us-retail.json";
         btn.disabled = true;
         btn.textContent = "Sending…";
 
-        fetch("/api/send-campaign-mail.php", {
+        fetch("/api/send-campaign-mail", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(payload),

@@ -1,0 +1,49 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "astro",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/solutions", "destination": "/solution", "permanent": true },
+    { "source": "/privacy", "destination": "/policy", "permanent": true }
+  ],
+  "rewrites": [
+    { "source": "/sitemap.xml", "destination": "/sitemap-index.xml" },
+    { "source": "/api/send-mail.php", "destination": "/api/send-mail" },
+    { "source": "/api/send-campaign-mail.php", "destination": "/api/send-campaign-mail" }
+  ],
+  "functions": {
+    "api/*.js": {
+      "maxDuration": 30,
+      "includeFiles": "src/data/blocked-email-domains.json"
+    }
+  },
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "staging.flipick.com" }],
+      "headers": [{ "key": "X-Robots-Tag", "value": "noindex, nofollow" }]
+    },
+    {
+      "source": "/individual/(.*)",
+      "headers": [{ "key": "X-Robots-Tag", "value": "noindex, nofollow" }]
+    },
+    {
+      "source": "/(.*)\\.(jpg|jpeg|png|svg|webp|ico|mp4|woff|woff2)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000" }]
+    },
+    {
+      "source": "/(.*)\\.(css|js)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=604800" }]
+    }
+  ]
+}
