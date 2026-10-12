@@ -35,7 +35,7 @@ const { page = '', ...seo } = Astro.props;
     <link rel="stylesheet" href="/assets/css/style.css" />
     <link rel="stylesheet" href="/assets/css/components.css" />
     <link rel="stylesheet" href="/assets/css/responsive.css" />
-
+    <link rel="alternate" type="application/rss+xml" title="Flipick Blog" href="/rss.xml" />
     <slot name="head" />
   </head>
   <body data-page={page}>
@@ -44,6 +44,7 @@ const { page = '', ...seo } = Astro.props;
     <Footer />
 
     <script is:inline src="/assets/js/config.js"></script>
+    <script is:inline src="/assets/js/blocked-email-domains.js"></script>
     <script is:inline src="/assets/js/geo-pricing.js"></script>
     <script is:inline src="/assets/js/navigation.js"></script>
     <script is:inline src="/assets/js/main.js"></script>

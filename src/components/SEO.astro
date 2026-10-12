@@ -44,21 +44,24 @@ const jsonLd = {
 {keywords && <meta name="keywords" content={keywords} />}
 <meta name="robots" content={robots} />
 <meta name="author" content="Flipick" />
-<link rel="canonical" href={canonical} />
 
 <meta name="google-site-verification" content="18R-BvwfUg5nAsnvs-jzFXYCmEO8tdM9fF6fEToiNuo" />
 <meta name="google-site-verification" content="Itj4N6uDNh3x7w9r_0fpBYp5pKBpLisSP-qMaImL5yA" />
 
-<meta property="og:type" content={ogType} />
-<meta property="og:site_name" content="Flipick" />
-<meta property="og:locale" content={locale} />
-<meta property="og:url" content={canonical} />
-<meta property="og:title" content={title} />
-<meta property="og:description" content={description} />
-<meta property="og:image" content={ogImageUrl} />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content={title} />
-<meta name="twitter:description" content={description} />
-<meta name="twitter:image" content={ogImageUrl} />
-
-<script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+{!noindex && (
+  <>
+    <link rel="canonical" href={canonical} />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:site_name" content="Flipick" />
+    <meta property="og:locale" content={locale} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl} />
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </>
+)}

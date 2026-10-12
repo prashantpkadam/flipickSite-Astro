@@ -1,0 +1,138 @@
+[
+  {
+    "@type": "Article",
+    "@id": "https://flipick.com/what-is-vvp#article",
+    "headline": "What is Variable Video Production (VVP)?",
+    "description": "Variable Video Production (VVP) is a technique where a single master video is rendered into thousands of unique personalised versions — each with different names, offers, stores or languages — without re-recording the source material.",
+    "author": {
+      "@id": "https://flipick.com/#organization"
+    },
+    "publisher": {
+      "@id": "https://flipick.com/#organization"
+    },
+    "datePublished": "2026-10-12",
+    "dateModified": "2026-10-12",
+    "isPartOf": {
+      "@id": "https://flipick.com/#website"
+    },
+    "mainEntityOfPage": "https://flipick.com/what-is-vvp",
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": [
+        ".vvp-def-block",
+        ".hero h1"
+      ]
+    }
+  },
+  {
+    "@type": "DefinedTerm",
+    "@id": "https://flipick.com/what-is-vvp#term",
+    "name": "Variable Video Production",
+    "alternateName": [
+      "VVP",
+      "variable video"
+    ],
+    "description": "Variable Video Production (VVP) is a technique where a single master video film is rendered into thousands of unique, personalised versions — each containing different data values such as a viewer's name, store address, renewal date, local offer, language or product — without re-recording or re-rendering the underlying footage. Each variant is delivered to a specific recipient via a unique authenticated link, and viewer behaviour (completion, drop-off, CTA clicks) is tracked individually. VVP is used in retail, automotive, BFSI, telecom and enterprise L&D to deliver one message at scale while making every recipient feel it was made for them.",
+    "inDefinedTermSet": {
+      "@type": "DefinedTermSet",
+      "name": "Flipick AI Video Glossary",
+      "url": "https://flipick.com/what-is-vvp"
+    },
+    "url": "https://flipick.com/what-is-vvp"
+  },
+  {
+    "@type": "WebPage",
+    "@id": "https://flipick.com/what-is-vvp",
+    "url": "https://flipick.com/what-is-vvp",
+    "name": "What is Variable Video Production (VVP)? — Flipick",
+    "description": "A comprehensive definition of Variable Video Production (VVP): what it is, how it works, industry use cases, and how it differs from traditional video and generic personalized video tools.",
+    "isPartOf": {
+      "@id": "https://flipick.com/#website"
+    },
+    "breadcrumb": {
+      "@id": "https://flipick.com/what-is-vvp#breadcrumb"
+    },
+    "mainEntity": {
+      "@id": "https://flipick.com/what-is-vvp#article"
+    }
+  },
+  {
+    "@type": "BreadcrumbList",
+    "@id": "https://flipick.com/what-is-vvp#breadcrumb",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://flipick.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "What is VVP?",
+        "item": "https://flipick.com/what-is-vvp"
+      }
+    ]
+  },
+  {
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is Variable Video Production (VVP)?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Variable Video Production (VVP) is a technique where a single master video is rendered into thousands of unique, personalised versions — each containing different data values such as a viewer's name, store address, renewal date, local offer, language or product — without re-recording or re-rendering the underlying footage. Flipick delivers each version via a unique authenticated link so only the intended recipient can open it, and viewing behaviour (completion, drop-off, CTA clicks) is tracked individually."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is VVP different from traditional personalised video?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Traditional personalised video tools render a separate AI-generated video for every recipient — which is slow and expensive at scale. Flipick's VVP renders one studio-grade master film once (at full AI render cost), then produces every variant by compositing data overlays and voice swaps on top of that master at a small fraction of the original cost. At 1,000 recipients, the per-video cost for a VVP variant is roughly 1–5% of the master's cost."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What can be personalised in a VVP video?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Anything that can be expressed as a data field: the viewer's name, account number or policy ID; store name, address and phone number; current offer price or expiry date; vehicle make, model and colour; language of narration and on-screen text; and any brand overlay such as a logo, CTA button or legal disclaimer. Fields are defined in a data file (CSV or API feed) and each row becomes one variant."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which industries use Variable Video Production?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "VVP is widely used in retail (per-store promotional videos), automotive (dealer co-op campaigns and rooftop-level offer videos), BFSI (policy renewal reminders, loan disbursement notifications and KYC onboarding), telecom (personalised plan upgrade or renewal videos), and enterprise L&D (role-specific onboarding and compliance training delivered to each learner's inbox)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does it take to produce a VVP campaign?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The master film production follows Flipick's standard AI video workflow: brief to approved screenplay and storyboard (same day), rendering the master film (hours), and then VVP variant generation for any number of recipients (minutes per batch). A full VVP campaign — master plus 1,000 variants — typically goes from brief to distribution-ready in 5–7 business days."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can VVP videos be tracked?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Every VVP variant is delivered via a unique authenticated link tied to a named recipient. Flipick tracks who opened the video, how far they watched, whether they clicked the CTA, and from which device. This authenticated viewing data — not just aggregate view counts — is available per recipient, making VVP compliant-grade for regulated industries."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is VVP the same as 'virtual video production'?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. 'Virtual video production' refers to using LED walls or CGI environments as physical production backdrops — a filmmaking technique. Variable Video Production (VVP) is a post-production and distribution technology: it takes a finished master film and produces thousands of data-driven personalised variants from it. The two terms describe different things in different industries."
+        }
+      }
+    ]
+  }
+]

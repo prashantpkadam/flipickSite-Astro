@@ -1,0 +1,104 @@
+---
+import { render } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import type { SectionKey } from '../lib/content';
+import { SECTIONS } from '../lib/sections';
+
+// One article page: /blog/<slug>, /case-studies/<slug>, /white-papers/<slug>.
+interface Props {
+  section: SectionKey;
+  post: any; // a blog, caseStudies or whitePapers entry
+}
+
+const { section, post } = Astro.props;
+const cfg = SECTIONS[section];
+const { data } = post;
+const { Content } = await render(post);
+
+// Fields that only some sections have.
+const extra = data as { customer?: string; industry?: string; downloadUrl?: string };
+
+const site = 'https://flipick.com';
+const url = `${site}${cfg.base}/${post.id}`;
+const fmt = (d: Date) =>
+  d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' });
+const minutes = Math.max(1, Math.round((post.body ?? '').split(/\s+/).filter(Boolean).length / 200));
+const coverUrl = data.cover ? new URL(data.cover, Astro.site).href : undefined;
+const isTeam = data.author === 'Flipick Team';
+
+const schema = [
+  {
+    '@type': cfg.ldItem,
+    '@id': `${url}#article`,
+    mainEntityOfPage: { '@type': 'WebPage', '@id': url },
+    headline: data.title,
+    description: data.seoDescription ?? data.description,
+    datePublished: data.publishDate.toISOString(),
+    dateModified: (data.updatedDate ?? data.publishDate).toISOString(),
+    author: isTeam
+      ? { '@id': `${site}/#organization` }
+      : { '@type': 'Person', name: data.author },
+    publisher: { '@id': `${site}/#organization` },
+    ...(coverUrl && { image: coverUrl }),
+    ...(data.tags.length > 0 && { keywords: data.tags.join(', ') }),
+  },
+  {
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${site}/` },
+      { '@type': 'ListItem', position: 2, name: cfg.name, item: `${site}${cfg.base}` },
+      { '@type': 'ListItem', position: 3, name: data.title, item: url },
+    ],
+  },
+];
+---
+<Layout
+  title={data.seoTitle ?? `${data.title} | ${cfg.titleSuffix}`}
+  description={data.seoDescription ?? data.description}
+  ogType="article"
+  ogImage={data.cover}
+  page={cfg.navKey}
+  schema={schema}
+>
+  <main>
+    <section class="hero hero--compact">
+      <div class="wrap">
+        <div class="hero-grid hero-grid--md">
+          <span class="eyebrow">{extra.customer ?? data.tags[0] ?? cfg.eyebrow}</span>
+          <h1 class="hero-h1--sm">{data.title}</h1>
+          <p class="sub">{data.description}</p>
+        </div>
+      </div>
+    </section>
+
+    <article class="post">
+      <a class="post-back" href={cfg.base}>&larr; {cfg.back}</a>
+      <div class="post-meta">
+        {extra.customer && <span>{extra.customer}</span>}
+        {extra.industry && <span>{extra.industry}</span>}
+        <span>{data.author}</span>
+        <span>{fmt(data.publishDate)}</span>
+        <span>{minutes} min read</span>
+      </div>
+      {extra.downloadUrl && (
+        <p class="post-download">
+          <a class="btn btn-primary" href={extra.downloadUrl} download>Download the PDF</a>
+        </p>
+      )}
+      {data.cover && <img class="post-cover" src={data.cover} alt={data.coverAlt} width="1200" height="630" />}
+      <div class="post-body">
+        <Content />
+      </div>
+    </article>
+
+    <section class="closing" aria-label="Call to action">
+      <div class="wrap">
+        <h2>{cfg.articleClosing[0]}<span class="serif-i">{cfg.articleClosing[1]}</span></h2>
+        <p>{cfg.articleClosing[2]}</p>
+        <div class="ctas-center">
+          <a class="btn btn-ghost" data-demo-link href="https://calendly.com/amol-chandsarkar/" target="_blank" rel="noopener noreferrer">Book a demo</a>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

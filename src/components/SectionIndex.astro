@@ -1,0 +1,126 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getPublished, type SectionKey } from '../lib/content';
+import { SECTIONS } from '../lib/sections';
+
+// Listing page for a content section: /blog, /case-studies, /white-papers.
+interface Props {
+  section: SectionKey;
+}
+
+const { section } = Astro.props;
+const cfg = SECTIONS[section];
+const posts = await getPublished(section);
+
+const fmt = (d: Date) =>
+  d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' });
+
+const site = 'https://flipick.com';
+const url = `${site}${cfg.base}`;
+
+const item = (p: (typeof posts)[number]) => ({
+  '@type': cfg.ldItem,
+  headline: p.data.title,
+  url: `${url}/${p.id}`,
+  datePublished: p.data.publishDate.toISOString(),
+});
+
+const collection =
+  section === 'blog'
+    ? {
+        '@type': 'Blog',
+        '@id': `${url}#blog`,
+        url,
+        name: cfg.ldName,
+        description: cfg.indexDescription,
+        publisher: { '@id': `${site}/#organization` },
+        blogPost: posts.map(item),
+      }
+    : {
+        '@type': 'CollectionPage',
+        '@id': `${url}#collection`,
+        url,
+        name: cfg.ldName,
+        description: cfg.indexDescription,
+        isPartOf: { '@id': `${site}/#website` },
+        publisher: { '@id': `${site}/#organization` },
+        mainEntity: {
+          '@type': 'ItemList',
+          itemListElement: posts.map((p, i) => ({
+            '@type': 'ListItem',
+            position: i + 1,
+            name: p.data.title,
+            url: `${url}/${p.id}`,
+          })),
+        },
+      };
+
+const schema = [
+  collection,
+  {
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${site}/` },
+      { '@type': 'ListItem', position: 2, name: cfg.name, item: url },
+    ],
+  },
+];
+---
+<Layout
+  title={cfg.indexTitle}
+  description={cfg.indexDescription}
+  page={cfg.navKey}
+  schema={schema}
+>
+  <main>
+    <section class="hero hero--compact">
+      <div class="wrap">
+        <div class="hero-grid hero-grid--md">
+          <span class="eyebrow">{cfg.eyebrow}</span>
+          <h1 class="hero-h1--sm">
+            {cfg.hero[0]}<span class="serif-i text-brand-mid">{cfg.hero[1]}</span>
+          </h1>
+          <p class="sub">{cfg.heroSub}</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-white section-pad-sm">
+      <div class="wrap">
+        {posts.length === 0 ? (
+          <p class="blog-empty">{cfg.empty}</p>
+        ) : (
+          <div class="blog-grid">
+            {posts.map((post) => (
+              <a class="blog-card rv" href={`${cfg.base}/${post.id}`}>
+                {post.data.cover && (
+                  <img src={post.data.cover} alt={post.data.coverAlt} width="1200" height="630" loading="lazy" />
+                )}
+                <div class="blog-card-body">
+                  {post.data.tags.length > 0 && (
+                    <div class="blog-tags">
+                      {post.data.tags.slice(0, 3).map((tag) => <span class="blog-tag">{tag}</span>)}
+                    </div>
+                  )}
+                  <h3>{post.data.title}</h3>
+                  <p>{post.data.description}</p>
+                  <span class="blog-meta">{fmt(post.data.publishDate)} · {post.data.author}</span>
+                </div>
+              </a>
+            ))}
+          </div>
+        )}
+      </div>
+    </section>
+
+    <section class="closing" aria-label="Call to action">
+      <div class="wrap">
+        <h2>{cfg.closing[0]}<span class="serif-i">{cfg.closing[1]}</span></h2>
+        <p>{cfg.closing[2]}</p>
+        <div class="ctas-center">
+          <a class="btn btn-ghost" data-demo-link href="https://calendly.com/amol-chandsarkar/" target="_blank" rel="noopener noreferrer">Book a demo</a>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

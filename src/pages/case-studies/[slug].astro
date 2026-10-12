@@ -1,0 +1,12 @@
+---
+import SectionArticle from '../../components/SectionArticle.astro';
+import { getPublished } from '../../lib/content';
+
+export async function getStaticPaths() {
+  const posts = await getPublished('caseStudies');
+  return posts.map((post) => ({ params: { slug: post.id }, props: { post } }));
+}
+
+const { post } = Astro.props;
+---
+<SectionArticle section="caseStudies" post={post} />

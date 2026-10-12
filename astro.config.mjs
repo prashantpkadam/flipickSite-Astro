@@ -7,5 +7,9 @@ export default defineConfig({
   output: 'static',
   trailingSlash: 'never',
   build: { format: 'file' },
-  integrations: [sitemap()],
+    integrations: [
+    sitemap({
+      filter: (page) => !page.endsWith('/e4m'),
+    }),
+  ],
 });

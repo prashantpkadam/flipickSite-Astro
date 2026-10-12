@@ -1,0 +1,153 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getPublished } from '../lib/content';
+import { SECTIONS } from '../lib/sections';
+
+const PER_SECTION = 3;
+
+// Icons for the "coming soon" cards (same style as the Resources dropdown).
+const ICONS = {
+  blog: '<svg width="26" height="26" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2.5 13.5l.7-3L11 2.7a1.4 1.4 0 0 1 2 2L5.2 12.5l-2.7 1z" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><path d="M9.5 4.2l2.3 2.3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>',
+  whitepapers:
+    '<svg width="26" height="26" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 1.5h6l3 3v10h-9z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M9.5 1.5v3h3M5.5 8h5M5.5 10.5h5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  'case-studies':
+    '<svg width="26" height="26" viewBox="0 0 16 16" fill="none" aria-hidden="true"><rect x="1.5" y="4.5" width="13" height="9" rx="1.5" stroke="currentColor" stroke-width="1.3"/><path d="M5.5 4.5v-1a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v1M1.5 8.5h13" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>',
+};
+
+// Latest published entries of each section.
+const sections = await Promise.all(
+  [
+    {
+      id: 'blog',
+      key: 'blog' as const,
+      eyebrow: 'Blog',
+      heading: 'Guides & explainers.',
+      intro: 'Clear, practical answers to the questions buyers actually ask about AI video and enterprise learning.',
+      soonTitle: 'Our first guides are on the way',
+      soonText: 'Practical explainers on AI video, Variable Video Production and enterprise learning, written by the Flipick team.',
+    },
+    {
+      id: 'whitepapers',
+      key: 'whitePapers' as const,
+      eyebrow: 'Whitepapers',
+      heading: 'Deeper frameworks & models.',
+      intro: 'In-depth, downloadable guides for teams building a case internally.',
+      soonTitle: 'Whitepapers are being written',
+      soonText: 'In-depth frameworks and models you can download and share with your team, with the first papers landing soon.',
+    },
+    {
+      id: 'case-studies',
+      key: 'caseStudies' as const,
+      eyebrow: 'Case studies',
+      heading: 'Proof, from real programmes.',
+      intro: 'What teams built with Flipick, what it solved, and what it delivered.',
+      soonTitle: 'Customer stories are in progress',
+      soonText: 'We are documenting what teams built with Flipick, what it solved and what it delivered. Want an early look?',
+    },
+  ].map(async (s) => {
+    const all = await getPublished(s.key);
+    return { ...s, base: SECTIONS[s.key].base, total: all.length, posts: all.slice(0, PER_SECTION) };
+  }),
+);
+
+const description =
+  'Guides on AI video, variable video production and enterprise learning; whitepapers with the frameworks behind them; and case studies showing what teams built with Flipick.';
+
+const schema = [
+  {
+    '@type': 'CollectionPage',
+    '@id': 'https://flipick.com/resources#collection',
+    url: 'https://flipick.com/resources',
+    name: 'Flipick Resources',
+    description,
+    isPartOf: { '@id': 'https://flipick.com/#website' },
+    publisher: { '@id': 'https://flipick.com/#organization' },
+  },
+  {
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://flipick.com/' },
+      { '@type': 'ListItem', position: 2, name: 'Resources', item: 'https://flipick.com/resources' },
+    ],
+  },
+];
+---
+<Layout
+  title="Resources: AI video guides, whitepapers and case studies | Flipick"
+  description={description}
+  page="resources"
+  schema={schema}
+>
+  <main>
+    <section class="hero hero--compact">
+      <div class="wrap">
+        <div class="hero-grid hero-grid--md">
+          <span class="eyebrow">Resources</span>
+          <h1 class="hero-h1--sm">Ideas, evidence <span class="serif-i text-brand-mid">and proof.</span></h1>
+          <p class="sub">{description}</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="wrap">
+      <nav class="res-chips" aria-label="Jump to a resource type">
+        <a class="res-chip" href="#blog">Blogs</a>
+        <a class="res-chip" href="#whitepapers">Whitepapers</a>
+        <a class="res-chip" href="#case-studies">Case studies</a>
+      </nav>
+    </div>
+
+    {sections.map((s) => (
+      <section class="res-sec" id={s.id} aria-label={s.eyebrow}>
+        <div class="wrap">
+          <div class="sec-head rv">
+            <span class="eyebrow">{s.eyebrow}</span>
+            <h2>{s.heading}</h2>
+            <p>{s.intro}</p>
+          </div>
+
+          {s.posts.length === 0 ? (
+            <div class="res-soon rv">
+              <span class="res-soon-icon" set:html={ICONS[s.id as keyof typeof ICONS]} />
+              <div class="res-soon-body">
+                <span class="res-soon-badge">Coming soon</span>
+                <h3>{s.soonTitle}</h3>
+                <p>{s.soonText}</p>
+              </div>
+              <a class="res-soon-link" href="/company#contact">Talk to us &rarr;</a>
+            </div>
+          ) : (
+            <div class="blog-grid res-grid">
+              {s.posts.map((post) => (
+                <a class="blog-card rv" href={`${s.base}/${post.id}`}>
+                  {post.data.cover && (
+                    <img src={post.data.cover} alt={post.data.coverAlt} width="1200" height="630" loading="lazy" />
+                  )}
+                  <div class="blog-card-body">
+                    <h3>{post.data.title}</h3>
+                    <p>{post.data.description}</p>
+                    <span class="res-link">Read the guide</span>
+                  </div>
+                </a>
+              ))}
+            </div>
+          )}
+
+          {s.total > PER_SECTION && (
+            <p class="res-all"><a href={s.base}>View all {s.eyebrow.toLowerCase()} &rarr;</a></p>
+          )}
+        </div>
+      </section>
+    ))}
+
+    <section class="closing" aria-label="Call to action">
+      <div class="wrap">
+        <h2>Want to see it <span class="serif-i">on your own campaign?</span></h2>
+        <p>Bring a brief and we will show how Flipick takes it from screenplay to a measured campaign.</p>
+        <div class="ctas-center">
+          <a class="btn btn-ghost" href="/company#contact">Talk to us</a>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

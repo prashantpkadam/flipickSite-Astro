@@ -321,3 +321,54 @@
   .dlr-tally b{font-size:42px}
   .dlr-vgrid{grid-template-columns:repeat(auto-fill,minmax(68px,1fr))}
 }
+
+/* ===== Blog ===== */
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.blog-card{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 10px 30px rgba(20,20,60,.05);transition:transform .2s ease,box-shadow .2s ease;text-decoration:none;color:inherit}
+.blog-card:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(20,20,60,.1)}
+.blog-card img{width:100%;aspect-ratio:1200/630;object-fit:cover;background:var(--brand-soft);display:block}
+.blog-card-body{padding:20px 22px 22px;display:flex;flex-direction:column;gap:10px;flex:1}
+.blog-card h3{font-size:20px;line-height:1.3;color:var(--ink)}
+.blog-card p{font-size:15px;line-height:1.6;color:var(--ink-soft)}
+.blog-meta{font:500 13px var(--body);color:var(--ink-soft)}
+.blog-tags{display:flex;flex-wrap:wrap;gap:8px}
+.blog-tag{font:600 12px var(--body);color:var(--brand);background:var(--brand-soft);padding:4px 10px;border-radius:999px}
+.blog-empty{text-align:center;color:var(--ink-soft);padding:64px 0;font-size:17px}
+.post{max-width:760px;margin:0 auto;padding:48px 24px 72px}
+.post-back{display:inline-block;font:600 14px var(--body);color:var(--brand);text-decoration:none;margin-bottom:24px}
+.post-back:hover{text-decoration:underline}
+.post-meta{display:flex;flex-wrap:wrap;gap:6px 14px;font:500 14px var(--body);color:var(--ink-soft);margin-bottom:28px}
+.post-cover{width:100%;aspect-ratio:1200/630;object-fit:cover;border-radius:16px;margin-bottom:32px;display:block}
+.post-body{font-size:18px;line-height:1.75;color:var(--ink-soft)}
+.post-body>*+*{margin-top:1.1em}
+.post-body h2{font-size:28px;line-height:1.25;color:var(--ink);margin-top:2em}
+.post-body h3{font-size:22px;line-height:1.3;color:var(--ink);margin-top:1.6em}
+.post-body a{color:var(--brand);text-decoration:underline}
+.post-body ul,.post-body ol{padding-left:1.4em}
+.post-body li+li{margin-top:.4em}
+.post-body img{max-width:100%;height:auto;border-radius:12px}
+.post-body blockquote{border-left:4px solid var(--brand-mid);padding:4px 0 4px 18px;color:var(--ink)}
+.post-body code{background:var(--brand-soft);padding:2px 6px;border-radius:6px;font-size:.9em}
+.post-body pre{background:var(--night);color:#fff;padding:18px;border-radius:12px;overflow-x:auto}
+.post-body pre code{background:none;padding:0;color:inherit}
+.post-body table{width:100%;border-collapse:collapse;font-size:16px}
+.post-body th,.post-body td{border:1px solid var(--line);padding:10px 12px;text-align:left}
+.post-download{margin:0 0 28px}
+.res-chips{display:flex;flex-wrap:wrap;gap:12px;padding:28px 0 8px}
+.res-chip{display:inline-block;padding:10px 20px;border-radius:999px;background:var(--brand-soft);color:var(--brand);font:600 13px var(--body);text-decoration:none;transition:background .2s ease,color .2s ease}
+.res-chip:hover{background:var(--brand);color:#fff}
+.res-sec{padding:48px 0 16px;scroll-margin-top:90px}
+.res-sec .sec-head{margin-bottom:28px}
+.res-grid .blog-card p{display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
+.res-link{margin-top:auto;font:600 13px var(--body);color:var(--brand)}
+.res-soon{display:flex;align-items:center;gap:24px;padding:28px 32px;border:1.5px dashed var(--brand-mid);border-radius:18px;background:linear-gradient(135deg,var(--brand-soft) 0,#fff 70%)}
+.res-soon-icon{flex:0 0 60px;width:60px;height:60px;border-radius:16px;background:#fff;color:var(--brand);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(68,76,236,.14)}
+.res-soon-body{flex:1;min-width:0}
+.res-soon-badge{display:inline-block;font:700 11px/1 var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--brand);background:#fff;border:1px solid var(--brand-mid);padding:6px 11px;border-radius:999px;margin-bottom:10px}
+.res-soon h3{font-size:20px;line-height:1.3;color:var(--ink);margin-bottom:6px}
+.res-soon p{font-size:15px;line-height:1.6;color:var(--ink-soft);max-width:60ch}
+.res-soon-link{flex:0 0 auto;font:600 14px var(--body);color:var(--brand);text-decoration:none;white-space:nowrap}
+.res-soon-link:hover{text-decoration:underline}
+.res-all{margin-top:20px}
+.res-all a{font:600 14px var(--body);color:var(--brand);text-decoration:none}
+.res-all a:hover{text-decoration:underline}

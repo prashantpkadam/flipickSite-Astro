@@ -1,0 +1,13 @@
+---
+import SectionArticle from '../../components/SectionArticle.astro';
+import { getPublished } from '../../lib/content';
+
+// Tells Astro which pages to build: one per published post.
+export async function getStaticPaths() {
+  const posts = await getPublished('blog');
+  return posts.map((post) => ({ params: { slug: post.id }, props: { post } }));
+}
+
+const { post } = Astro.props;
+---
+<SectionArticle section="blog" post={post} />
