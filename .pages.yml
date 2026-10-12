@@ -1,0 +1,317 @@
+# Pages CMS configuration (https://app.pagescms.org).
+# Lets the marketing team write blog posts, case studies and whitepapers through
+# a form. Every Save becomes a commit to this repository, which Vercel builds.
+# The fields below mirror the content schema in src/content.config.ts.
+
+settings:
+  content:
+    merge: true # keep any front-matter keys the form does not know about
+  commit:
+    identity: user # show the editor's name on the commit
+    templates:
+      create: "content: add {path}"
+      update: "content: update {path}"
+      delete: "content: remove {path}"
+      rename: "content: rename {oldPath} to {newPath}"
+
+# Where uploaded files are stored. "input" is the folder in the repository,
+# "output" is the public address written into the post.
+media:
+  - name: blog
+    label: Blog images
+    input: public/assets/blog
+    output: /assets/blog
+    categories: [image]
+    rename: safe
+  - name: case-studies
+    label: Case study images
+    input: public/assets/case-studies
+    output: /assets/case-studies
+    categories: [image]
+    rename: safe
+  - name: white-papers
+    label: Whitepaper images and PDFs
+    input: public/assets/white-papers
+    output: /assets/white-papers
+    categories: [image, document]
+    rename: safe
+
+content:
+  # ------------------------------------------------------------------ Blog
+  - name: blog
+    label: Blog posts
+    type: collection
+    path: src/content/blog
+    format: yaml-frontmatter
+    exclude: [README.md]
+    filename:
+      template: "{primary}.md"
+      field: create # the file name becomes the web address: use lowercase words and hyphens
+    operations:
+      create: true
+      rename: false # renaming would change the web address
+      delete: false # ask a developer to remove a published post
+    view:
+      fields: [title, publishDate, draft]
+      primary: title
+      sort: [publishDate, title]
+      default:
+        sort: publishDate
+        order: desc
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+        description: The headline of the page. Up to 110 characters.
+        options:
+          maxlength: 110
+      - name: description
+        label: Short description
+        type: text
+        required: true
+        description: Shown on cards and in Google results. Up to 200 characters.
+        options:
+          maxlength: 200
+      - name: publishDate
+        label: Publish date
+        type: date
+        required: true
+        description: The post goes live on this date once Draft is switched off.
+        options:
+          format: yyyy-MM-dd
+      - name: draft
+        label: Draft
+        type: boolean
+        default: true
+        description: Keep this ON until the post is ready. A draft is not shown to the public.
+      - name: author
+        label: Author
+        type: string
+        default: Flipick Team
+      - name: cover
+        label: Cover image
+        type: image
+        description: Best size 1200 x 630 pixels, WebP or JPG, under 200 KB.
+        options:
+          media: blog
+          extensions: [webp, jpg, jpeg, png]
+      - name: coverAlt
+        label: Cover image description
+        type: string
+        description: Required when there is a cover image. Describe the picture in one sentence.
+      - name: tags
+        label: Tags
+        type: string
+        list: true
+      - name: body
+        label: Article
+        type: rich-text
+        options:
+          format: markdown
+          media: blog
+      - name: updatedDate
+        label: Last updated (optional)
+        type: date
+        default: ""
+        options:
+          format: yyyy-MM-dd
+      - name: seoTitle
+        label: Google title (optional)
+        type: string
+        description: Only if it should differ from the headline.
+      - name: seoDescription
+        label: Google description (optional)
+        type: text
+        description: Only if it should differ from the short description.
+
+  # ---------------------------------------------------------- Case studies
+  - name: case-studies
+    label: Case studies
+    type: collection
+    path: src/content/case-studies
+    format: yaml-frontmatter
+    exclude: [README.md]
+    filename:
+      template: "{primary}.md"
+      field: create
+    operations:
+      create: true
+      rename: false
+      delete: false
+    view:
+      fields: [title, customer, publishDate, draft]
+      primary: title
+      sort: [publishDate, title]
+      default:
+        sort: publishDate
+        order: desc
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+        description: The headline of the page. Up to 110 characters.
+        options:
+          maxlength: 110
+      - name: description
+        label: Short description
+        type: text
+        required: true
+        description: Shown on cards and in Google results. Up to 200 characters.
+        options:
+          maxlength: 200
+      - name: customer
+        label: Customer
+        type: string
+        description: For example "Godrej".
+      - name: industry
+        label: Industry
+        type: string
+        description: For example "Manufacturing".
+      - name: publishDate
+        label: Publish date
+        type: date
+        required: true
+        description: The case study goes live on this date once Draft is switched off.
+        options:
+          format: yyyy-MM-dd
+      - name: draft
+        label: Draft
+        type: boolean
+        default: true
+        description: Keep this ON until it is ready. A draft is not shown to the public.
+      - name: author
+        label: Author
+        type: string
+        default: Flipick Team
+      - name: cover
+        label: Cover image
+        type: image
+        description: Best size 1200 x 630 pixels, WebP or JPG, under 200 KB.
+        options:
+          media: case-studies
+          extensions: [webp, jpg, jpeg, png]
+      - name: coverAlt
+        label: Cover image description
+        type: string
+        description: Required when there is a cover image. Describe the picture in one sentence.
+      - name: tags
+        label: Tags
+        type: string
+        list: true
+      - name: body
+        label: Case study
+        type: rich-text
+        options:
+          format: markdown
+          media: case-studies
+      - name: updatedDate
+        label: Last updated (optional)
+        type: date
+        default: ""
+        options:
+          format: yyyy-MM-dd
+      - name: seoTitle
+        label: Google title (optional)
+        type: string
+        description: Only if it should differ from the headline.
+      - name: seoDescription
+        label: Google description (optional)
+        type: text
+        description: Only if it should differ from the short description.
+
+  # ----------------------------------------------------------- Whitepapers
+  - name: white-papers
+    label: Whitepapers
+    type: collection
+    path: src/content/white-papers
+    format: yaml-frontmatter
+    exclude: [README.md]
+    filename:
+      template: "{primary}.md"
+      field: create
+    operations:
+      create: true
+      rename: false
+      delete: false
+    view:
+      fields: [title, publishDate, draft]
+      primary: title
+      sort: [publishDate, title]
+      default:
+        sort: publishDate
+        order: desc
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+        description: The headline of the page. Up to 110 characters.
+        options:
+          maxlength: 110
+      - name: description
+        label: Short description
+        type: text
+        required: true
+        description: Shown on cards and in Google results. Up to 200 characters.
+        options:
+          maxlength: 200
+      - name: publishDate
+        label: Publish date
+        type: date
+        required: true
+        description: The whitepaper goes live on this date once Draft is switched off.
+        options:
+          format: yyyy-MM-dd
+      - name: draft
+        label: Draft
+        type: boolean
+        default: true
+        description: Keep this ON until it is ready. A draft is not shown to the public.
+      - name: downloadUrl
+        label: PDF download (optional)
+        type: file
+        description: Adds a "Download the PDF" button to the page.
+        options:
+          media: white-papers
+          extensions: [pdf]
+      - name: author
+        label: Author
+        type: string
+        default: Flipick Team
+      - name: cover
+        label: Cover image
+        type: image
+        description: Best size 1200 x 630 pixels, WebP or JPG, under 200 KB.
+        options:
+          media: white-papers
+          extensions: [webp, jpg, jpeg, png]
+      - name: coverAlt
+        label: Cover image description
+        type: string
+        description: Required when there is a cover image. Describe the picture in one sentence.
+      - name: tags
+        label: Tags
+        type: string
+        list: true
+      - name: body
+        label: Summary
+        type: rich-text
+        options:
+          format: markdown
+          media: white-papers
+      - name: updatedDate
+        label: Last updated (optional)
+        type: date
+        default: ""
+        options:
+          format: yyyy-MM-dd
+      - name: seoTitle
+        label: Google title (optional)
+        type: string
+        description: Only if it should differ from the headline.
+      - name: seoDescription
+        label: Google description (optional)
+        type: text
+        description: Only if it should differ from the short description.

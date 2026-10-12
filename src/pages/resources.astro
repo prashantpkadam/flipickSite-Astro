@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { getPublished } from '../lib/content';
+import { getPublished, isLive } from '../lib/content';
 import { SECTIONS } from '../lib/sections';
 
 const PER_SECTION = 3;
@@ -124,6 +124,7 @@ const schema = [
                     <img src={post.data.cover} alt={post.data.coverAlt} width="1200" height="630" loading="lazy" />
                   )}
                   <div class="blog-card-body">
+                    {!isLive(post.data) && <span class="blog-tag blog-tag--draft">{post.data.draft ? 'Draft' : 'Scheduled'}</span>}
                     <h3>{post.data.title}</h3>
                     <p>{post.data.description}</p>
                     <span class="res-link">Read the guide</span>

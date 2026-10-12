@@ -2,19 +2,25 @@ import { defineCollection } from 'astro:content';
 import { glob } from 'astro/loaders';
 import { z } from 'astro/zod';
 
-// Fields shared by every content type (blog posts, case studies, white papers).
+// A content editor (Pages CMS) saves empty form inputs as "" or null. Treat those
+// as "not set" so optional fields stay optional and defaults still apply.
+const blankToUndefined = (value: unknown) => (value === '' || value === null ? undefined : value);
+const optionalText = z.preprocess(blankToUndefined, z.string().optional());
+const optionalDate = z.preprocess(blankToUndefined, z.coerce.date().optional());
+
+// Fields shared by every content type (blog posts, case studies, whitepapers).
 const base = {
   title: z.string().max(110),
   description: z.string().max(200),
   publishDate: z.coerce.date(),
-  updatedDate: z.coerce.date().optional(),
-  author: z.string().default('Flipick Team'),
-  cover: z.string().optional(), // e.g. /assets/blog/grocery-vvp.webp
-  coverAlt: z.string().optional(),
-  tags: z.array(z.string()).default([]),
+  updatedDate: optionalDate,
+  author: z.preprocess(blankToUndefined, z.string().default('Flipick Team')),
+  cover: optionalText, // e.g. /assets/blog/grocery-vvp.webp
+  coverAlt: optionalText,
+  tags: z.preprocess((v) => (v === '' || v === null ? [] : v), z.array(z.string()).default([])),
   draft: z.boolean().default(false),
-  seoTitle: z.string().optional(),
-  seoDescription: z.string().optional(),
+  seoTitle: optionalText,
+  seoDescription: optionalText,
 };
 
 // A cover image needs alt text (accessibility and SEO).
@@ -32,8 +38,8 @@ const caseStudies = defineCollection({
   schema: z
     .object({
       ...base,
-      customer: z.string().optional(), // e.g. "Godrej"
-      industry: z.string().optional(), // e.g. "Manufacturing"
+      customer: optionalText, // e.g. "Godrej"
+      industry: optionalText, // e.g. "Manufacturing"
     })
     .refine(hasAlt, altError),
 });
@@ -43,7 +49,7 @@ const whitePapers = defineCollection({
   schema: z
     .object({
       ...base,
-      downloadUrl: z.string().optional(), // e.g. /assets/white-papers/vvp-guide.pdf
+      downloadUrl: optionalText, // e.g. /assets/white-papers/vvp-guide.pdf
     })
     .refine(hasAlt, altError),
 });

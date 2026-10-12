@@ -1,7 +1,7 @@
 ---
 import { render } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
-import type { SectionKey } from '../lib/content';
+import { isLive, type SectionKey } from '../lib/content';
 import { SECTIONS } from '../lib/sections';
 
 // One article page: /blog/<slug>, /case-studies/<slug>, /white-papers/<slug>.
@@ -25,6 +25,8 @@ const fmt = (d: Date) =>
 const minutes = Math.max(1, Math.round((post.body ?? '').split(/\s+/).filter(Boolean).length / 200));
 const coverUrl = data.cover ? new URL(data.cover, Astro.site).href : undefined;
 const isTeam = data.author === 'Flipick Team';
+// Only built when draft preview is on (staging). Never indexed, and clearly marked.
+const unpublished = !isLive(data);
 
 const schema = [
   {
@@ -57,10 +59,16 @@ const schema = [
   description={data.seoDescription ?? data.description}
   ogType="article"
   ogImage={data.cover}
+  noindex={unpublished}
   page={cfg.navKey}
   schema={schema}
 >
   <main>
+    {unpublished && (
+      <div class="draft-banner" role="status">
+        Preview only: this {data.draft ? 'is a draft' : 'is scheduled for ' + fmt(data.publishDate)} and is not visible on flipick.com yet.
+      </div>
+    )}
     <section class="hero hero--compact">
       <div class="wrap">
         <div class="hero-grid hero-grid--md">
