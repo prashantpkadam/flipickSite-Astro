@@ -1,0 +1,148 @@
+---
+import Analytics from "../components/Analytics.astro";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <Analytics />
+    <meta charset="utf-8" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="/assets/images/favicon_io/favicon.ico"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assets/images/favicon_io/apple-touch-icon.png"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>Aurelle Airways demo · One master, 16 versions · Flipick</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,700&family=Cormorant+Garamond:ital,wght@1,500;1,600&family=Jost:wght@500;600&display=swap"
+    rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/individual/aurelle/css/style.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <header class="top">
+        <div class="mark">
+          <a href="/"
+            ><img
+              src="/individual/aurelle/images/Flipick.webp"
+              alt="Flipick"
+              class="mark-logo"
+            /></a>
+        </div>
+        <div class="for" id="forLine" hidden>
+          Prepared for <b id="forName"></b>
+        </div>
+        <a class="btn" href="#" data-book>Book a 15-minute call</a>
+      </header>
+
+      <section class="hero">
+        <h1>One master. <span id="hTotal">16</span> market-ready versions.</h1>
+        <p class="lede">
+          A Business Class spot for Aurelle Airways, adapted by size, language
+          and route in a single batch. Play the master, then open any version
+          below.
+        </p>
+        <div class="stage">
+          <div class="player-hero" id="heroPlayer">
+            <iframe
+              src="https://player.vimeo.com/video/1230928548?badge=0&autopause=0&player_id=0&app_id=58479"
+              frameborder="0"
+              allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
+              title="Aurelle Airways master film"></iframe>
+          </div>
+          <div class="guide" id="guide" aria-hidden="true">
+            <div class="win" id="guideWin">
+              <div class="tag" id="guideTag"></div>
+            </div>
+          </div>
+        </div>
+        <div class="cropbar">
+          <span>See how the master is cropped</span>
+          <div class="seg" role="group" aria-label="Crop guide">
+            <button type="button" aria-pressed="true" data-crop="none"
+              >Master</button
+            >
+            <button type="button" aria-pressed="false" data-crop="5:4"
+              >5:4</button
+            >
+            <button type="button" aria-pressed="false" data-crop="1:1"
+              >1:1</button
+            >
+          </div>
+          <span class="cropnote" id="cropNote"
+            >Footage is smart-cropped from the 16:9 master. Overlays and the end
+            card are laid out natively for each size, and 9:16 has its own
+            master.</span
+          >
+        </div>
+      </section>
+
+      <section class="facts" aria-label="Batch summary" id="facts"></section>
+
+      <section class="lib" id="library">
+        <h2>Every version in this batch</h2>
+        <p class="sub">
+          Filter by size, language or route. Each tile is shown at its real
+          shape. Select one to play it.
+        </p>
+
+        <div class="filters" id="filters"></div>
+        <div class="table" id="grid" aria-live="polite"></div>
+
+        <div class="note">
+          <p>
+            <b>Turnaround.</b> This batch of <span data-total>16</span> versions was
+            produced in <span class="fill" data-cfg="turnaround">[X hours]</span
+            >, from one approved master.
+          </p>
+          <p>
+            <b>Cost.</b> Each extra adaptation costs <span
+              class="fill"
+              data-cfg="cost">[a fraction of a manual re-edit]</span
+            >. Adding a market is a new data row, not a new edit.
+          </p>
+        </div>
+      </section>
+
+      <section class="cta">
+        <div>
+          <h2>See this with your own campaign</h2>
+          <p>
+            In 15 minutes we'll show how one of your masters would scale across
+            your markets, sizes and fares.
+          </p>
+        </div>
+        <a class="btn big" href="#" data-book>Book a 15-minute call</a>
+      </section>
+
+      <footer>
+        <span
+          >Aurelle Airways is a fictitious brand created for demonstration
+          purposes.</span
+        >
+        <span>© Flipick</span>
+      </footer>
+    </div>
+
+    <dialog id="dlg" aria-label="Video player">
+        <div class="modal" id="modal"></div>
+    </dialog>
+
+    <script is:inline src="https://player.vimeo.com/api/player.js" defer
+    ></script>
+    <script is:inline src="/individual/aurelle/js/main.js?v=2" defer></script>
+  </body>
+</html>

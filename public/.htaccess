@@ -1,0 +1,100 @@
+# =====================================================================
+# Flipick — Apache config for the static Astro build (Hostinger)
+# =====================================================================
+
+ErrorDocument 404 /404.html
+Options -Indexes
+
+# --- Never serve env / dotfiles --------------------------------------
+<FilesMatch "^\.(?!well-known)">
+  Require all denied
+</FilesMatch>
+<Files ".htaccess">
+  Require all denied
+</Files>
+
+# --- GZIP compression ------------------------------------------------
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/javascript application/javascript text/xml application/xml image/svg+xml
+</IfModule>
+
+# --- Browser caching -------------------------------------------------
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/jpeg        "access plus 1 year"
+  ExpiresByType image/png         "access plus 1 year"
+  ExpiresByType image/svg+xml     "access plus 1 year"
+  ExpiresByType image/webp        "access plus 1 year"
+  ExpiresByType image/x-icon      "access plus 1 year"
+  ExpiresByType video/mp4         "access plus 1 year"
+  ExpiresByType font/woff2        "access plus 1 year"
+  ExpiresByType font/woff         "access plus 1 year"
+  ExpiresByType text/css          "access plus 1 week"
+  ExpiresByType application/javascript "access plus 1 week"
+  ExpiresByType text/javascript   "access plus 1 week"
+  ExpiresByType text/html         "access plus 0 seconds"
+</IfModule>
+
+<IfModule mod_headers.c>
+  <FilesMatch "\.(jpg|jpeg|png|svg|webp|ico|mp4|woff|woff2)$">
+    Header set Cache-Control "public, max-age=31536000"
+  </FilesMatch>
+  <FilesMatch "\.(css|js)$">
+    Header set Cache-Control "public, max-age=604800"
+  </FilesMatch>
+  <FilesMatch "\.html$">
+    Header set Cache-Control "no-cache, must-revalidate"
+  </FilesMatch>
+  <FilesMatch "\.(txt|md)$">
+    Header set Content-Type "text/plain; charset=UTF-8"
+  </FilesMatch>
+
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+  # Keep API and standalone-demo assets out of search results
+  <If "%{REQUEST_URI} =~ m#^/(api|individual)/#">
+    Header set X-Robots-Tag "noindex, nofollow"
+  </If>
+
+  # Never index the staging site
+  <If "%{HTTP_HOST} == 'staging.flipick.com'">
+    Header set X-Robots-Tag "noindex, nofollow"
+  </If>
+</IfModule>
+
+RewriteEngine On
+
+# --- Force HTTPS (keeps the host as typed, so staging works too) -----
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# --- www -> non-www (production only) --------------------------------
+RewriteCond %{HTTP_HOST} ^www\.flipick\.com$ [NC]
+RewriteRule ^ https://flipick.com%{REQUEST_URI} [L,R=301]
+
+# --- 301 redirects for renamed URLs ----------------------------------
+RewriteRule ^solutions/?$ /solution [R=301,L]
+RewriteRule ^privacy/?$ /policy [R=301,L]
+
+# --- sitemap.xml is served from Astro's sitemap-index.xml ------------
+RewriteRule ^sitemap\.xml$ /sitemap-index.xml [L]
+
+# --- /index.html -> / ------------------------------------------------
+RewriteRule ^index\.html$ / [R=301,L]
+
+# --- /page.html -> /page (skip the Google verification file) ---------
+RewriteCond %{REQUEST_URI} !^/google[0-9a-z]+\.html$
+RewriteCond %{THE_REQUEST} \s/+(.+?)\.html[\s?] [NC]
+RewriteRule ^ /%1 [R=301,L]
+
+# --- Trailing slash: /pricing/ -> /pricing (asset, API and demo folders excluded) ---
+RewriteCond %{REQUEST_URI} !^/(assets|api|individual)/
+RewriteRule ^(.+)/$ /$1 [R=301,L]
+
+# --- Clean URLs: /pricing -> pricing.html ----------------------------
+# No "!-d" here on purpose: /blog must resolve to blog.html even though
+# a blog/ folder (for /blog/<slug>) also exists.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.+[^/])$ $1.html [L]

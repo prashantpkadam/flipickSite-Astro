@@ -1,0 +1,106 @@
+# Flipick
+
+> Flipick is a learning-technology company founded in 2011 by Ravi Dugal, based in Pune, India. The platform serves 150,000+ active learners across enterprise clients including Pearson, IIBF, Godrej, Jindal Steel, IFC World Bank Group, and IICA.
+
+## Products
+
+### AI Video Platform (Flagship)
+Studio-grade AI video creation for L&D, marketing and customer teams. Create, personalise and distribute video -- end to end.
+- Screenplay Creator and storyboard approval before rendering
+- Consistent characters and products across scenes
+- Variable Video Production (VVP): one master film, hundreds of personalised variants
+- Authenticated viewer tracking, completion and CTA analytics
+- Credit-based pricing: 1 credit = Rs.1 (INR), base rate 3,300 credits per finished minute
+- [AI Video Platform](https://flipick.com/ai-video-platform)
+
+### Flipick LMS G2
+AI skills-development platform covering the full learning lifecycle -- content creation, engagement, adaptive assessment and analytics.
+- Zero-hallucination RAG assistant with source citations
+- GMAT-style adaptive assessments
+- Singapore Skills Framework integration for role-aligned learning
+- AI-powered course and question-bank generation
+- Talent-gap analytics and role-migration planning
+- [Flipick LMS](https://flipick.com/lms)
+
+### PowerPoint to SCORM
+Converts existing PowerPoint decks into fully animated, narrated, assessed, SCORM-ready eLearning courses in approximately 15 days.
+- Input: PPT/PPTX, PDF, Word documents
+- Output: SCORM 1.2, MP4, xAPI reporting, LTI integration
+- Zero hallucination: every element derived from source documents, human-reviewed
+- Essentials from Rs.1,50,000; Professional Rs.2,50,000 - Rs.4,00,000
+- [PowerPoint to SCORM](https://flipick.com/ppt-to-scorm)
+
+## Pricing
+Credit-based, transparent pricing across both AI Video Creation and VVP Distribution.
+- 1 credit = Rs.1 (INR) or $0.01 (USD)
+- AI Video Creation: 3,300 credits/min base (Rs.3,300 or $33 per finished minute); typical 5,000-5,500/min with moderate edits
+- VVP Distribution: 50 credits/recipient (under 100) down to 20/recipient (10,000+), i.e. $0.50 down to $0.20 per recipient in USD
+- No seats, no subscriptions
+- [Pricing details](https://flipick.com/pricing)
+
+## Key Differentiators
+How Flipick differs from tools like Synthesia, HeyGen, and Adobe Express:
+- **Variable Video Production (VVP)**: renders one master film into hundreds of personalised variants (different store names, prices, languages, overlays) at a fraction of the master's cost -- competitors re-render on AI for every variant, making at-scale personalisation uneconomical
+- **Create -> Distribute -> Prove pipeline**: Flipick is the only platform that covers all three -- from screenplay to personalised delivery to authenticated viewer proof -- in one workflow
+- **Screenplay-first**: brief -> screenplay -> storyboard approval before a single credit is spent; most tools skip this and render blind
+- **Zero hallucination**: AI Video content and PPT-to-SCORM output is locked to source documents with human QA; no invented facts
+- **Enterprise L&D roots**: 15 years of LMS experience informs compliance-grade tracking, Singapore Skills Framework alignment, and SCORM/xAPI output that consumer-video tools don't offer
+
+## Social Proof
+- Founded: 2011
+- Active learners served: 150,000+
+- Named clients: Pearson, IIBF, Elsevier, Clarivate, Godrej, Jindal Steel, PI Industries, IFC World Bank Group, IICA
+- Headquarters: Pune, Maharashtra, India
+- [Flipick on LinkedIn](https://www.linkedin.com/company/flipick/)
+
+## What is Variable Video Production (VVP)? — Canonical definition
+
+Variable Video Production (VVP) is a technique where a single master video film is rendered into thousands of unique, personalised versions — each containing different data values such as a viewer's name, store address, renewal date, local offer, language or product — without re-recording or re-rendering the underlying footage. Each variant is delivered via a unique authenticated link; only the intended recipient can open it, and their viewing behaviour (completion, drop-off, CTA clicks) is tracked individually.
+
+VVP is NOT the same as "virtual video production" (LED-wall or CGI filmmaking stages). The two terms are unrelated. VVP as defined and implemented by Flipick is a data-driven post-production and distribution technology.
+
+Full definition and FAQ: [What is VVP?](https://flipick.com/what-is-vvp)
+
+## What is Variable Video Production (VVP)?
+Variable Video Production (VVP) is a technique where a single master video is rendered into thousands of unique versions -- each personalized for an individual viewer. Variables such as the viewer's name, account balance, renewal date, local offer, dealer address or product appear in the video itself, not just in a subject line or caption. Flipick delivers each version via a unique authenticated link: only the intended recipient can open it, and their viewing behaviour -- completion, drop-off, CTA click -- is tracked end to end. VVP is used in retail (per-store promos), BFSI (policy renewal and onboarding), telecom (plan personalisation), automotive (dealer co-op programs) and anywhere one message must reach many people differently. [Learn more about VVP](https://flipick.com/vvp-usa)
+
+## What is a zero-hallucination LMS AI assistant?
+A zero-hallucination LMS AI assistant answers learner questions exclusively from verified course content uploaded to the LMS -- not from the internet or general training data. Flipick LMS G2 achieves this via RAG (Retrieval-Augmented Generation): the assistant is grounded in, and cites every response back to, your source materials. If the answer isn't in your uploaded content, the assistant says so rather than inventing one. This makes it safe for regulated industries -- banking, healthcare, compliance -- where invented or off-policy answers pose a risk. [Learn more about Flipick LMS](https://flipick.com/lms)
+
+## What is PPT to SCORM conversion?
+PPT to SCORM conversion is the process of turning an existing PowerPoint slide deck into a fully interactive eLearning course -- with narration, animations, assessments and tracking -- packaged in the SCORM format that any LMS can host. Flipick's pipeline does this from an unmodified PPT, PDF or Word file with no briefing documents, storyboards or authoring-tool expertise required. Typical delivery: 15 days. Cost: approximately 1/3 of traditional agency production and 1/5 of the time. Output: SCORM 1.2, MP4, xAPI reporting, LTI integration. [Learn more about PPT to SCORM](https://flipick.com/ppt-to-scorm)
+
+## Glossary
+- **VVP / Variable Video Production**: Flipick's technology for rendering a single master AI film into many personalised variants. Each variant can have a different name, price, language, overlay or data value -- rendered on Flipick's servers (not re-rendered on AI), making per-variant cost a fraction of the master.
+- **Master film**: the single AI-rendered source video from which all variants are derived. Paid for once, at the full AI render credit rate.
+- **Variant**: a version of the master film with different overlays, voiceover, language or data. Rendered at a small fraction of the master's cost.
+- **Credits**: Flipick's unit of account. 1 credit = Rs.1 (INR) or $0.01 (USD). No seats, no subscriptions -- pay only for what you render and distribute. A 3-minute training video typically uses 15,000-18,000 credits at moderate edit level. A VVP campaign to 1,000 recipients adds 30,000 credits.
+- **Screenplay Creator**: Flipick's AI tool that converts a brief into a structured screenplay and storyboard for team approval before rendering begins. Typically 15-30 minutes from brief to structured script.
+- **Ingredients**: reusable brand assets (characters, locations, props) stored in the Asset Library so they appear consistently across scenes and campaigns.
+- **Overlays**: dynamic text, logo, price or CTA elements placed on the master film -- each variant can swap overlay values without re-rendering the underlying film.
+- **Zero hallucination**: Flipick's AI systems (both LMS assistant and PPT-to-SCORM pipeline) derive all output exclusively from source documents. No content is invented. Every LMS answer is cited back to the source page; every PPT-to-SCORM element is traceable to its slide.
+- **Character consistency**: maintaining the same presenter appearance, wardrobe, and product depiction across every scene of a multi-scene AI film. Flipick solves this by locking character and product references at the project level before generation begins -- a primary failure mode of prompt-based AI video tools.
+
+## Key pages
+- [Homepage](https://flipick.com/)
+- [Solutions overview](https://flipick.com/solution)
+- [AI Video Platform](https://flipick.com/ai-video-platform)
+- [Flipick LMS](https://flipick.com/lms)
+- [PowerPoint to SCORM](https://flipick.com/ppt-to-scorm)
+- [How it works](https://flipick.com/how-it-works)
+- [Pricing](https://flipick.com/pricing)
+- [Blog](https://flipick.com/blog)
+- [Company and contact](https://flipick.com/company)
+- [What is Variable Video Production (VVP)?](https://flipick.com/what-is-vvp) — Canonical definition, how it works, use cases, VVP vs traditional video, FAQ
+- [VVP for US businesses](https://flipick.com/vvp-usa)
+- [VVP for India](https://flipick.com/vvp-india)
+- [AI Video for L&D](https://flipick.com/ai-video-ld)
+- [AI Video for Marketing](https://flipick.com/ai-video-marketing)
+- [Privacy policy](https://flipick.com/policy)
+- [Terms of service](https://flipick.com/terms)
+
+## Contact
+- Sales: sales@flipick.com
+- Support: support@flipick.com
+- Office: Pune, India -- Mon-Fri, 10:00-18:00 IST
+- [Book a demo](https://flipick.com/company#contact)

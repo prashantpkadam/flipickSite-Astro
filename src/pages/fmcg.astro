@@ -1,0 +1,1053 @@
+---
+
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="/assets/images/favicon_io/favicon.ico"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assets/images/favicon_io/apple-touch-icon.png"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title id="pageTitle">Flipick — One master. Every adaptation.</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <meta
+      id="pageDescription"
+      name="description"
+      content="One master film, adapted by Flipick SmartCrop into every size, language and market — without re-rendering."
+    />
+    <style is:inline>
+      /* ===== Brand tokens ===== */
+      :root {
+        --bg: #0b0d12;
+        --surface: #141821;
+        --ink: #f4f1ea;
+        --muted: #a9adb8;
+        --accent: #c9a45c;
+        --accent-2: #5b8cff;
+        --radius: 14px;
+        --gap: 20px;
+        --font-display: "Playfair Display", Georgia, "Times New Roman", serif;
+        --font-body:
+          "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+      }
+      body {
+        background: var(--bg);
+        color: var(--ink);
+        font-family: var(--font-body);
+        line-height: 1.55;
+        -webkit-font-smoothing: antialiased;
+      }
+      a {
+        color: inherit;
+      }
+      .wrap {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+
+      /* Header + personalisation badge */
+      header.top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 18px 24px;
+        max-width: 1280px;
+        margin: 0 auto;
+      }
+      .logo {
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+      }
+      .logo img {
+        height: clamp(26px, 4vw, 34px);
+        width: auto;
+        display: block;
+      }
+      .badge {
+        display: none;
+        font-size: 12px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        border: 1px solid var(--accent);
+        color: var(--accent);
+        padding: 6px 12px;
+        border-radius: 999px;
+      }
+      .badge.show {
+        display: inline-block;
+      }
+      .badge b {
+        color: var(--ink);
+        letter-spacing: 0.04em;
+        text-transform: none;
+        font-size: 13px;
+      }
+
+      /* Hero */
+      .hero {
+        position: relative;
+        min-height: 72vh;
+        display: grid;
+        place-items: center;
+        text-align: center;
+        overflow: hidden;
+      }
+      .hero-media {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.55;
+      }
+      .hero-inner {
+        position: relative;
+        padding: 96px 24px;
+        max-width: 900px;
+      }
+      .hero h1 {
+        font-family: var(--font-display);
+        font-size: clamp(34px, 6vw, 68px);
+        line-height: 1.08;
+        margin: 0 0 16px;
+      }
+      .hero p.sub {
+        font-size: clamp(16px, 2vw, 20px);
+        color: var(--muted);
+        margin: 0 auto 28px;
+        max-width: 680px;
+      }
+      .btn {
+        display: inline-block;
+        background: var(--accent);
+        color: #111;
+        font-weight: 600;
+        padding: 14px 26px;
+        border-radius: 999px;
+        text-decoration: none;
+        border: 0;
+        cursor: pointer;
+        font-size: 15px;
+      }
+      .btn.ghost {
+        background: transparent;
+        color: var(--ink);
+        border: 1px solid #ffffff33;
+      }
+      .sound {
+        position: absolute;
+        right: 20px;
+        bottom: 20px;
+      }
+
+      /* Pipeline strip */
+      .pipeline {
+        display: flex;
+        gap: 12px;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 28px 24px;
+        border-top: 1px solid #ffffff14;
+        border-bottom: 1px solid #ffffff14;
+        color: var(--muted);
+        font-size: 14px;
+      }
+      .pipeline span b {
+        color: var(--ink);
+      }
+
+      /* Feature sections */
+      section.feature {
+        padding: 88px 0 40px;
+      }
+      .eyebrow {
+        font-size: 12px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin: 0 0 10px;
+      }
+      .feature h2 {
+        font-family: var(--font-display);
+        font-size: clamp(28px, 4vw, 44px);
+        margin: 0 0 14px;
+        line-height: 1.15;
+      }
+      .lede {
+        color: var(--muted);
+        max-width: 760px;
+        margin: 0 0 18px;
+        font-size: 17px;
+      }
+      ul.points {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 36px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px 22px;
+        font-size: 14px;
+      }
+      ul.points li::before {
+        content: "◆";
+        color: var(--accent);
+        margin-right: 8px;
+        font-size: 10px;
+        vertical-align: 2px;
+      }
+
+      /* Comparison rows */
+      .row {
+        display: flex;
+        gap: var(--gap);
+        align-items: flex-end;
+        flex-wrap: wrap;
+      }
+      .tile {
+        min-width: 0;
+        display: flex;
+        flex-direction: column;
+        flex: 1 1 0;
+      }
+      .frame {
+        position: relative;
+        width: 100%;
+        background: var(--surface);
+        border-radius: var(--radius);
+        overflow: hidden;
+        box-shadow: 0 10px 40px #0007;
+      }
+      .frame iframe {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+      .missing {
+        position: absolute;
+        inset: 0;
+        display: grid;
+        place-items: center;
+        text-align: center;
+        padding: 12px;
+        font-size: 13px;
+        color: #ffb4a8;
+        background: repeating-linear-gradient(
+          45deg,
+          #1b1f29 0 12px,
+          #171a22 12px 24px
+        );
+      }
+      .label {
+        margin-top: 12px;
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 0.03em;
+      }
+      .label small {
+        display: block;
+        font-weight: 400;
+        color: var(--muted);
+        font-size: 12px;
+        margin-top: 2px;
+      }
+
+      .controls {
+        display: flex;
+        gap: 12px;
+        margin-top: 22px;
+        flex-wrap: wrap;
+      }
+      .note {
+        font-size: 12px;
+        color: var(--muted);
+        margin-top: 10px;
+      }
+
+      /* Closing CTA + footer */
+      .closing {
+        text-align: center;
+        padding: 96px 24px;
+      }
+      .closing h2 {
+        font-family: var(--font-display);
+        font-size: clamp(28px, 4vw, 42px);
+        margin: 0 0 12px;
+      }
+      .closing p {
+        color: var(--muted);
+        max-width: 640px;
+        margin: 0 auto 28px;
+      }
+      footer {
+        border-top: 1px solid #ffffff14;
+        padding: 28px 24px;
+        text-align: center;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      /* Responsive */
+      @media (max-width: 1024px) {
+        .row.size {
+          align-items: flex-start;
+        }
+        .row.size .tile {
+          flex: 1 1 calc(50% - var(--gap)) !important;
+        }
+      }
+      @media (max-width: 640px) {
+        .row {
+          flex-direction: column;
+          align-items: stretch;
+        }
+        .row.size .tile {
+          flex: none !important;
+          width: 100%;
+        }
+        .row.pair .tile {
+          flex: none !important;
+          width: 100%;
+        }
+        .row .tile .label {
+          text-align: center;
+        }
+        section.feature {
+          padding: 64px 0 24px;
+        }
+        .controls .btn {
+          display: block;
+          width: 100%;
+          text-align: center;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        iframe {
+          animation: none;
+        }
+      }
+
+      /* ---- Compare overlay modal ---- */
+      dialog {
+        border: 0;
+        padding: 0;
+        background: transparent;
+        max-width: none;
+        max-height: none;
+        width: 100%;
+        height: 100%;
+        color: var(--ink);
+      }
+      dialog::backdrop {
+        background: rgba(10, 12, 16, 0.88);
+      }
+      .modal {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: max(20px, env(safe-area-inset-top, 0px)) 20px
+          max(20px, env(safe-area-inset-bottom, 0px));
+        gap: 14px;
+      }
+      .mhead {
+        width: min(1100px, 100%);
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 10px;
+      }
+      .mhead .mtitle {
+        font-family: var(--font-display);
+        font-size: 18px;
+        font-weight: 400;
+      }
+      .mhead .x {
+        margin-left: auto;
+        background: rgba(244, 241, 234, 0.12);
+        border: 0;
+        border-radius: 999px;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        color: var(--ink);
+        font-size: 22px;
+        line-height: 1;
+      }
+      .mbody {
+        position: relative;
+        display: flex;
+        gap: 18px;
+        justify-content: center;
+        align-items: flex-start;
+        width: min(1100px, 100%);
+        flex-wrap: nowrap;
+        overflow: hidden;
+      }
+      .mbody.stack {
+        flex-direction: column;
+        align-items: center;
+      }
+      .mplayer {
+        position: relative;
+        border-radius: var(--radius);
+        overflow: hidden;
+        flex-shrink: 0;
+      }
+      .mplayer iframe {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+      .cmpcol {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        align-items: flex-start;
+      }
+      .cmpcol .col-label {
+        font-size: 13px;
+        color: var(--muted);
+        letter-spacing: 0.04em;
+      }
+      .mfoot {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        font-size: 14px;
+      }
+      .mfoot button {
+        background: rgba(244, 241, 234, 0.12);
+        border: 0;
+        color: var(--ink);
+        border-radius: 999px;
+        padding: 9px 18px;
+        cursor: pointer;
+        font-size: 14px;
+      }
+      .mfoot button:hover {
+        background: rgba(244, 241, 234, 0.22);
+      }
+      .ovl-poster {
+        position: absolute;
+        inset: 0;
+        background: var(--surface) center/cover no-repeat;
+        transition: opacity 0.5s ease;
+        z-index: 2;
+        border-radius: var(--radius);
+      }
+      @media (max-width: 639px) {
+        dialog {
+          position: fixed;
+          inset: 0;
+          overflow: hidden;
+        }
+        .modal {
+          overflow-y: auto;
+          justify-content: flex-start;
+          padding-left: 16px;
+          padding-right: 16px;
+          height: 100%;
+        }
+        .mhead {
+          position: sticky;
+          top: 0;
+          background: var(--bg);
+          z-index: 10;
+          padding: 14px 0 10px;
+          margin-bottom: 0;
+        }
+        .mfoot {
+          position: sticky;
+          bottom: 0;
+          background: var(--bg);
+          z-index: 10;
+          padding: 10px 0 14px;
+          margin-top: 0;
+        }
+        .mbody {
+          flex-shrink: 0;
+        }
+        .mbody.stack .cmpcol {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!--__CONFIG_START__-->
+    <script is:inline>
+      window.LANDING_CONFIG = {
+        hero: {
+          headline: "One master. Every market-ready version.",
+          subheadline:
+            "An FMCG multi-product campaign adapted across four sizes and three languages — all from a single approved master render.",
+        },
+        cta: {
+          show: true,
+          text: "Book a 15-minute call",
+          url: "https://calendly.com/rahul-uppal-flipick/30min",
+        },
+        showFlipickLogo: true,
+        footerDisclaimer:
+          "HomeNest Appliances is a fictitious brand created for demonstration purposes.",
+        ga4Id: "G-E3NQRXFSH7",
+        pageTitle: "",
+        pageDescription: "",
+        personalization: {
+          param: "for",
+          names: {},
+        },
+        sections: {
+          size: {
+            eyebrow: "01 · Size adaptation",
+            heading: "One master. Every screen.",
+            lede: "The cinematic master is rendered once. Flipick SmartCrop then reframes that same footage for each format, finding the subject and keeping it in frame, from 16:9 TV and CTV to 5:4, square feed and 9:16 stories and reels. Nothing is re-rendered, so the product and the brand look exactly as they do in the master on every screen.",
+            points: [
+              "Subject-aware reframing, not a blind centre-crop",
+              "Pixel-accurate to the master, with zero hallucination risk",
+              "Every format in ~30 seconds",
+            ],
+            videoSlots: [
+              {
+                label: "16:9 · English",
+                sub: "TV · CTV · YouTube",
+                aspectRatio: "16:9",
+                src: "https://player.vimeo.com/video/1233933535?badge=0&autopause=0&player_id=0&app_id=58479&title=0&byline=0&portrait=0",
+              },
+              {
+                label: "5:4 · English",
+                sub: "Feed · display",
+                aspectRatio: "5:4",
+                src: "https://player.vimeo.com/video/1233933712?badge=0&autopause=0&player_id=0&app_id=58479&title=0&byline=0&portrait=0",
+              },
+              {
+                label: "1:1 · English",
+                sub: "Square social feed",
+                aspectRatio: "1:1",
+                src: "https://player.vimeo.com/video/1233933805?badge=0&autopause=0&player_id=0&app_id=58479&title=0&byline=0&portrait=0",
+              },
+              {
+                label: "9:16 · English",
+                sub: "Stories · Reels · Shorts",
+                aspectRatio: "9:16",
+                src: "https://player.vimeo.com/video/1233933895?badge=0&autopause=0&player_id=0&app_id=58479&title=0&byline=0&portrait=0",
+              },
+            ],
+          },
+          language: {
+            eyebrow: "02 · Language adaptation",
+            heading: "Same film. Every market's language.",
+            lede: "The visual master stays untouched. SmartCrop's adaptation layer swaps only the market-specific parts: on-screen text, pricing in local format, and voice. Hindi and Marathi audiences see the same frames, timing and product accuracy as English audiences, with no re-render and no re-generation.",
+            points: [
+              "Localised text, pricing and voice per market",
+              "Identical visuals, so brand approval is done once",
+              "~80% lower cost than re-producing per market",
+            ],
+            videoSlots: [
+              {
+                label: "16:9 · English",
+                aspectRatio: "16:9",
+                src: "https://player.vimeo.com/video/1233933535?badge=0&autopause=0&player_id=0&app_id=58479&title=0&byline=0&portrait=0",
+              },
+              {
+                label: "16:9 · Hindi",
+                aspectRatio: "16:9",
+                src: "https://player.vimeo.com/video/1233934021?badge=0&autopause=0&player_id=0&app_id=58479&title=0&byline=0&portrait=0",
+              },
+              {
+                label: "16:9 · Marathi",
+                aspectRatio: "16:9",
+                src: "https://player.vimeo.com/video/1233934100?badge=0&autopause=0&player_id=0&app_id=58479&title=0&byline=0&portrait=0",
+              },
+            ],
+          },
+          dataVariant: null,
+        },
+      };
+    </script>
+    <!--__CONFIG_END__-->
+
+    <header class="top">
+      <a class="logo" id="flipickLogo" href="https://flipick.com"
+        ><img src="/individual/fmcg/images/Flipick.webp" alt="Flipick" /></a
+      >
+      <span class="badge" id="prepBadge"
+        >Prepared for <b id="prepName"></b></span
+      >
+    </header>
+
+    <section class="hero" id="hero">
+      <div class="hero-inner">
+        <h1 id="heroHeadline"></h1>
+        <p class="sub" id="heroSub"></p>
+        <a class="btn js-cta" href="#">Book a call</a>
+      </div>
+    </section>
+
+    <div class="pipeline">
+      <span><b>1 master render</b> (Google Omni)</span><span>→</span>
+      <span><b>Flipick SmartCrop</b> adapts it</span><span>→</span>
+      <span><b>Every size · language · market</b></span><span>·</span>
+      <span>No re-rendering. No re-generation.</span>
+    </div>
+
+    <main class="wrap">
+      <!-- Each section below is built entirely from C.sections.<key> by the bootstrap script.
+       A section whose config key is null/absent is removed outright, never left empty. -->
+
+      <section class="feature" id="section-size">
+        <p class="eyebrow" id="size-eyebrow"></p>
+        <h2 id="size-heading"></h2>
+        <p class="lede" id="size-lede"></p>
+        <ul class="points" id="size-points"></ul>
+        <div class="row size" data-group="size" id="size-row"></div>
+        <div class="controls">
+          <button class="btn ghost js-sync" data-group="size"
+            >▶ Play all in sync</button>
+        </div>
+      </section>
+
+      <section class="feature" id="section-language">
+        <p class="eyebrow" id="language-eyebrow"></p>
+        <h2 id="language-heading"></h2>
+        <p class="lede" id="language-lede"></p>
+        <ul class="points" id="language-points"></ul>
+        <div class="row pair" data-group="language" id="language-row"></div>
+        <div class="controls">
+          <button class="btn ghost js-sync" data-group="language"
+            >▶ Compare in sync</button>
+        </div>
+      </section>
+
+      <section class="feature" id="section-dataVariant">
+        <p class="eyebrow" id="dataVariant-eyebrow"></p>
+        <h2 id="dataVariant-heading"></h2>
+        <p class="lede" id="dataVariant-lede"></p>
+        <ul class="points" id="dataVariant-points"></ul>
+        <div class="row pair" data-group="dataVariant" id="dataVariant-row">
+        </div>
+        <div class="controls">
+          <button class="btn ghost js-sync" data-group="dataVariant"
+            >▶ Compare in sync</button>
+        </div>
+      </section>
+    </main>
+
+    <section class="closing">
+      <h2>Your next campaign, in every format, language and market.</h2>
+      <p>
+        One master render, then unlimited accurate adaptations with Flipick
+        SmartCrop.
+      </p>
+      <a class="btn js-cta" href="#">Book a call</a>
+    </section>
+
+    <footer>
+      <div id="disclaimer"></div>
+      <div style="margin-top:6px">
+        © Flipick · <a href="https://flipick.com">flipick.com</a>
+      </div>
+    </footer>
+
+    <dialog id="cmpDlg" aria-label="Compare videos">
+      <div class="modal" id="cmpModal"></div>
+    </dialog>
+
+    <script is:inline src="https://player.vimeo.com/api/player.js"></script>
+    <script is:inline>
+      (function () {
+        var C = window.LANDING_CONFIG;
+        var SECTION_KEYS = ["size", "language", "dataVariant"];
+
+        /* ---- Page title/description (optional overrides) ---- */
+        if (C.pageTitle)
+          document.getElementById("pageTitle").textContent = C.pageTitle;
+        if (C.pageDescription)
+          document
+            .getElementById("pageDescription")
+            .setAttribute("content", C.pageDescription);
+
+        /* ---- Hero ---- */
+        document.getElementById("heroHeadline").textContent =
+          C.hero.headline || "";
+        var sub = document.getElementById("heroSub");
+        if (C.hero.subheadline) sub.textContent = C.hero.subheadline;
+        else sub.remove();
+        var hero = document.getElementById("hero");
+        var isPhone = window.matchMedia("(max-width:640px)").matches;
+        var heroVid = isPhone
+          ? C.hero.video9x16 || C.hero.video16x9
+          : C.hero.video16x9;
+        if (heroVid) {
+          var hv = document.createElement("video");
+          hv.className = "hero-media";
+          hv.src = heroVid;
+          hv.muted = true;
+          hv.loop = true;
+          hv.autoplay = true;
+          hv.playsInline = true;
+          if (C.hero.image) hv.poster = C.hero.image;
+          hero.prepend(hv);
+          var sb = document.createElement("button");
+          sb.className = "btn ghost sound";
+          sb.textContent = "🔊 Sound on";
+          sb.onclick = function () {
+            hv.muted = !hv.muted;
+            sb.textContent = hv.muted ? "🔊 Sound on" : "🔇 Sound off";
+          };
+          hero.appendChild(sb);
+        } else if (C.hero.image) {
+          var hi = document.createElement("img");
+          hi.className = "hero-media";
+          hi.src = C.hero.image;
+          hi.alt = "";
+          hero.prepend(hi);
+        }
+
+        /* ---- CTA, logo, footer ---- */
+        document.querySelectorAll(".js-cta").forEach(function (a) {
+          if (!C.cta || !C.cta.show) {
+            a.remove();
+            return;
+          }
+          a.textContent = C.cta.text || "Book a call";
+          a.href = C.cta.url || "#";
+          if (C.cta.url) {
+            a.target = "_blank";
+            a.rel = "noopener";
+          }
+        });
+        if (!C.showFlipickLogo)
+          document.getElementById("flipickLogo").style.visibility = "hidden";
+        document.getElementById("disclaimer").textContent =
+          C.footerDisclaimer || "";
+
+        /* ---- Build one feature section's copy + video row from C.sections.<key>.
+         Returns the resolved videoSlots array (used by the sync/compare button),
+         or null if the section was removed. ---- */
+        function buildSection(key) {
+          var cfg = C.sections && C.sections[key];
+          var sectionEl = document.getElementById("section-" + key);
+          if (!cfg) {
+            sectionEl.remove();
+            return null;
+          }
+
+          document.getElementById(key + "-eyebrow").textContent =
+            cfg.eyebrow || "";
+          document.getElementById(key + "-heading").textContent =
+            cfg.heading || "";
+          var lede = document.getElementById(key + "-lede");
+          if (cfg.lede) lede.textContent = cfg.lede;
+          else lede.remove();
+          var pointsEl = document.getElementById(key + "-points");
+          if (cfg.points && cfg.points.length) {
+            cfg.points.forEach(function (p) {
+              var li = document.createElement("li");
+              li.textContent = p;
+              pointsEl.appendChild(li);
+            });
+          } else {
+            pointsEl.remove();
+          }
+
+          var rowEl = document.getElementById(key + "-row");
+          var slots = (cfg.videoSlots || []).filter(function (s) {
+            return s && s.src;
+          });
+          if (!slots.length) {
+            // No real videos to show -- drop the whole section rather than show an empty row.
+            sectionEl.remove();
+            return null;
+          }
+          slots.forEach(function (slot) {
+            var tile = document.createElement("div");
+            tile.className = "tile";
+            if (slot.aspectRatio) tile.dataset.ar = slot.aspectRatio;
+            var frame = document.createElement("div");
+            frame.className = "frame";
+            frame.dataset.vid = "1";
+            if (slot.aspectRatio) {
+              var parts = String(slot.aspectRatio).split(":").map(Number);
+              if (parts.length === 2 && parts[0] && parts[1])
+                frame.style.aspectRatio = parts[0] + " / " + parts[1];
+              // Size tiles: give wider aspect ratios proportionally more row width.
+              if (key === "size")
+                tile.style.flex = parts[0] / parts[1] + " 1 0";
+            }
+            var iframe = document.createElement("iframe");
+            var src =
+              slot.src +
+              (slot.src.indexOf("?") >= 0 ? "&" : "?") +
+              "controls=1&dnt=1";
+            iframe.src = src;
+            iframe.setAttribute("frameborder", "0");
+            iframe.allow = "autoplay; fullscreen; picture-in-picture";
+            frame.appendChild(iframe);
+            tile.appendChild(frame);
+            var label = document.createElement("div");
+            label.className = "label";
+            label.textContent = slot.label || "";
+            if (slot.sub) {
+              var small = document.createElement("small");
+              small.textContent = slot.sub;
+              label.appendChild(small);
+            }
+            tile.appendChild(label);
+            rowEl.appendChild(tile);
+          });
+          return slots;
+        }
+
+        var resolvedSlots = {};
+        SECTION_KEYS.forEach(function (key) {
+          resolvedSlots[key] = buildSection(key);
+        });
+
+        /* ---- "Play/compare in sync" modal: generic N-column version, used by every section ---- */
+        var cmpDlg = document.getElementById("cmpDlg");
+        var cmpModal = document.getElementById("cmpModal");
+        var modalPlayers = [];
+
+        function closeCompare() {
+          modalPlayers.forEach(function (p) {
+            p.pause().catch(function () {});
+          });
+          modalPlayers = [];
+          cmpModal.innerHTML = "";
+          cmpDlg.close();
+        }
+        cmpDlg.addEventListener("cancel", function (e) {
+          e.preventDefault();
+          closeCompare();
+        });
+        cmpDlg.addEventListener("click", function (e) {
+          if (e.target === cmpModal) closeCompare();
+        });
+
+        function openSync(key) {
+          var slots = resolvedSlots[key];
+          if (!slots || !slots.length) return;
+          modalPlayers.forEach(function (p) {
+            p.pause().catch(function () {});
+          });
+          modalPlayers = [];
+
+          var isPhoneNow = window.innerWidth < 640;
+          var n = slots.length;
+          var gaps = (n - 1) * 18;
+          var availW = Math.min(1100, window.innerWidth - 40) - gaps;
+          var sumAr = slots.reduce(function (s, sl) {
+            var parts = sl.aspectRatio
+              ? String(sl.aspectRatio).split(":").map(Number)
+              : [16, 9];
+            return s + parts[0] / parts[1];
+          }, 0);
+          var maxH = window.innerHeight - 260;
+          var tileH = Math.floor(Math.min(availW / sumAr, maxH));
+
+          var cols = slots
+            .map(function (sl) {
+              var parts = sl.aspectRatio
+                ? String(sl.aspectRatio).split(":").map(Number)
+                : [16, 9];
+              var ar = parts[0] / parts[1];
+              var w, h;
+              if (isPhoneNow) {
+                var availMobileW = window.innerWidth - 32;
+                w = availMobileW;
+                h = Math.floor(w / ar);
+              } else {
+                w = Math.floor(tileH * ar);
+                h = tileH;
+              }
+              var src =
+                sl.src +
+                (sl.src.indexOf("?") >= 0 ? "&" : "?") +
+                "background=1&muted=1&loop=1&controls=0&dnt=1";
+              return (
+                '<div class="cmpcol"><span class="col-label">' +
+                (sl.label || "") +
+                "</span>" +
+                '<div class="mplayer" style="width:' +
+                w +
+                "px;height:" +
+                h +
+                'px">' +
+                '<iframe src="' +
+                src +
+                '" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="pointer-events:none"></iframe>' +
+                "</div></div>"
+              );
+            })
+            .join("");
+
+          var title =
+            key === "size"
+              ? "All sizes · Same master"
+              : key === "language"
+                ? "Same film · Every language"
+                : "Same master · Every variant";
+
+          cmpModal.innerHTML =
+            '<div class="mhead"><span class="mtitle">' +
+            title +
+            "</span>" +
+            '<button class="x" type="button" aria-label="Close">&#215;</button></div>' +
+            '<div class="mbody' +
+            (isPhoneNow ? " stack" : "") +
+            '">' +
+            cols +
+            "</div>" +
+            '<div class="mfoot"><button id="cmpPlayBtn">&#9654; Play all</button>' +
+            '<button id="cmpRestartBtn">&#8635; Restart</button></div>';
+
+          cmpModal.querySelector(".x").onclick = closeCompare;
+          cmpModal.querySelectorAll(".mplayer iframe").forEach(function (f) {
+            modalPlayers.push(new Vimeo.Player(f));
+          });
+          wirePosters(modalPlayers, slots);
+
+          var playing = false;
+          var playBtn = document.getElementById("cmpPlayBtn");
+          playBtn.onclick = function () {
+            playing = !playing;
+            modalPlayers.forEach(function (p) {
+              playing
+                ? p.play().catch(function () {})
+                : p.pause().catch(function () {});
+            });
+            playBtn.textContent = playing ? "⏸ Pause all" : "▶ Play all";
+          };
+          document.getElementById("cmpRestartBtn").onclick = function () {
+            modalPlayers.forEach(function (p) {
+              p.setCurrentTime(0).catch(function () {});
+            });
+            if (!playing) playBtn.click();
+          };
+
+          if (!cmpDlg.open) cmpDlg.showModal();
+          cmpModal.querySelector(".x").focus();
+        }
+
+        document.querySelectorAll(".js-sync").forEach(function (b) {
+          b.addEventListener("click", function () {
+            openSync(b.dataset.group);
+          });
+        });
+
+        /* ---- Vimeo thumbnail fetch + poster wiring ---- */
+        var thumbCache = {};
+        function vimeoThumb(src) {
+          var id = (String(src).match(/video\/(\d+)/) || [])[1];
+          if (!id) return Promise.resolve(null);
+          return (thumbCache[id] =
+            thumbCache[id] ||
+            fetch(
+              "https://vimeo.com/api/oembed.json?url=" +
+                encodeURIComponent("https://vimeo.com/" + id) +
+                "&width=640",
+            )
+              .then(function (r) {
+                return r.ok ? r.json() : null;
+              })
+              .then(function (d) {
+                return (d && d.thumbnail_url) || null;
+              })
+              .catch(function () {
+                return null;
+              }));
+        }
+        function wirePosters(players, slots) {
+          players.forEach(function (vp, i) {
+            var iframe = vp.element;
+            if (!iframe) return;
+            var mplayer = iframe.closest(".mplayer");
+            if (!mplayer) return;
+            var poster = document.createElement("div");
+            poster.className = "ovl-poster";
+            mplayer.appendChild(poster);
+            vimeoThumb((slots && slots[i] && slots[i].src) || iframe.src).then(
+              function (url) {
+                if (url) poster.style.backgroundImage = 'url("' + url + '")';
+              },
+            );
+            vp.on("playing", function () {
+              poster.style.opacity = "0";
+              poster.style.pointerEvents = "none";
+            });
+          });
+        }
+
+        /* ---- Fix size-tile frame heights on mobile (aspect-ratio CSS ignored by flex column) ---- */
+        function fixSizeTileHeights() {
+          var mobile = window.innerWidth <= 640;
+          document
+            .querySelectorAll(".row.size .frame[data-ar]")
+            .forEach(function (f) {
+              if (mobile) {
+                var parts = f.dataset.ar.split(":").map(Number);
+                var ar = parts[0] / parts[1];
+                f.style.height = Math.round(f.offsetWidth / ar) + "px";
+              } else {
+                f.style.height = "";
+              }
+            });
+        }
+        fixSizeTileHeights();
+        window.addEventListener("resize", fixSizeTileHeights);
+
+        /* ---- Optional "Prepared for X" personalisation via ?for=<key> ---- */
+        var p = C.personalization || {};
+        var names = p.names || {};
+        var tag = (
+          new URLSearchParams(location.search).get(p.param || "for") || ""
+        )
+          .toLowerCase()
+          .trim();
+        if (names[tag]) {
+          document.getElementById("prepName").textContent = names[tag];
+          document.getElementById("prepBadge").classList.add("show");
+        }
+
+        /* ---- GA4 ---- */
+        if (C.ga4Id) {
+          var s = document.createElement("script");
+          s.async = true;
+          s.src = "https://www.googletagmanager.com/gtag/js?id=" + C.ga4Id;
+          document.head.appendChild(s);
+          window.dataLayer = window.dataLayer || [];
+          window.gtag = function () {
+            dataLayer.push(arguments);
+          };
+          gtag("js", new Date());
+          gtag("config", C.ga4Id);
+        }
+      })();
+    </script>
+  </body>
+</html>

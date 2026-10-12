@@ -1,0 +1,207 @@
+---
+---
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="icon" type="image/x-icon" href="/assets/images/favicon_io/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon_io/apple-touch-icon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Response to exchange4media: drift in AI-generated campaign variants</title>
+<style is:inline>
+  :root { --ink:#1C2326; --muted:#55605F; --accent:#0E4D4F; --rule:#D5DCDB; --ph:#F3F6F5; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:#FFFFFF; color:var(--ink); font-family: Georgia, 'Times New Roman', serif; font-size:17px; line-height:1.6; }
+  main { max-width: 760px; margin: 0 auto; padding: 48px 24px 72px; }
+  h1 { font-size: 30px; line-height:1.25; margin: 0 0 8px; }
+  h2 { font-size: 22px; margin: 48px 0 12px; color: var(--accent); }
+  h3 { font-size: 18px; margin: 32px 0 8px; font-family: 'Helvetica Neue', Helvetica, sans-serif; }
+  p { margin: 0 0 16px; }
+  .credit { font-family: 'Helvetica Neue', Helvetica, sans-serif; font-size: 15px; color: var(--muted); margin-bottom: 32px; }
+  .question { font-family: 'Helvetica Neue', Helvetica, sans-serif; font-size: 18px; font-weight: 600; letter-spacing: .01em; border-top: 2px solid var(--accent); padding-top: 16px; margin-top: 48px; }
+  .lead { font-size: 18px; }
+  figure { margin: 24px 0; }
+  figcaption { font-family: 'Helvetica Neue', Helvetica, sans-serif; font-size: 14px; color: var(--muted); margin-top: 8px; }
+  .row { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+  .row img { width:100%; display:block; border-radius:4px; }
+  .table-wrap { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; font-family: 'Helvetica Neue', Helvetica, sans-serif; font-size: 14px; margin: 16px 0 24px; }
+  th, td { border: 1px solid var(--rule); padding: 8px 10px; text-align: left; vertical-align: top; }
+  th { background: #EEF3F2; }
+  footer { margin-top: 56px; border-top: 1px solid var(--rule); padding-top: 16px; font-family: 'Helvetica Neue', Helvetica, sans-serif; font-size: 14px; color: var(--muted); }
+  a { color: var(--accent); }
+  .video-wrap { position:relative; width:100%; border-radius:6px; overflow:hidden; background:#000; cursor:pointer; }
+  .video-wrap video { width:100%; display:block; }
+  .video-wrap .play-icon { display:none; }
+  .video-pair { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+  .video-trio { display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; align-items:end; }
+  @media (max-width:560px) { .video-trio { grid-template-columns:1fr; } }
+  .video-label { font-family:'Helvetica Neue',Helvetica,sans-serif; font-size:14px; color:var(--muted); margin:0 0 6px; }
+  @media (max-width:560px) { .video-pair { grid-template-columns:1fr; } }
+  .video-link { font-family: 'Helvetica Neue', Helvetica, sans-serif; font-size: 15px; }
+  .video-link a { color: var(--accent); font-weight: 600; }
+  img.full { width:100%; display:block; border-radius:4px; }
+</style>
+</head>
+<body>
+<main>
+
+<h1>When AI campaign variants drift from the approved master</h1>
+<p class="credit">Responses for Shantanu David, exchange4media<br>Ravi Dugal, President, Flipick Pvt. Ltd.</p>
+
+<!-- ============ QUESTION 1 ============ -->
+<p class="question">Q1. Can you share a concrete example where AI-generated campaign variants caused meaningful product or visual drift from the approved master?</p>
+
+<p class="lead">In our tests, regenerating a product shot for a new format changed the product itself. With a car, a single eight-second shot turned the approved blue-teal vehicle silver-grey, even in the same studio setting as the reference and with the elements locked and seeded. Across multiple shots, the drift grows. With a tea tin, regenerating the same scene at a different aspect ratio changed the tin's shape, its lid, its stripes and its colour, and the clip came back two seconds shorter.</p>
+
+<p>The fix is restraint rather than a bigger model: build from real, approved images, adapt formats by cropping rather than regenerating, and keep logos and text in an overlay layer so the product is never redrawn.</p>
+
+<h3>Example 1: colour drift on a car</h3>
+
+<p>We gave a generative video model one approved reference image of the vehicle and asked for a single eight-second shot. We then built a second video from real images of the same car, using motion and transitions instead of generation.</p>
+
+<figure>
+  <div class="row">
+    <img src="/individual/e4m/images/1.jpg" alt="Approved reference image of the car">
+    <img src="/individual/e4m/images/2.jpg" alt="Still from generative video at 7 seconds">
+    <img src="/individual/e4m/images/3.png" alt="Still from video built from real images">
+  </div>
+  <figcaption>Left to right: the approved reference, a still from the generative video at seven seconds, and a still from the video built from real images. All three show the same studio and the same angle. The approved car is blue-teal. In the generative video it has turned silver-grey. In the version built from real images it stays blue-teal.</figcaption>
+</figure>
+
+<p>Because the generative still is in the same studio as the reference, the lighting can't explain the change: the model repainted the car. The drift isn't limited to one frame, either. Earlier in the same eight-second clip, at four seconds, the car is on a desert road at sunset, and it is silver there too.</p>
+
+<figure>
+  <img class="full" src="/individual/e4m/images/4.png" alt="Still from generative clip at 4 seconds — silver car on desert road">
+  <figcaption>The same generative clip at four seconds: a different setting, and the same silver car.</figcaption>
+</figure>
+
+<figure>
+  <div class="video-pair">
+    <div>
+      <p class="video-label">Generative video (Aris drift)</p>
+      <div class="video-wrap">
+        <video src="/individual/e4m/images/5-aris-drift.mp4" preload="metadata" loop muted></video>
+        <div class="play-icon"></div>
+      </div>
+    </div>
+    <div>
+      <p class="video-label">Built from real images (Aris with image transition)</p>
+      <div class="video-wrap">
+        <video src="/individual/e4m/images/6-aris-image-transition.mp4" preload="metadata" loop muted></video>
+        <div class="play-icon"></div>
+      </div>
+    </div>
+  </div>
+</figure>
+
+<p>The customer would see a silver car in the generative version, while the one on sale is blue-teal. Building from real, approved images fixes this: the car in every frame is the approved car.</p>
+
+<h3>Example 2: one prompt, two sizes, two different products</h3>
+
+<p>We used the same prompt and the same engine to generate a tea tin scene twice, changing only the requested aspect ratio. We then cropped the first version to the second size instead of regenerating it.</p>
+
+<figure>
+  <div class="video-trio">
+    <div>
+      <p class="video-label">Generated at 16:9</p>
+      <div class="video-wrap">
+        <video src="/individual/e4m/images/7-teatin-generated-169.mp4" preload="auto" loop></video>
+        <div class="play-icon"></div>
+      </div>
+    </div>
+    <div>
+      <p class="video-label">Generated at 5:4</p>
+      <div class="video-wrap">
+        <video src="/individual/e4m/images/8-teatin-generated-54.mp4" preload="auto" loop></video>
+        <div class="play-icon"></div>
+      </div>
+    </div>
+    <div>
+      <p class="video-label">Cropped to 5:4 from the 16:9 version</p>
+      <div class="video-wrap">
+        <video src="/individual/e4m/images/9-aura-cropped-54.mp4" preload="auto" loop></video>
+        <div class="play-icon"></div>
+      </div>
+    </div>
+  </div>
+  <figcaption>Left to right: generated at 16:9, generated at 5:4, cropped to 5:4. The cropped version shows the same tin as the master; the regenerated version shows a different one.</figcaption>
+</figure>
+
+<p>What changed when the scene was regenerated:</p>
+
+<div class="table-wrap">
+<table>
+  <thead>
+    <tr><th>Element</th><th>Generated at 16:9</th><th>Generated at 5:4</th><th>Type of drift</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Tin shape</td><td>Short, wide cylinder</td><td>Tall, slim cylinder, nearly twice as tall as it is wide</td><td>Product</td></tr>
+    <tr><td>Lid</td><td>Low dome with a rounded top</td><td>Taller lid with a raised rim</td><td>Product</td></tr>
+    <tr><td>Gold stripes</td><td>Closely spaced, about six</td><td>Wider spacing, about five</td><td>Product</td></tr>
+    <tr><td>Colour</td><td>Deep teal</td><td>Lighter, brighter teal-blue</td><td>Product</td></tr>
+    <tr><td>Framing</td><td>Tin at mid-distance, props visible</td><td>Closer and lower, tin fills the frame</td><td>Composition</td></tr>
+    <tr><td>Props and background</td><td>Spoon and tea leaves beside the tin; soft shelves</td><td>Leaves almost gone; shelves full of jars</td><td>Scene</td></tr>
+    <tr><td>Length</td><td>10 seconds</td><td>8 seconds</td><td>Timing</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>The cropped 5:4 version has none of these changes: same tin, same colour, same length.</p>
+
+<h3>Logos and text</h3>
+
+<p>Logos and on-screen text are where generative rendering is weakest: letters soften, numbers change, brand marks distort. Our approach is to keep every logo, price, offer and line of copy in an overlay layer (supers) above the video. The overlay is identical in every size and language, and a price or offer can be changed without touching the footage. The car video above uses this approach.</p>
+
+<figure>
+  <img class="full" src="/individual/e4m/images/10-image-overlay.png" alt="Still from car video showing overlay text and logo">
+  <figcaption>Logo and copy carried in the overlay layer, not generated into the scene.</figcaption>
+</figure>
+
+<h3>Voice-over timing across languages</h3>
+
+<p>The same script runs to different lengths in different languages, and even in one language the voice may sound rushed when squeezed into a fixed slot. Across hundreds of adaptations, these problems slip through. AI can translate the script and iterate with a text-to-speech engine until the timing fits, but every version still needs an automated quality check.</p>
+
+<!-- ============ QUESTION 2 ============ -->
+<p class="question">Q2. In practice, when one campaign becomes dozens of versions, how are those variants currently reviewed and approved? And, in your experience, where does that process tend to break?</p>
+
+<p class="lead">A campaign multiplies quickly. Each video has several shots, and each shot has its own voice, overlays and music, in every language and every size. Checking each point and going back for corrections by hand is very hard. Review breaks down because the work runs through disconnected tools: prompts, script, storyboard, assets, voice-over, translation, text-to-speech and final rendering each happen separately, so nobody sees the whole picture.</p>
+
+<p>When those steps run in a single pipeline, checks can happen automatically: before rendering, to confirm that scripts fit their time slots and every asset is in place, and after rendering, to check every shot of every version. Most problems can be flagged, and many fixed, before a person ever reviews the output.</p>
+
+<p>In one recent retail campaign, 12 versions across three languages (English, Hindi and Marathi) and four sizes, our automated audio check found that:</p>
+
+<ul>
+  <li>every English version failed on all four shots, because the audio was cut off and kept only 43% to 69% of the script's words;</li>
+  <li>each Hindi version had one failing shot, where the speech was audibly rushed at more than 2.3 words per second;</li>
+  <li>every Marathi version passed.</li>
+</ul>
+
+<p>A person reviewing dozens of finished files could easily miss problems like these, especially in a language they don't speak.</p>
+
+<figure>
+  <img class="full" src="/individual/e4m/images/11-audio-qc.png" alt="Automated audio QC report across 12 campaign versions">
+  <figcaption>Automated audio check across 12 versions of one campaign. Red marks a failing shot.</figcaption>
+</figure>
+
+<footer>
+  <p>Ravi Dugal is the founder and President of Flipick Pvt. Ltd., a Pune-based company that produces personalised and localised video at scale. He has spent four decades in publishing, from print and digital advertising to EdTech and now video.</p>
+  <p><a href="https://www.flipick.com" target="_blank" rel="noopener">www.flipick.com</a> · <a href="https://www.linkedin.com/in/ravidugal" target="_blank" rel="noopener">linkedin.com/in/ravidugal</a></p>
+</footer>
+
+</main>
+
+<script is:inline>
+  document.querySelectorAll('.video-wrap').forEach(wrap => {
+    const vid = wrap.querySelector('video');
+    wrap.addEventListener('mouseenter', () => { if (!vid.hasAttribute('muted')) vid.muted = false; vid.play().catch(()=>{}); wrap.classList.add('playing'); });
+    wrap.addEventListener('mouseleave', () => { vid.pause(); vid.currentTime = 0; wrap.classList.remove('playing'); });
+    wrap.addEventListener('click', () => {
+      if (vid.paused) { vid.play().catch(()=>{}); wrap.classList.add('playing'); }
+      else { vid.pause(); wrap.classList.remove('playing'); }
+    });
+  });
+</script>
+</body>
+</html>
