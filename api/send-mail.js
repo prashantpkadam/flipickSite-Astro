@@ -8,7 +8,7 @@ import {
 // Must match the options in the /company contact form.
 const TOPICS = ['Booking a demo', 'Sales & pricing', 'Support', 'Partnerships', 'Careers', 'Something else'];
 
-export async function POST(request) {
+async function handlePost(request) {
   return respond('send-mail', async () => {
     const data = await readJson(request);
 
@@ -39,8 +39,14 @@ export async function POST(request) {
   });
 }
 
-// Any other method gets a clear 405.
-export const GET = () => json(405, { success: false, message: 'Method not allowed' });
+// Vercel calls this for every request. Only POST is accepted; anything else gets a clear 405.
+export default {
+  fetch(request) {
+    return request.method === 'POST'
+      ? handlePost(request)
+      : json(405, { success: false, message: 'Method not allowed' });
+  },
+};
 
 const row = (label, htmlValue) =>
   `<tr><td style="padding:14px 0;border-bottom:1px solid #EBEBF0;">` +
